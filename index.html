@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Walk Tokyo with Masa — Local Friend Guide</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Nunito:wght@300;400;500;600;700&family=Shippori+Mincho:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --cream:      #FAF8F3;
+      --ivory:      #F2EDE3;
+      --charcoal:   #252523;
+      --red:        #B84131;
+      --tan:        #C9A97A;
+      --tan-light:  #E8DABD;
+      --muted:      #7A766E;
+      --white:      #FFFFFF;
+      --shadow-sm:  0 2px 8px rgba(37,37,35,0.08);
+      --shadow-md:  0 6px 24px rgba(37,37,35,0.12);
+      --radius:     16px;
+      --radius-sm:  10px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: 'Nunito', sans-serif;
+      background: var(--cream);
+      color: var(--charcoal);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+    img { display: block; width: 100%; object-fit: cover; }
+    a { color: inherit; text-decoration: none; }
+
+    /* TYPOGRAPHY */
+    .jp-accent {
+      font-family: 'Shippori Mincho', serif;
+      color: var(--red);
+      font-size: 0.75rem;
+      letter-spacing: 0.14em;
+    }
+    h2.section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 6vw, 3rem);
+      font-weight: 600;
+      line-height: 1.2;
+      margin-bottom: 0.5rem;
+    }
+    /* In Japanese mode, use Shippori for headings */
+    body.lang-ja h2.section-title,
+    body.lang-ja .hero-h1,
+    body.lang-ja .tour-title,
+    body.lang-ja .footer-logo {
+      font-family: 'Shippori Mincho', serif;
+      letter-spacing: 0.04em;
+    }
+    .section-sub {
+      color: var(--muted);
+      font-size: 1rem;
+      max-width: 500px;
+      line-height: 1.7;
+    }
+
+    /* LAYOUT */
+    .container {
+      max-width: 480px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    @media (min-width: 768px) { .container { max-width: 900px; padding: 0 40px; } }
+    @media (min-width: 1100px) { .container { max-width: 1100px; } }
+    section { padding: 72px 0; }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(250,248,243,0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--tan-light);
+      transition: box-shadow 0.3s;
+    }
+    nav.scrolled { box-shadow: var(--shadow-sm); }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 60px;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+      gap: 12px;
+    }
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--charcoal);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .nav-logo span { color: var(--red); }
+    .nav-links {
+      display: none;
+      gap: 24px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 0.83rem;
+      font-weight: 600;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--charcoal); }
+    @media (min-width: 700px) { .nav-links { display: flex; } }
+
+    /* LANGUAGE TOGGLE */
+    .lang-switch {
+      display: flex;
+      align-items: center;
+      background: var(--ivory);
+      border: 1.5px solid var(--tan-light);
+      border-radius: 50px;
+      padding: 3px;
+      gap: 2px;
+      flex-shrink: 0;
+    }
+    .lang-btn {
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 50px;
+      border: none;
+      background: transparent;
+      color: var(--muted);
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+      letter-spacing: 0.04em;
+      white-space: nowrap;
+    }
+    .lang-btn.active {
+      background: var(--red);
+      color: var(--white);
+    }
+
+    .nav-cta {
+      background: var(--red);
+      color: var(--white) !important;
+      padding: 8px 16px;
+      border-radius: 50px;
+      font-size: 0.82rem !important;
+      font-weight: 700 !important;
+      transition: background 0.2s, transform 0.15s !important;
+      white-space: nowrap;
+    }
+    .nav-cta:hover { background: #962E21 !important; transform: translateY(-1px); }
+
+    /* HERO */
+    #home {
+      padding-top: 80px;
+      min-height: 100svh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-bg { position: absolute; inset: 0; z-index: 0; }
+    .hero-bg img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.4) saturate(0.7); }
+    .hero-bg::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(160deg, rgba(37,37,35,0.6) 0%, rgba(37,37,35,0.3) 50%, rgba(184,65,49,0.25) 100%);
+    }
+    .hero-content {
+      position: relative; z-index: 2;
+      padding: 0 24px;
+      max-width: 700px;
+    }
+    .hero-tag {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.25);
+      backdrop-filter: blur(8px);
+      border-radius: 50px;
+      padding: 6px 16px;
+      margin-bottom: 24px;
+      animation: fadeUp 0.7s ease both;
+    }
+    .hero-tag span { font-family: 'Shippori Mincho', serif; font-size: 0.8rem; color: rgba(255,255,255,0.85); letter-spacing: 0.12em; }
+    .hero-dot { width: 6px; height: 6px; background: var(--red); border-radius: 50%; animation: pulse 2s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.6;transform:scale(0.8)} }
+    .hero-h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.8rem, 9vw, 5.5rem);
+      font-weight: 600;
+      color: var(--white);
+      line-height: 1.08;
+      margin-bottom: 20px;
+      animation: fadeUp 0.7s 0.15s ease both;
+    }
+    .hero-h1 em { font-style: italic; color: var(--tan); }
+    .hero-sub {
+      font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+      color: rgba(255,255,255,0.8);
+      line-height: 1.75;
+      max-width: 540px;
+      margin-bottom: 36px;
+      animation: fadeUp 0.7s 0.3s ease both;
+    }
+    .hero-btns {
+      display: flex; flex-wrap: wrap; gap: 12px;
+      animation: fadeUp 0.7s 0.45s ease both;
+    }
+    .btn-primary {
+      background: var(--red); color: var(--white);
+      padding: 14px 28px; border-radius: 50px;
+      font-weight: 700; font-size: 0.95rem;
+      border: none; cursor: pointer;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+      box-shadow: 0 4px 16px rgba(184,65,49,0.4);
+      white-space: nowrap;
+    }
+    .btn-primary:hover { background: #962E21; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(184,65,49,0.45); }
+    .btn-ghost {
+      background: rgba(255,255,255,0.12); color: var(--white);
+      padding: 14px 28px; border-radius: 50px;
+      font-weight: 600; font-size: 0.95rem;
+      border: 1px solid rgba(255,255,255,0.35);
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+      backdrop-filter: blur(4px);
+      white-space: nowrap;
+    }
+    .btn-ghost:hover { background: rgba(255,255,255,0.22); transform: translateY(-2px); }
+    .hero-scroll {
+      position: absolute; bottom: 32px; left: 50%; transform: translateX(-50%);
+      z-index: 2; display: flex; flex-direction: column; align-items: center; gap: 6px;
+      animation: fadeUp 1s 1s ease both;
+    }
+    .hero-scroll span { font-size: 0.7rem; color: rgba(255,255,255,0.5); letter-spacing: 0.1em; }
+    .scroll-line {
+      width: 1px; height: 40px;
+      background: linear-gradient(to bottom, rgba(255,255,255,0.5), transparent);
+      animation: scrollLine 1.8s ease-in-out infinite;
+    }
+    @keyframes scrollLine {
+      0%{transform:scaleY(0);transform-origin:top}
+      50%{transform:scaleY(1);transform-origin:top}
+      51%{transform:scaleY(1);transform-origin:bottom}
+      100%{transform:scaleY(0);transform-origin:bottom}
+    }
+    @keyframes fadeUp { from{opacity:0;transform:translateY(24px)} to{opacity:1;transform:translateY(0)} }
+
+    /* ABOUT */
+    #about { background: var(--white); }
+    .about-grid {
+      display: grid; grid-template-columns: 1fr; gap: 40px; align-items: center;
+    }
+    @media (min-width: 768px) { .about-grid { grid-template-columns: 1fr 1fr; gap: 60px; } }
+    .about-img-wrap { position: relative; }
+    .about-img-frame { border-radius: var(--radius); overflow: hidden; aspect-ratio: 4/5; box-shadow: var(--shadow-md); }
+    .about-img-frame img { height: 100%; }
+    .about-badge {
+      position: absolute; bottom: -16px; right: -8px;
+      background: var(--red); color: var(--white);
+      border-radius: var(--radius); padding: 16px 20px;
+      box-shadow: var(--shadow-md);
+      font-size: 0.85rem; font-weight: 700; line-height: 1.4; text-align: center;
+    }
+    .about-badge .big { font-size: 1.8rem; font-weight: 700; display: block; line-height: 1; }
+    .about-text { padding-bottom: 20px; }
+    .about-intro { font-size: 1.05rem; color: var(--charcoal); margin: 20px 0 28px; line-height: 1.85; }
+    .about-intro2 { font-size: 0.93rem; color: var(--muted); line-height: 1.85; }
+    .about-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 28px; }
+    .tag {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: var(--ivory); border: 1px solid var(--tan-light);
+      border-radius: 50px; padding: 6px 14px;
+      font-size: 0.82rem; font-weight: 600; color: var(--charcoal);
+    }
+
+    /* TOURS */
+    #tours { background: var(--cream); }
+    .tours-header { margin-bottom: 40px; }
+    .tours-grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
+    @media (min-width: 600px) { .tours-grid { grid-template-columns: 1fr 1fr; } }
+    @media (min-width: 900px) { .tours-grid { grid-template-columns: repeat(4, 1fr); } }
+    .tour-card {
+      background: var(--white); border-radius: var(--radius); overflow: hidden;
+      box-shadow: var(--shadow-sm); transition: transform 0.25s, box-shadow 0.25s;
+      display: flex; flex-direction: column;
+    }
+    .tour-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); }
+    .tour-img { aspect-ratio: 4/3; overflow: hidden; position: relative; }
+    .tour-img img { height: 100%; transition: transform 0.4s ease; }
+    .tour-card:hover .tour-img img { transform: scale(1.06); }
+    .tour-label {
+      position: absolute; top: 12px; left: 12px;
+      background: var(--red); color: var(--white);
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.06em;
+      padding: 4px 10px; border-radius: 50px;
+    }
+    .tour-body { padding: 20px; flex: 1; display: flex; flex-direction: column; gap: 10px; }
+    .tour-title { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 600; line-height: 1.25; color: var(--charcoal); }
+    .tour-desc { font-size: 0.87rem; color: var(--muted); line-height: 1.65; flex: 1; }
+    .tour-stops { list-style: none; display: flex; flex-wrap: wrap; gap: 5px; margin-top: 4px; }
+    .tour-stops li { font-size: 0.72rem; background: var(--ivory); color: var(--charcoal); padding: 3px 9px; border-radius: 50px; font-weight: 600; }
+    .tour-link { display: inline-flex; align-items: center; gap: 6px; color: var(--red); font-size: 0.85rem; font-weight: 700; margin-top: 8px; transition: gap 0.2s; }
+    .tour-link:hover { gap: 10px; }
+
+    /* WHY MASA */
+    #why { background: var(--charcoal); }
+    #why .section-title { color: var(--white); }
+    #why .section-sub { color: rgba(255,255,255,0.55); }
+    #why .jp-accent { color: var(--tan); }
+    .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 40px; }
+    @media (min-width: 640px) { .why-grid { grid-template-columns: repeat(4, 1fr); gap: 20px; } }
+    .why-card {
+      background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08);
+      border-radius: var(--radius); padding: 22px 18px;
+      transition: background 0.2s, border-color 0.2s, transform 0.2s;
+    }
+    .why-card:hover { background: rgba(255,255,255,0.09); border-color: rgba(184,65,49,0.4); transform: translateY(-4px); }
+    .why-icon { font-size: 1.6rem; margin-bottom: 10px; display: block; }
+    .why-label { font-size: 0.87rem; font-weight: 700; color: var(--white); line-height: 1.35; }
+
+    /* SAMPLE DAY */
+    #sample { background: var(--ivory); }
+    .day-wrap { display: grid; grid-template-columns: 1fr; gap: 48px; align-items: start; }
+    @media (min-width: 768px) { .day-wrap { grid-template-columns: 1fr 1.2fr; } }
+    .day-img { border-radius: var(--radius); overflow: hidden; aspect-ratio: 3/4; box-shadow: var(--shadow-md); }
+    .day-img img { height: 100%; }
+    .timeline { display: flex; flex-direction: column; gap: 0; margin-top: 28px; }
+    .tl-item { display: grid; grid-template-columns: 80px 1fr; gap: 16px; position: relative; padding-bottom: 28px; }
+    .tl-item:last-child { padding-bottom: 0; }
+    .tl-item::before { content: ''; position: absolute; left: 37px; top: 28px; bottom: 0; width: 1px; background: var(--tan-light); }
+    .tl-item:last-child::before { display: none; }
+    .tl-time { font-family: 'Shippori Mincho', serif; font-size: 0.75rem; font-weight: 500; color: var(--red); padding-top: 3px; text-align: right; }
+    .tl-dot-wrap { position: absolute; left: 30px; top: 4px; width: 16px; height: 16px; background: var(--white); border: 2px solid var(--tan); border-radius: 50%; }
+    .tl-content { padding-left: 8px; }
+    .tl-title { font-weight: 700; font-size: 0.95rem; color: var(--charcoal); line-height: 1.3; }
+    .tl-note { font-size: 0.82rem; color: var(--muted); margin-top: 2px; }
+
+    /* TESTIMONIAL */
+    #testimonial { background: var(--cream); text-align: center; }
+    .testi-wrap { max-width: 680px; margin: 0 auto; }
+    .testi-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.25rem, 3.5vw, 1.65rem);
+      font-weight: 500; font-style: italic;
+      color: var(--charcoal); line-height: 1.65;
+      margin: 24px 0; position: relative;
+    }
+    .testi-quote::before {
+      content: '"'; font-size: 5rem; color: var(--tan-light);
+      font-family: 'Cormorant Garamond', serif;
+      position: absolute; top: -20px; left: -10px; line-height: 1;
+    }
+    .testi-author { display: flex; align-items: center; justify-content: center; gap: 14px; }
+    .testi-avatar { width: 48px; height: 48px; border-radius: 50%; overflow: hidden; border: 2px solid var(--tan-light); flex-shrink: 0; }
+    .testi-avatar img { width: 100%; height: 100%; }
+    .testi-name { font-weight: 700; font-size: 0.95rem; }
+    .testi-loc { font-size: 0.8rem; color: var(--muted); }
+    .stars { color: var(--tan); font-size: 1rem; margin-bottom: 4px; }
+
+    /* CONTACT */
+    #contact { background: var(--white); }
+    .contact-grid { display: grid; grid-template-columns: 1fr; gap: 48px; }
+    @media (min-width: 768px) { .contact-grid { grid-template-columns: 1fr 1.2fr; align-items: start; } }
+    .contact-note { font-size: 0.95rem; color: var(--muted); margin: 16px 0 28px; line-height: 1.75; }
+    .contact-chips { display: flex; flex-direction: column; gap: 10px; }
+    .contact-chip { display: flex; align-items: center; gap: 12px; background: var(--ivory); border-radius: var(--radius-sm); padding: 14px 16px; font-size: 0.88rem; font-weight: 600; }
+    .contact-chip-icon { font-size: 1.1rem; }
+    .form-wrap { background: var(--ivory); border-radius: var(--radius); padding: 32px 28px; box-shadow: var(--shadow-sm); }
+    .form-row { display: grid; grid-template-columns: 1fr; gap: 16px; }
+    @media (min-width: 480px) { .form-row { grid-template-columns: 1fr 1fr; } }
+    .form-group { display: flex; flex-direction: column; gap: 6px; }
+    .form-group.full { grid-column: 1 / -1; }
+    label { font-size: 0.8rem; font-weight: 700; color: var(--charcoal); letter-spacing: 0.04em; }
+    input, select, textarea {
+      font-family: 'Nunito', sans-serif; font-size: 0.95rem; color: var(--charcoal);
+      background: var(--white); border: 1.5px solid var(--tan-light);
+      border-radius: var(--radius-sm); padding: 12px 16px; outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s; width: 100%;
+    }
+    input:focus, select:focus, textarea:focus { border-color: var(--red); box-shadow: 0 0 0 3px rgba(184,65,49,0.12); }
+    textarea { resize: vertical; min-height: 100px; }
+    .form-submit {
+      width: 100%; background: var(--red); color: var(--white);
+      border: none; border-radius: 50px; padding: 15px;
+      font-family: 'Nunito', sans-serif; font-size: 1rem; font-weight: 700;
+      cursor: pointer; margin-top: 8px;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+      box-shadow: 0 4px 14px rgba(184,65,49,0.35);
+    }
+    .form-submit:hover { background: #962E21; transform: translateY(-2px); box-shadow: 0 8px 20px rgba(184,65,49,0.4); }
+
+    /* FOOTER */
+    footer { background: var(--charcoal); color: rgba(255,255,255,0.55); text-align: center; padding: 36px 24px; font-size: 0.83rem; }
+    .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 600; color: var(--white); margin-bottom: 6px; }
+    .footer-logo span { color: var(--red); }
+    .footer-tagline { font-size: 0.8rem; color: rgba(255,255,255,0.4); margin-bottom: 20px; }
+    .footer-links { display: flex; justify-content: center; gap: 24px; list-style: none; flex-wrap: wrap; margin-bottom: 24px; }
+    .footer-links a { color: rgba(255,255,255,0.5); font-size: 0.82rem; font-weight: 600; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--white); }
+    .footer-divider { width: 40px; height: 1px; background: rgba(255,255,255,0.12); margin: 16px auto; }
+
+    /* DIVIDER */
+    .jp-divider { display: flex; align-items: center; gap: 16px; margin-bottom: 16px; }
+    .jp-divider-line { flex: 1; height: 1px; background: var(--tan-light); max-width: 40px; }
+
+    /* SCROLL REVEAL */
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.65s ease, transform 0.65s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+
+    /* LANG TRANSITION */
+    [data-i18n] { transition: opacity 0.2s ease; }
+    body.lang-switching [data-i18n] { opacity: 0; }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="main-nav">
+    <div class="nav-inner">
+      <a href="#home" class="nav-logo">Walk Tokyo <span>with Masa</span></a>
+      <ul class="nav-links">
+        <li><a href="#about" data-i18n="nav_about">About</a></li>
+        <li><a href="#tours" data-i18n="nav_tours">Tours</a></li>
+        <li><a href="#why" data-i18n="nav_why">Why Masa</a></li>
+        <li><a href="#sample" data-i18n="nav_sample">Sample Day</a></li>
+        <li><a href="#contact" class="nav-cta" data-i18n="nav_cta">Ask Masa</a></li>
+      </ul>
+      <!-- Language Toggle -->
+      <div class="lang-switch">
+        <button class="lang-btn active" id="btn-en" onclick="setLang('en')">EN</button>
+        <button class="lang-btn" id="btn-ja" onclick="setLang('ja')">日本語</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="home">
+    <div class="hero-bg">
+      <img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=1600&q=85&auto=format&fit=crop" alt="Tokyo at night" loading="eager" />
+    </div>
+    <div class="hero-content container">
+      <div class="hero-tag">
+        <div class="hero-dot"></div>
+        <span data-i18n="hero_tag">東京 — Private Local Guide</span>
+      </div>
+      <h1 class="hero-h1" data-i18n="hero_h1">Explore Tokyo<br />with a <em>Local Friend</em></h1>
+      <p class="hero-sub" data-i18n="hero_sub">Private, relaxed Tokyo walking tours guided by Masa — a friendly local who loves food, culture, hidden spots, and helping visitors enjoy Japan without stress.</p>
+      <div class="hero-btns">
+        <a href="#contact" class="btn-primary" data-i18n="hero_btn1">Plan My Tokyo Day</a>
+        <a href="#tours" class="btn-ghost" data-i18n="hero_btn2">See Sample Tours</a>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span data-i18n="hero_scroll">SCROLL</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-img-wrap reveal">
+          <div class="about-img-frame">
+            <img src="https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=800&q=80&auto=format&fit=crop" alt="Masa in Tokyo" />
+          </div>
+          <div class="about-badge">
+            <span class="big">3+</span>
+            <span data-i18n="about_badge">years<br />guiding Tokyo</span>
+          </div>
+        </div>
+        <div class="about-text reveal reveal-delay-2">
+          <div class="jp-divider">
+            <div class="jp-divider-line"></div>
+            <span class="jp-accent" data-i18n="about_label">About Masa</span>
+          </div>
+          <h2 class="section-title" data-i18n="about_title">Hi, I'm Masa 👋</h2>
+          <p class="about-intro" data-i18n="about_intro">I live in Japan and enjoy helping visitors experience Tokyo in a relaxed and personal way. I'm not here to rush you from one tourist spot to another — I want you to enjoy Tokyo like you're spending the day with a local friend.</p>
+          <p class="about-intro2" data-i18n="about_intro2">Whether it's finding the perfect bowl of ramen, figuring out the train system, or discovering a quiet temple tucked behind a busy street — I know this city, and I love sharing it.</p>
+          <div class="about-tags">
+            <span class="tag">🇯🇵 <span data-i18n="tag1">Japanese &amp; English</span></span>
+            <span class="tag">🧘 <span data-i18n="tag2">Yoga &amp; Jogging</span></span>
+            <span class="tag">🍜 <span data-i18n="tag3">Food Lover</span></span>
+            <span class="tag">🚇 <span data-i18n="tag4">Train Expert</span></span>
+            <span class="tag">😊 <span data-i18n="tag5">Patient &amp; Friendly</span></span>
+            <span class="tag">🗺️ <span data-i18n="tag6">First-Timer Friendly</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TOURS -->
+  <section id="tours">
+    <div class="container">
+      <div class="tours-header">
+        <div class="jp-divider">
+          <div class="jp-divider-line"></div>
+          <span class="jp-accent" data-i18n="tours_label">Sample Tours</span>
+        </div>
+        <h2 class="section-title reveal" data-i18n="tours_title">Find Your Tokyo Day</h2>
+        <p class="section-sub reveal reveal-delay-1" data-i18n="tours_sub">No two days are the same. These are starting points — Masa will shape the day around what you enjoy.</p>
+      </div>
+      <div class="tours-grid">
+        <div class="tour-card reveal">
+          <div class="tour-img">
+            <img src="https://images.unsplash.com/photo-1554797589-7241bb691973?w=600&q=80&auto=format&fit=crop" alt="Senso-ji Temple" />
+            <span class="tour-label" data-i18n="tour1_badge">Fan Favorite</span>
+          </div>
+          <div class="tour-body">
+            <div class="tour-title" data-i18n="tour1_title">Classic Tokyo First-Time Tour</div>
+            <p class="tour-desc" data-i18n="tour1_desc">A relaxed introduction to Tokyo's famous sights, with help navigating trains, food, and local culture.</p>
+            <ul class="tour-stops">
+              <li data-i18n="tour1_s1">Asakusa</li><li data-i18n="tour1_s2">Senso-ji</li><li data-i18n="tour1_s3">Ueno</li><li data-i18n="tour1_s4">Tokyo Station</li><li data-i18n="tour1_s5">Ginza</li>
+            </ul>
+            <a href="#contact" class="tour-link" data-i18n="tour_ask">Ask about this tour →</a>
+          </div>
+        </div>
+        <div class="tour-card reveal reveal-delay-1">
+          <div class="tour-img">
+            <img src="https://images.unsplash.com/photo-1569050467447-ce54b3bbc37d?w=600&q=80&auto=format&fit=crop" alt="Japanese food" />
+            <span class="tour-label" data-i18n="tour2_badge">For Foodies</span>
+          </div>
+          <div class="tour-body">
+            <div class="tour-title" data-i18n="tour2_title">Food &amp; Local Tokyo Tour</div>
+            <p class="tour-desc" data-i18n="tour2_desc">A food-focused day for visitors who want to try real Japanese meals without feeling lost.</p>
+            <ul class="tour-stops">
+              <li data-i18n="tour2_s1">Tsukiji Market</li><li data-i18n="tour2_s2">Shimbashi</li><li data-i18n="tour2_s3">Ramen Lunch</li><li data-i18n="tour2_s4">Akasaka Dinner</li>
+            </ul>
+            <a href="#contact" class="tour-link" data-i18n="tour_ask">Ask about this tour →</a>
+          </div>
+        </div>
+        <div class="tour-card reveal reveal-delay-2">
+          <div class="tour-img">
+            <img src="https://images.unsplash.com/photo-1542051841857-5f90071e7989?w=600&q=80&auto=format&fit=crop" alt="Shibuya Crossing" />
+            <span class="tour-label" data-i18n="tour3_badge">Modern Tokyo</span>
+          </div>
+          <div class="tour-body">
+            <div class="tour-title" data-i18n="tour3_title">Modern Tokyo Walk</div>
+            <p class="tour-desc" data-i18n="tour3_desc">A mix of modern Tokyo, fashion streets, quiet shrine areas, and city energy.</p>
+            <ul class="tour-stops">
+              <li>Shibuya</li><li>Harajuku</li><li data-i18n="tour3_s3">Meiji Shrine</li><li>Shinjuku</li>
+            </ul>
+            <a href="#contact" class="tour-link" data-i18n="tour_ask">Ask about this tour →</a>
+          </div>
+        </div>
+        <div class="tour-card reveal reveal-delay-3">
+          <div class="tour-img">
+            <img src="https://images.unsplash.com/photo-1536098561742-ca998e48cbcc?w=600&q=80&auto=format&fit=crop" alt="Custom Tokyo" />
+            <span class="tour-label" data-i18n="tour4_badge">Your Way</span>
+          </div>
+          <div class="tour-body">
+            <div class="tour-title" data-i18n="tour4_title">Custom Local Friend Tour</div>
+            <p class="tour-desc" data-i18n="tour4_desc">Tell Masa what you like — food, temples, shopping, anime, parks, or quiet neighborhoods — and he'll create a relaxed custom plan just for you.</p>
+            <ul class="tour-stops">
+              <li data-i18n="tour4_s1">Your Interests</li><li data-i18n="tour4_s2">Your Pace</li><li data-i18n="tour4_s3">Your Plan</li>
+            </ul>
+            <a href="#contact" class="tour-link" data-i18n="tour4_ask">Start planning →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY MASA -->
+  <section id="why">
+    <div class="container">
+      <div class="jp-divider">
+        <div class="jp-divider-line" style="background:rgba(255,255,255,0.15)"></div>
+        <span class="jp-accent" data-i18n="why_label">Why Masa</span>
+      </div>
+      <h2 class="section-title reveal" data-i18n="why_title">No crowds. No rush.<br />Just Tokyo.</h2>
+      <p class="section-sub reveal reveal-delay-1" data-i18n="why_sub">Here's what makes a day with Masa different from a group tour.</p>
+      <div class="why-grid">
+        <div class="why-card reveal"><span class="why-icon">🚶</span><div class="why-label" data-i18n="why1">Relaxed Pace</div></div>
+        <div class="why-card reveal reveal-delay-1"><span class="why-icon">🏘️</span><div class="why-label" data-i18n="why2">Local Knowledge</div></div>
+        <div class="why-card reveal reveal-delay-2"><span class="why-icon">🚇</span><div class="why-label" data-i18n="why3">Train Help</div></div>
+        <div class="why-card reveal reveal-delay-3"><span class="why-icon">🍱</span><div class="why-label" data-i18n="why4">Food Recommendations</div></div>
+        <div class="why-card reveal"><span class="why-icon">💬</span><div class="why-label" data-i18n="why5">English &amp; Japanese Support</div></div>
+        <div class="why-card reveal reveal-delay-1"><span class="why-icon">🙅</span><div class="why-label" data-i18n="why6">No Group Tour Feeling</div></div>
+        <div class="why-card reveal reveal-delay-2"><span class="why-icon">👤</span><div class="why-label" data-i18n="why7">Great for First-Timers</div></div>
+        <div class="why-card reveal reveal-delay-3"><span class="why-icon">🤝</span><div class="why-label" data-i18n="why8">Friendly Local Experience</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SAMPLE DAY -->
+  <section id="sample">
+    <div class="container">
+      <div class="day-wrap">
+        <div class="day-img reveal">
+          <img src="https://images.unsplash.com/photo-1522383225747-1c993197db4e?w=800&q=80&auto=format&fit=crop" alt="Tokyo day walk" />
+        </div>
+        <div class="reveal reveal-delay-2">
+          <div class="jp-divider">
+            <div class="jp-divider-line"></div>
+            <span class="jp-accent" data-i18n="sample_label">Sample Day</span>
+          </div>
+          <h2 class="section-title" data-i18n="sample_title">A Sample Day<br />with Masa</h2>
+          <p class="section-sub" data-i18n="sample_sub">Every day is flexible — this is just one example of how a relaxed Tokyo day might look.</p>
+          <div class="timeline">
+            <div class="tl-item"><div class="tl-time">9:00</div><div class="tl-dot-wrap"></div><div class="tl-content"><div class="tl-title" data-i18n="tl1_t">Meet at your hotel or station</div><div class="tl-note" data-i18n="tl1_n">No need to figure out where to go — Masa comes to you.</div></div></div>
+            <div class="tl-item"><div class="tl-time">10:00</div><div class="tl-dot-wrap"></div><div class="tl-content"><div class="tl-title" data-i18n="tl2_t">Asakusa &amp; Senso-ji Temple</div><div class="tl-note" data-i18n="tl2_n">Old Tokyo vibes, incense, and a great photo spot.</div></div></div>
+            <div class="tl-item"><div class="tl-time">12:00</div><div class="tl-dot-wrap"></div><div class="tl-content"><div class="tl-title" data-i18n="tl3_t">Local tempura or ramen lunch</div><div class="tl-note" data-i18n="tl3_n">Masa knows where the locals eat — not the tourist traps.</div></div></div>
+            <div class="tl-item"><div class="tl-time">13:30</div><div class="tl-dot-wrap"></div><div class="tl-content"><div class="tl-title" data-i18n="tl4_t">Ueno or Tokyo Station area</div><div class="tl-note" data-i18n="tl4_n">Museums, markets, or just a good walk.</div></div></div>
+            <div class="tl-item"><div class="tl-time">15:00</div><div class="tl-dot-wrap"></div><div class="tl-content"><div class="tl-title" data-i18n="tl5_t">Coffee break or shopping</div><div class="tl-note" data-i18n="tl5_n">Rest your feet. Masa will find a good spot.</div></div></div>
+            <div class="tl-item"><div class="tl-time">17:00</div><div class="tl-dot-wrap"></div><div class="tl-content"><div class="tl-title" data-i18n="tl6_t">Shibuya or Akasaka evening walk</div><div class="tl-note" data-i18n="tl6_n">Tokyo comes alive at dusk.</div></div></div>
+            <div class="tl-item"><div class="tl-time">18:30</div><div class="tl-dot-wrap"></div><div class="tl-content"><div class="tl-title" data-i18n="tl7_t">Optional dinner recommendation</div><div class="tl-note" data-i18n="tl7_n">End the day well — Masa will suggest the right spot for your taste.</div></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIAL -->
+  <section id="testimonial">
+    <div class="container">
+      <div class="testi-wrap">
+        <div class="jp-divider" style="justify-content:center">
+          <div class="jp-divider-line"></div>
+          <span class="jp-accent" data-i18n="testi_label">What People Say</span>
+          <div class="jp-divider-line"></div>
+        </div>
+        <div class="stars">★★★★★</div>
+        <blockquote class="testi-quote reveal" data-i18n="testi_quote">Masa guided me around Tokyo for 3 days. He planned everything, helped with transportation, chose great places to eat, and showed me both famous spots and local areas I would never have found on my own. It felt like exploring Tokyo with a brother, not a tour guide.</blockquote>
+        <div class="testi-author reveal reveal-delay-1">
+          <div class="testi-avatar"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80&auto=format&fit=crop" alt="Andy" /></div>
+          <div>
+            <div class="testi-name" data-i18n="testi_name">Andy, USA</div>
+            <div class="testi-loc" data-i18n="testi_loc">3-day Tokyo private tour</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="reveal">
+          <div class="jp-divider">
+            <div class="jp-divider-line"></div>
+            <span class="jp-accent" data-i18n="contact_label">Get in Touch</span>
+          </div>
+          <h2 class="section-title" data-i18n="contact_title">Ask Masa About<br />Your Tokyo Day</h2>
+          <p class="contact-note" data-i18n="contact_note">Send Masa a quick message and he'll follow up personally. No automated replies. Just a real conversation about your trip.</p>
+          <div class="contact-chips">
+            <div class="contact-chip"><span class="contact-chip-icon">📅</span><span data-i18n="chip1">Weekend tours available</span></div>
+            <div class="contact-chip"><span class="contact-chip-icon">✏️</span><span data-i18n="chip2">Custom plans welcome</span></div>
+            <div class="contact-chip"><span class="contact-chip-icon">👨‍👩‍👧</span><span data-i18n="chip3">Great for couples, solo &amp; families</span></div>
+            <div class="contact-chip"><span class="contact-chip-icon">🗾</span><span data-i18n="chip4">Based in Tokyo, Japan</span></div>
+          </div>
+        </div>
+        <div class="form-wrap reveal reveal-delay-2">
+          <div class="form-row">
+            <div class="form-group">
+              <label data-i18n="form_name">Your Name</label>
+              <input type="text" data-i18n-placeholder="form_name_ph" placeholder="e.g. Sarah" />
+            </div>
+            <div class="form-group">
+              <label data-i18n="form_email">Email Address</label>
+              <input type="email" placeholder="you@email.com" />
+            </div>
+            <div class="form-group">
+              <label data-i18n="form_dates">Travel Dates</label>
+              <input type="text" data-i18n-placeholder="form_dates_ph" placeholder="e.g. Oct 12–15, 2025" />
+            </div>
+            <div class="form-group">
+              <label data-i18n="form_people">Number of People</label>
+              <select>
+                <option data-i18n="form_sel0">Select...</option>
+                <option data-i18n="form_sel1">1 (Solo)</option>
+                <option data-i18n="form_sel2">2 (Couple)</option>
+                <option data-i18n="form_sel3">3–4 (Small group)</option>
+                <option data-i18n="form_sel4">5+ (Family / Group)</option>
+              </select>
+            </div>
+            <div class="form-group full">
+              <label data-i18n="form_msg">What kind of Tokyo experience are you looking for?</label>
+              <textarea data-i18n-placeholder="form_msg_ph" placeholder="e.g. We love food and quiet places. First time in Japan. Two adults and one child."></textarea>
+            </div>
+          </div>
+          <button class="form-submit" onclick="return false;" data-i18n="form_submit">Ask Masa 🗾</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">Walk Tokyo <span>with Masa</span></div>
+    <div class="footer-tagline" data-i18n="footer_tagline">Explore Tokyo like a local friend.</div>
+    <ul class="footer-links">
+      <li><a href="#home" data-i18n="footer_home">Home</a></li>
+      <li><a href="#about" data-i18n="nav_about">About</a></li>
+      <li><a href="#tours" data-i18n="nav_tours">Tours</a></li>
+      <li><a href="#why" data-i18n="nav_why">Why Masa</a></li>
+      <li><a href="#sample" data-i18n="nav_sample">Sample Day</a></li>
+      <li><a href="#contact" data-i18n="footer_contact">Contact</a></li>
+    </ul>
+    <div class="footer-divider"></div>
+    <p data-i18n="footer_copy">© 2025 Walk Tokyo with Masa · Private Local Guide · Tokyo, Japan</p>
+  </footer>
+
+  <script>
+    // =============================================
+    // TRANSLATION DICTIONARY
+    // =============================================
+    const T = {
+      en: {
+        nav_about: "About",
+        nav_tours: "Tours",
+        nav_why: "Why Masa",
+        nav_sample: "Sample Day",
+        nav_cta: "Ask Masa",
+
+        hero_tag: "東京 — Private Local Guide",
+        hero_h1: "Explore Tokyo<br />with a <em>Local Friend</em>",
+        hero_sub: "Private, relaxed Tokyo walking tours guided by Masa — a friendly local who loves food, culture, hidden spots, and helping visitors enjoy Japan without stress.",
+        hero_btn1: "Plan My Tokyo Day",
+        hero_btn2: "See Sample Tours",
+        hero_scroll: "SCROLL",
+
+        about_label: "About Masa",
+        about_title: "Hi, I'm Masa 👋",
+        about_badge: "years<br />guiding Tokyo",
+        about_intro: "I live in Japan and enjoy helping visitors experience Tokyo in a relaxed and personal way. I'm not here to rush you from one tourist spot to another — I want you to enjoy Tokyo like you're spending the day with a local friend.",
+        about_intro2: "Whether it's finding the perfect bowl of ramen, figuring out the train system, or discovering a quiet temple tucked behind a busy street — I know this city, and I love sharing it.",
+        tag1: "Japanese & English",
+        tag2: "Yoga & Jogging",
+        tag3: "Food Lover",
+        tag4: "Train Expert",
+        tag5: "Patient & Friendly",
+        tag6: "First-Timer Friendly",
+
+        tours_label: "Sample Tours",
+        tours_title: "Find Your Tokyo Day",
+        tours_sub: "No two days are the same. These are starting points — Masa will shape the day around what you enjoy.",
+        tour1_badge: "Fan Favorite",
+        tour1_title: "Classic Tokyo First-Time Tour",
+        tour1_desc: "A relaxed introduction to Tokyo's famous sights, with help navigating trains, food, and local culture.",
+        tour1_s1: "Asakusa", tour1_s2: "Senso-ji", tour1_s3: "Ueno", tour1_s4: "Tokyo Station", tour1_s5: "Ginza",
+        tour2_badge: "For Foodies",
+        tour2_title: "Food & Local Tokyo Tour",
+        tour2_desc: "A food-focused day for visitors who want to try real Japanese meals without feeling lost.",
+        tour2_s1: "Tsukiji Market", tour2_s2: "Shimbashi", tour2_s3: "Ramen Lunch", tour2_s4: "Akasaka Dinner",
+        tour3_badge: "Modern Tokyo",
+        tour3_title: "Modern Tokyo Walk",
+        tour3_desc: "A mix of modern Tokyo, fashion streets, quiet shrine areas, and city energy.",
+        tour3_s3: "Meiji Shrine",
+        tour4_badge: "Your Way",
+        tour4_title: "Custom Local Friend Tour",
+        tour4_desc: "Tell Masa what you like — food, temples, shopping, anime, parks, or quiet neighborhoods — and he'll create a relaxed custom plan just for you.",
+        tour4_s1: "Your Interests", tour4_s2: "Your Pace", tour4_s3: "Your Plan",
+        tour_ask: "Ask about this tour →",
+        tour4_ask: "Start planning →",
+
+        why_label: "Why Masa",
+        why_title: "No crowds. No rush.<br />Just Tokyo.",
+        why_sub: "Here's what makes a day with Masa different from a group tour.",
+        why1: "Relaxed Pace", why2: "Local Knowledge", why3: "Train Help", why4: "Food Recommendations",
+        why5: "English & Japanese Support", why6: "No Group Tour Feeling", why7: "Great for First-Timers", why8: "Friendly Local Experience",
+
+        sample_label: "Sample Day",
+        sample_title: "A Sample Day<br />with Masa",
+        sample_sub: "Every day is flexible — this is just one example of how a relaxed Tokyo day might look.",
+        tl1_t: "Meet at your hotel or station", tl1_n: "No need to figure out where to go — Masa comes to you.",
+        tl2_t: "Asakusa & Senso-ji Temple", tl2_n: "Old Tokyo vibes, incense, and a great photo spot.",
+        tl3_t: "Local tempura or ramen lunch", tl3_n: "Masa knows where the locals eat — not the tourist traps.",
+        tl4_t: "Ueno or Tokyo Station area", tl4_n: "Museums, markets, or just a good walk.",
+        tl5_t: "Coffee break or shopping", tl5_n: "Rest your feet. Masa will find a good spot.",
+        tl6_t: "Shibuya or Akasaka evening walk", tl6_n: "Tokyo comes alive at dusk.",
+        tl7_t: "Optional dinner recommendation", tl7_n: "End the day well — Masa will suggest the right spot for your taste.",
+
+        testi_label: "What People Say",
+        testi_quote: "Masa guided me around Tokyo for 3 days. He planned everything, helped with transportation, chose great places to eat, and showed me both famous spots and local areas I would never have found on my own. It felt like exploring Tokyo with a brother, not a tour guide.",
+        testi_name: "Andy, USA",
+        testi_loc: "3-day Tokyo private tour",
+
+        contact_label: "Get in Touch",
+        contact_title: "Ask Masa About<br />Your Tokyo Day",
+        contact_note: "Send Masa a quick message and he'll follow up personally. No automated replies. Just a real conversation about your trip.",
+        chip1: "Weekend tours available", chip2: "Custom plans welcome",
+        chip3: "Great for couples, solo & families", chip4: "Based in Tokyo, Japan",
+        form_name: "Your Name", form_name_ph: "e.g. Sarah",
+        form_email: "Email Address",
+        form_dates: "Travel Dates", form_dates_ph: "e.g. Oct 12–15, 2025",
+        form_people: "Number of People",
+        form_sel0: "Select...", form_sel1: "1 (Solo)", form_sel2: "2 (Couple)", form_sel3: "3–4 (Small group)", form_sel4: "5+ (Family / Group)",
+        form_msg: "What kind of Tokyo experience are you looking for?",
+        form_msg_ph: "e.g. We love food and quiet places. First time in Japan. Two adults and one child.",
+        form_submit: "Ask Masa 🗾",
+
+        footer_home: "Home", footer_contact: "Contact",
+        footer_tagline: "Explore Tokyo like a local friend.",
+        footer_copy: "© 2025 Walk Tokyo with Masa · Private Local Guide · Tokyo, Japan",
+      },
+
+      ja: {
+        nav_about: "Masaについて",
+        nav_tours: "ツアー",
+        nav_why: "選ぶ理由",
+        nav_sample: "1日の流れ",
+        nav_cta: "Masaに聞く",
+
+        hero_tag: "東京 — プライベートローカルガイド",
+        hero_h1: "地元の友達と<br /><em>東京を歩こう</em>",
+        hero_sub: "Masaによるプライベート・のんびり東京ウォーキングツアー。食、文化、穴場スポット、ストレスなく日本を楽しみたい方へ。",
+        hero_btn1: "東京の1日を計画する",
+        hero_btn2: "サンプルツアーを見る",
+        hero_scroll: "スクロール",
+
+        about_label: "Masaについて",
+        about_title: "こんにちは、Masaです 👋",
+        about_badge: "年間<br />東京ガイド歴",
+        about_intro: "私は日本在住で、訪れる方に東京をのんびりと、個人的な形で体験してもらうことが好きです。観光地をあちこち急いで回るのではなく、地元の友達と過ごすような1日を一緒に作りたいと思っています。",
+        about_intro2: "絶品ラーメンのお店を見つけること、電車の乗り方、にぎやかな通りの裏に隠れた静かなお寺の発見 — この街のことを知っていて、それを分かち合うことが大好きです。",
+        tag1: "日本語・英語対応",
+        tag2: "ヨガ＆ジョギング",
+        tag3: "食べることが大好き",
+        tag4: "電車ナビが得意",
+        tag5: "穏やかで親切",
+        tag6: "初めての方も安心",
+
+        tours_label: "サンプルツアー",
+        tours_title: "あなたの東京の1日を探そう",
+        tours_sub: "同じ日はありません。これはあくまで出発点です — あなたの好みに合わせてMasaが調整します。",
+        tour1_badge: "人気No.1",
+        tour1_title: "初めての東京 定番ツアー",
+        tour1_desc: "電車、食事、地元文化のサポートつきで、東京の有名スポットをのんびり巡ります。",
+        tour1_s1: "浅草", tour1_s2: "浅草寺", tour1_s3: "上野", tour1_s4: "東京駅", tour1_s5: "銀座",
+        tour2_badge: "食べ歩き向け",
+        tour2_title: "食＆ローカル東京ツアー",
+        tour2_desc: "本格的な日本食を迷わずに楽しみたい方のための、食に特化した1日。",
+        tour2_s1: "築地場外市場", tour2_s2: "新橋", tour2_s3: "ラーメンランチ", tour2_s4: "赤坂ディナー",
+        tour3_badge: "現代の東京",
+        tour3_title: "モダン東京ウォーク",
+        tour3_desc: "現代的な東京、ファッションの街、静かな神社エリア、都市のエネルギーをミックスした1日。",
+        tour3_s3: "明治神宮",
+        tour4_badge: "オーダーメイド",
+        tour4_title: "カスタム・ローカルフレンドツアー",
+        tour4_desc: "食、寺社、ショッピング、アニメ、公園、静かな下町など — あなたの好みを教えてください。Masaが専用プランを作ります。",
+        tour4_s1: "あなたの興味", tour4_s2: "あなたのペース", tour4_s3: "あなたのプラン",
+        tour_ask: "このツアーについて聞く →",
+        tour4_ask: "プランを考える →",
+
+        why_label: "Masaを選ぶ理由",
+        why_title: "混雑なし。急がない。<br />東京を楽しもう。",
+        why_sub: "Masaとの1日が、グループツアーと何が違うのかをご紹介します。",
+        why1: "のんびりペース", why2: "地元の知識", why3: "電車サポート", why4: "食事のアドバイス",
+        why5: "英語・日本語対応", why6: "団体ツアーじゃない", why7: "初めての方も安心", why8: "親切な地元体験",
+
+        sample_label: "1日の流れ",
+        sample_title: "Masaと過ごす<br />サンプルの1日",
+        sample_sub: "毎回柔軟に対応します。これはのんびりした東京の1日のほんの一例です。",
+        tl1_t: "ホテルまたは駅でお待ち合わせ", tl1_n: "どこへ行けばいいか迷う必要はありません — Masaがあなたのもとに来ます。",
+        tl2_t: "浅草・浅草寺", tl2_n: "下町の雰囲気、お線香、素敵な写真スポット。",
+        tl3_t: "天ぷらまたはラーメンのランチ", tl3_n: "Masaは地元の人が通うお店を知っています — 観光客向けのお店ではなく。",
+        tl4_t: "上野または東京駅エリア", tl4_n: "美術館、市場、または散歩を楽しむ。",
+        tl5_t: "コーヒー休憩またはショッピング", tl5_n: "足を休めましょう。Masaが良いお店を見つけます。",
+        tl6_t: "渋谷または赤坂の夕方散歩", tl6_n: "夕暮れ時の東京は格別です。",
+        tl7_t: "ディナーのご提案（任意）", tl7_n: "良い形で1日を締めくくりましょう — Masaがぴったりのお店を提案します。",
+
+        testi_label: "お客様の声",
+        testi_quote: "Masaは3日間、東京を案内してくれました。移動の計画、交通のサポート、食事のお店選び、有名スポットから自分では絶対見つけられなかったローカルエリアまで — すべてをコーディネートしてくれました。ツアーガイドではなく、まるでお兄さんと東京を探検しているような感覚でした。",
+        testi_name: "Andy（アメリカ）",
+        testi_loc: "3日間・東京プライベートツアー",
+
+        contact_label: "お問い合わせ",
+        contact_title: "あなたの東京の1日<br />Masaに相談しませんか",
+        contact_note: "メッセージを送っていただければ、Masaが直接ご返信します。自動応答なし。旅についての素直な会話です。",
+        chip1: "週末ツアーも対応可", chip2: "カスタムプランも歓迎",
+        chip3: "カップル・おひとり様・ご家族も", chip4: "東京在住",
+        form_name: "お名前", form_name_ph: "例：田中さん",
+        form_email: "メールアドレス",
+        form_dates: "旅行の日程", form_dates_ph: "例：10月12日〜15日",
+        form_people: "人数",
+        form_sel0: "選んでください", form_sel1: "1名（おひとり様）", form_sel2: "2名（カップル）", form_sel3: "3〜4名（小グループ）", form_sel4: "5名以上（家族・グループ）",
+        form_msg: "どんな東京体験を求めていますか？",
+        form_msg_ph: "例：食べ歩きと静かな場所が好きです。日本は初めて。大人2名と子ども1名です。",
+        form_submit: "Masaに聞く 🗾",
+
+        footer_home: "ホーム", footer_contact: "お問い合わせ",
+        footer_tagline: "地元の友達と東京を旅しよう。",
+        footer_copy: "© 2025 Walk Tokyo with Masa · プライベートローカルガイド · 東京",
+      }
+    };
+
+    // =============================================
+    // LANGUAGE SWITCHER
+    // =============================================
+    let currentLang = 'en';
+
+    function setLang(lang) {
+      if (lang === currentLang) return;
+
+      // Fade out
+      document.body.classList.add('lang-switching');
+
+      setTimeout(() => {
+        currentLang = lang;
+        document.documentElement.lang = lang;
+        document.body.classList.toggle('lang-ja', lang === 'ja');
+
+        // Toggle button styles
+        document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+        document.getElementById('btn-ja').classList.toggle('active', lang === 'ja');
+
+        // Update all text nodes
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+          const key = el.getAttribute('data-i18n');
+          if (T[lang][key] !== undefined) {
+            el.innerHTML = T[lang][key];
+          }
+        });
+
+        // Update placeholders
+        document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+          const key = el.getAttribute('data-i18n-placeholder');
+          if (T[lang][key] !== undefined) {
+            el.placeholder = T[lang][key];
+          }
+        });
+
+        // Fade back in
+        document.body.classList.remove('lang-switching');
+      }, 200);
+    }
+
+    // =============================================
+    // STICKY NAV SHADOW
+    // =============================================
+    const nav = document.getElementById('main-nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 20);
+    });
+
+    // =============================================
+    // SCROLL REVEAL
+    // =============================================
+    const revealEls = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+      });
+    }, { threshold: 0.12 });
+    revealEls.forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

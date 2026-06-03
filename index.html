@@ -446,6 +446,14 @@
     .testi-author { display: flex; align-items: center; justify-content: center; gap: 14px; }
     .testi-avatar { width: 48px; height: 48px; border-radius: 50%; overflow: hidden; border: 2px solid var(--tan-light); flex-shrink: 0; }
     .testi-avatar img { width: 100%; height: 100%; }
+    .testi-avatar-initials {
+      width: 48px; height: 48px; border-radius: 50%;
+      background: var(--tan); border: 2px solid var(--tan-light);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem; font-weight: 600; color: var(--white);
+      flex-shrink: 0;
+    }
     .testi-name { font-weight: 700; font-size: 0.95rem; }
     .testi-loc { font-size: 0.8rem; color: var(--muted); }
     .stars { color: var(--tan); font-size: 1rem; margin-bottom: 4px; }
@@ -646,7 +654,7 @@
           </div>
           <h2 class="section-title" data-i18n="about_title">Hi, I'm Masa 👋</h2>
           <p class="about-intro" data-i18n="about_intro">I live in Japan and enjoy helping visitors experience Tokyo and nearby areas in a relaxed and personal way. I'm not here to rush you from one tourist spot to another — I want you to enjoy Japan like you're spending the day with a local friend.</p>
-          <p class="about-intro2" data-i18n="about_intro2">Whether it's finding the perfect bowl of ramen, figuring out the train system, or discovering a quiet temple tucked behind a busy street — I know this country, and I love sharing it.</p>
+          <p class="about-intro2" data-i18n="about_intro2">Whether it's finding the perfect bowl of ramen, figuring out the train system, or discovering a quiet temple tucked behind a busy street — I love helping visitors experience the small details that make Japan special.</p>
           <div class="about-tags">
             <span class="tag">🇯🇵 <span data-i18n="tag1">Japanese &amp; English</span></span>
             <span class="tag">🧘 <span data-i18n="tag2">Yoga &amp; Jogging</span></span>
@@ -891,8 +899,8 @@
         <div class="stars">★★★★★</div>
         <blockquote class="testi-quote reveal" data-i18n="testi_quote">Masa guided me around Tokyo for 3 days. He planned everything, helped with transportation, chose great places to eat, and showed me both famous spots and local areas I would never have found on my own. It felt like exploring Tokyo with a brother, not a tour guide.</blockquote>
         <div class="testi-author reveal reveal-delay-1">
-          <!-- Andy is a real person — this photo can stay or be replaced with Andy's real photo -->
-          <div class="testi-avatar"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80&auto=format&fit=crop" alt="Andy" /></div>
+          <!-- REPLACE: Add Andy's real photo here when available -->
+          <div class="testi-avatar-initials">A</div>
           <div>
             <div class="testi-name" data-i18n="testi_name">Andy, USA</div>
             <div class="testi-loc" data-i18n="testi_loc">3-day Tokyo private experience</div>
@@ -1081,7 +1089,7 @@
         about_title:    "Hi, I'm Masa 👋",
         about_badge:    "Weekend<br />Local Guide",
         about_intro:    "I live in Japan and enjoy helping visitors experience Tokyo and nearby areas in a relaxed and personal way. I'm not here to rush you from one tourist spot to another — I want you to enjoy Japan like you're spending the day with a local friend.",
-        about_intro2:   "Whether it's finding the perfect bowl of ramen, figuring out the train system, or discovering a quiet temple tucked behind a busy street — I know this country, and I love sharing it.",
+        about_intro2:   "Whether it's finding the perfect bowl of ramen, figuring out the train system, or discovering a quiet temple tucked behind a busy street — I love helping visitors experience the small details that make Japan special.",
         tag1: "Japanese & English",
         tag2: "Yoga & Jogging",
         tag3: "Food Lover",
@@ -1209,8 +1217,8 @@
         nav_cta:    "Masaに聞く",
 
         hero_tag:  "東京 · 日本 — プライベートローカルガイド",
-        hero_h1:   "マサおじさんと<br /><em>日本を旅しよう</em>",
-        hero_sub:  "東京と近郊エリアへのプライベートでのんびりした体験。食、文化、移動サポートまで — ストレスなく日本を楽しみたい方へ。",
+        hero_h1:   "マサおじさんと<br /><em>日本を楽しもう</em>",
+        hero_sub:  "東京と近郊エリアを、地元の友人と過ごすようにのんびり楽しむプライベート体験。食事、文化、電車移動まで、初めての日本でも安心して楽しめるようにサポートします。",
         hero_btn1: "プランを相談する",
         hero_btn2: "体験を見る",
         hero_scroll: "スクロール",
@@ -1218,16 +1226,16 @@
         about_label:    "Masaについて",
         about_title:    "こんにちは、Masaです 👋",
         about_badge:    "週末<br />ローカルガイド",
-        about_intro:    "私は日本在住で、訪れる方に東京や近郊エリアをのんびりと、個人的な形で体験してもらうことが好きです。観光地をあちこち急いで回るのではなく、地元の友達と過ごすような1日を一緒に作りたいと思っています。",
-        about_intro2:   "絶品ラーメンのお店を見つけること、電車の乗り方、にぎやかな通りの裏に隠れた静かなお寺の発見 — この国のことを知っていて、それを分かち合うことが大好きです。",
+        about_intro:    "私は日本在住で、東京や近郊エリアを訪れる方に、のんびりとした個人的な体験を楽しんでもらうことが好きです。観光地を急いで回るのではなく、地元の友人と過ごすような1日を一緒に作りたいと思っています。",
+        about_intro2:   "おいしいラーメンのお店を探したり、電車移動をサポートしたり、にぎやかな通りの近くにある静かなお寺を見つけたり。日本の魅力を一緒に楽しんでもらうことが大好きです。",
         tag1: "日本語・英語対応",
         tag2: "ヨガ＆ジョギング",
         tag3: "食べることが大好き",
-        tag4: "電車ナビが得意",
+        tag4: "電車移動をサポート",
         tag5: "穏やかで親切",
         tag6: "初めての方も安心",
         about_why_title: "「マサおじさん」の由来",
-        about_why_body:  "姪のAnnaが小さい頃から「マサおじさん」と呼んでくれています。その名前は温かく、親しみやすく、とても大切です。訪れる方にお届けしたいのも、それと同じ体験です — 急かすツアーではなく、地元の友人と過ごすような、のんびりした日本の1日を。",
+        about_why_body:  "姪のAnnaが小さい頃から、私のことを「マサおじさん」と呼んでくれています。この名前は、温かくて親しみやすく、私にとってとても大切なものです。訪れる方にも、急がされるツアーではなく、地元の友人と過ごすような、のんびりした日本の1日を楽しんでもらいたいと思っています。",
 
         tours_label: "体験の一例",
         tours_title: "あなたの1日を見つけよう",
@@ -1252,7 +1260,7 @@
         tour4_ask: "プランを考える →",
 
         perfect_label: "こんな方へ",
-        perfect_title: "Uncle Masaが向いている方",
+        perfect_title: "マサおじさんが向いている方",
         perfect1: "日本が初めての方",
         perfect2: "カップル",
         perfect3: "おひとり様",
@@ -1264,16 +1272,16 @@
 
         why_label: "選ぶ理由",
         why_title: "混雑なし。急がない。<br />日本を楽しもう。",
-        why_sub:   "Uncle Masaとの1日が、グループツアーと何が違うのかをご紹介します。",
+        why_sub:   "マサおじさんとの1日が、グループツアーと何が違うのかをご紹介します。",
         why1: "のんびりペース", why2: "地元の知識", why3: "電車サポート", why4: "食事のアドバイス",
         why5: "英語・日本語対応", why6: "団体ツアーじゃない", why7: "初めての方も安心", why8: "親切な地元体験",
 
         sample_label: "1日の流れ",
-        sample_title: "Uncle Masaと過ごす<br />サンプルの1日",
+        sample_title: "マサおじさんと過ごす<br />サンプルの1日",
         sample_sub:   "毎回柔軟に対応します。これはのんびりした東京の1日のほんの一例です。",
         tl1_t: "ホテルまたは駅でお待ち合わせ",    tl1_n: "どこへ行けばいいか迷う必要はありません — Masaがあなたのもとに来ます。",
         tl2_t: "浅草・浅草寺",                     tl2_n: "下町の雰囲気、お線香、素敵な写真スポット。",
-        tl3_t: "天ぷらまたはラーメンのランチ",     tl3_n: "Masaは地元の人が通うお店を知っています — 観光客向けのお店ではなく。",
+        tl3_t: "天ぷらまたはラーメンのランチ",     tl3_n: "地元の人にも親しまれているお店を紹介します。",
         tl4_t: "上野または東京駅エリア",            tl4_n: "美術館、市場、または散歩を楽しむ。",
         tl5_t: "コーヒー休憩またはショッピング",   tl5_n: "足を休めましょう。Masaが良いお店を見つけます。",
         tl6_t: "渋谷または赤坂の夕方散歩",         tl6_n: "夕暮れ時の東京は格別です。",
@@ -1297,7 +1305,7 @@
         faq_label: "よくある質問",
         faq_title: "よくある質問",
         faq1_q: "プライベートツアーですか？",
-        faq1_a: "はい。のんびりとした、柔軟でプライベートな体験を大切にしています — あなたのペースで、Uncle Masaと二人で。",
+        faq1_a: "はい。のんびりとした、柔軟でプライベートな体験を大切にしています — あなたのペースで、マサおじさんと二人で。",
         faq2_q: "英語は話せますか？",
         faq2_a: "Masaは日本語と日常英会話が話せます。英語が得意でなくても、安心して楽しんでいただけます。",
         faq3_q: "電車のサポートはしてもらえますか？",
@@ -1314,11 +1322,11 @@
         contact_label: "お問い合わせ",
         contact_title: "あなたの日本旅行<br />Masaに相談しませんか",
         contact_note:  "メッセージを送っていただければ、Masaが直接ご返信します。自動応答なし。旅についての素直な会話です。",
-        chip1: "選ばれた週末・祝日に対応",
+        chip1: "一部の週末・祝日に対応可能",
         chip2: "カスタムプランも歓迎",
         chip3: "カップル・おひとり様・ご家族も",
         chip4: "日本在住 — 東京・近郊エリア対応",
-        contact_avail: "選ばれた週末・祝日に対応しています。小さな個人サービスのため、受付枠が限られる場合があります。メッセージをお送りいただければ、Masaが直接ご返信します。",
+        contact_avail: "一部の週末・祝日に対応しています。小さな個人サービスのため、対応できる日程が限られる場合があります。メッセージをお送りいただければ、Masaが直接ご返信します。",
         form_name:    "お名前",       form_name_ph: "例：田中さん",
         form_email:   "メールアドレス",
         form_dates:   "旅行の日程",   form_dates_ph: "例：10月12日〜15日",

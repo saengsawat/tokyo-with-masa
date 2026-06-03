@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Walk Tokyo with Masa — Local Friend Guide</title>
+  <title>Uncle Masa — Explore Japan with a Local Friend</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Nunito:wght@300;400;500;600;700&family=Shippori+Mincho:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -49,7 +49,6 @@
       line-height: 1.2;
       margin-bottom: 0.5rem;
     }
-    /* In Japanese mode, use Shippori for headings */
     body.lang-ja h2.section-title,
     body.lang-ja .hero-h1,
     body.lang-ja .tour-title,
@@ -145,10 +144,7 @@
       letter-spacing: 0.04em;
       white-space: nowrap;
     }
-    .lang-btn.active {
-      background: var(--red);
-      color: var(--white);
-    }
+    .lang-btn.active { background: var(--red); color: var(--white); }
 
     .nav-cta {
       background: var(--red);
@@ -273,9 +269,9 @@
       background: var(--red); color: var(--white);
       border-radius: var(--radius); padding: 16px 20px;
       box-shadow: var(--shadow-md);
-      font-size: 0.85rem; font-weight: 700; line-height: 1.4; text-align: center;
+      font-size: 0.85rem; font-weight: 700; line-height: 1.5; text-align: center;
     }
-    .about-badge .big { font-size: 1.8rem; font-weight: 700; display: block; line-height: 1; }
+    .about-badge-icon { font-size: 1.5rem; display: block; margin-bottom: 4px; }
     .about-text { padding-bottom: 20px; }
     .about-intro { font-size: 1.05rem; color: var(--charcoal); margin: 20px 0 28px; line-height: 1.85; }
     .about-intro2 { font-size: 0.93rem; color: var(--muted); line-height: 1.85; }
@@ -286,8 +282,23 @@
       border-radius: 50px; padding: 6px 14px;
       font-size: 0.82rem; font-weight: 600; color: var(--charcoal);
     }
+    .about-story {
+      background: var(--ivory);
+      border-left: 3px solid var(--red);
+      border-radius: var(--radius-sm);
+      padding: 20px 24px;
+      margin-top: 28px;
+    }
+    .about-story-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--red);
+      margin-bottom: 10px;
+    }
+    .about-story p { font-size: 0.92rem; color: var(--muted); line-height: 1.8; }
 
-    /* TOURS */
+    /* TOURS / EXPERIENCES */
     #tours { background: var(--cream); }
     .tours-header { margin-bottom: 40px; }
     .tours-grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
@@ -315,6 +326,27 @@
     .tour-stops li { font-size: 0.72rem; background: var(--ivory); color: var(--charcoal); padding: 3px 9px; border-radius: 50px; font-weight: 600; }
     .tour-link { display: inline-flex; align-items: center; gap: 6px; color: var(--red); font-size: 0.85rem; font-weight: 700; margin-top: 8px; transition: gap 0.2s; }
     .tour-link:hover { gap: 10px; }
+
+    /* PERFECT FOR */
+    #perfect { background: var(--ivory); }
+    .perfect-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 40px;
+    }
+    @media (min-width: 640px) { .perfect-grid { grid-template-columns: repeat(4, 1fr); gap: 16px; } }
+    .perfect-card {
+      background: var(--white);
+      border: 1.5px solid var(--tan-light);
+      border-radius: var(--radius);
+      padding: 22px 16px;
+      text-align: center;
+      transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+    }
+    .perfect-card:hover { border-color: var(--red); transform: translateY(-3px); box-shadow: var(--shadow-sm); }
+    .perfect-icon { font-size: 1.75rem; margin-bottom: 10px; display: block; }
+    .perfect-label { font-size: 0.84rem; font-weight: 600; color: var(--charcoal); line-height: 1.45; }
 
     /* WHY MASA */
     #why { background: var(--charcoal); }
@@ -349,6 +381,53 @@
     .tl-title { font-weight: 700; font-size: 0.95rem; color: var(--charcoal); line-height: 1.3; }
     .tl-note { font-size: 0.82rem; color: var(--muted); margin-top: 2px; }
 
+    /* GALLERY */
+    #gallery { background: var(--white); }
+    .gallery-disclaimer {
+      display: inline-block;
+      background: var(--ivory);
+      border: 1px solid var(--tan-light);
+      border-radius: var(--radius-sm);
+      padding: 10px 18px;
+      font-size: 0.82rem;
+      color: var(--muted);
+      font-style: italic;
+      margin-bottom: 32px;
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    @media (min-width: 600px) { .gallery-grid { grid-template-columns: repeat(3, 1fr); gap: 16px; } }
+    .gallery-card {
+      border-radius: var(--radius);
+      overflow: hidden;
+      position: relative;
+      aspect-ratio: 1;
+      box-shadow: var(--shadow-sm);
+    }
+    .gallery-card img { height: 100%; transition: transform 0.4s ease; }
+    .gallery-card:hover img { transform: scale(1.05); }
+    .gallery-card-label {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      background: linear-gradient(to top, rgba(37,37,35,0.82) 0%, transparent 100%);
+      padding: 30px 14px 14px;
+      color: var(--white);
+      font-size: 0.82rem;
+      font-weight: 600;
+    }
+    .gallery-replace-badge {
+      position: absolute; top: 10px; right: 10px;
+      background: rgba(37,37,35,0.7);
+      color: rgba(255,255,255,0.85);
+      font-size: 0.62rem;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 50px;
+      letter-spacing: 0.03em;
+    }
+
     /* TESTIMONIAL */
     #testimonial { background: var(--cream); text-align: center; }
     .testi-wrap { max-width: 680px; margin: 0 auto; }
@@ -360,7 +439,7 @@
       margin: 24px 0; position: relative;
     }
     .testi-quote::before {
-      content: '"'; font-size: 5rem; color: var(--tan-light);
+      content: '\201C'; font-size: 5rem; color: var(--tan-light);
       font-family: 'Cormorant Garamond', serif;
       position: absolute; top: -20px; left: -10px; line-height: 1;
     }
@@ -371,6 +450,60 @@
     .testi-loc { font-size: 0.8rem; color: var(--muted); }
     .stars { color: var(--tan); font-size: 1rem; margin-bottom: 4px; }
 
+    /* FAQ */
+    #faq { background: var(--cream); }
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 40px;
+      max-width: 780px;
+    }
+    .faq-item {
+      background: var(--white);
+      border: 1.5px solid var(--tan-light);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: border-color 0.2s;
+    }
+    .faq-item.open { border-color: var(--tan); }
+    .faq-q {
+      width: 100%;
+      padding: 18px 24px;
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--charcoal);
+      background: none;
+      border: none;
+      cursor: pointer;
+      text-align: left;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+    .faq-arrow {
+      width: 22px; height: 22px;
+      background: var(--ivory);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem;
+      color: var(--red);
+      flex-shrink: 0;
+      transition: transform 0.25s;
+      line-height: 1;
+    }
+    .faq-item.open .faq-arrow { transform: rotate(45deg); }
+    .faq-a {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease, padding 0.3s ease;
+      padding: 0 24px;
+    }
+    .faq-item.open .faq-a { max-height: 200px; padding: 0 24px 18px; }
+    .faq-a p { font-size: 0.9rem; color: var(--muted); line-height: 1.75; }
+
     /* CONTACT */
     #contact { background: var(--white); }
     .contact-grid { display: grid; grid-template-columns: 1fr; gap: 48px; }
@@ -379,6 +512,16 @@
     .contact-chips { display: flex; flex-direction: column; gap: 10px; }
     .contact-chip { display: flex; align-items: center; gap: 12px; background: var(--ivory); border-radius: var(--radius-sm); padding: 14px 16px; font-size: 0.88rem; font-weight: 600; }
     .contact-chip-icon { font-size: 1.1rem; }
+    .contact-avail-note {
+      background: var(--ivory);
+      border-left: 3px solid var(--tan);
+      border-radius: var(--radius-sm);
+      padding: 14px 18px;
+      font-size: 0.84rem;
+      color: var(--muted);
+      margin-top: 24px;
+      line-height: 1.7;
+    }
     .form-wrap { background: var(--ivory); border-radius: var(--radius); padding: 32px 28px; box-shadow: var(--shadow-sm); }
     .form-row { display: grid; grid-template-columns: 1fr; gap: 16px; }
     @media (min-width: 480px) { .form-row { grid-template-columns: 1fr 1fr; } }
@@ -402,6 +545,14 @@
       box-shadow: 0 4px 14px rgba(184,65,49,0.35);
     }
     .form-submit:hover { background: #962E21; transform: translateY(-2px); box-shadow: 0 8px 20px rgba(184,65,49,0.4); }
+    .form-mockup-note {
+      text-align: center;
+      font-size: 0.78rem;
+      color: var(--muted);
+      font-style: italic;
+      margin-top: 12px;
+      line-height: 1.6;
+    }
 
     /* FOOTER */
     footer { background: var(--charcoal); color: rgba(255,255,255,0.55); text-align: center; padding: 36px 24px; font-size: 0.83rem; }
@@ -431,18 +582,18 @@
 </head>
 <body>
 
-  <!-- NAV -->
+  <!-- ===================== NAV ===================== -->
   <nav id="main-nav">
     <div class="nav-inner">
-      <a href="#home" class="nav-logo">Walk Tokyo <span>with Masa</span></a>
+      <a href="#home" class="nav-logo">Uncle <span>Masa</span></a>
       <ul class="nav-links">
         <li><a href="#about" data-i18n="nav_about">About</a></li>
-        <li><a href="#tours" data-i18n="nav_tours">Tours</a></li>
+        <li><a href="#tours" data-i18n="nav_tours">Experiences</a></li>
         <li><a href="#why" data-i18n="nav_why">Why Masa</a></li>
         <li><a href="#sample" data-i18n="nav_sample">Sample Day</a></li>
+        <li><a href="#faq" data-i18n="nav_faq">FAQ</a></li>
         <li><a href="#contact" class="nav-cta" data-i18n="nav_cta">Ask Masa</a></li>
       </ul>
-      <!-- Language Toggle -->
       <div class="lang-switch">
         <button class="lang-btn active" id="btn-en" onclick="setLang('en')">EN</button>
         <button class="lang-btn" id="btn-ja" onclick="setLang('ja')">日本語</button>
@@ -450,21 +601,22 @@
     </div>
   </nav>
 
-  <!-- HERO -->
+  <!-- ===================== HERO ===================== -->
   <section id="home">
     <div class="hero-bg">
-      <img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=1600&q=85&auto=format&fit=crop" alt="Tokyo at night" loading="eager" />
+      <!-- REPLACE: A photo of Tokyo at night — Shibuya crossing or Tokyo tower -->
+      <img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=1600&q=85&auto=format&fit=crop" alt="Placeholder photo — Tokyo cityscape at night" loading="eager" />
     </div>
     <div class="hero-content container">
       <div class="hero-tag">
         <div class="hero-dot"></div>
-        <span data-i18n="hero_tag">東京 — Private Local Guide</span>
+        <span data-i18n="hero_tag">東京 · Japan — Private Local Guide</span>
       </div>
-      <h1 class="hero-h1" data-i18n="hero_h1">Explore Tokyo<br />with a <em>Local Friend</em></h1>
-      <p class="hero-sub" data-i18n="hero_sub">Private, relaxed Tokyo walking tours guided by Masa — a friendly local who loves food, culture, hidden spots, and helping visitors enjoy Japan without stress.</p>
+      <h1 class="hero-h1" data-i18n="hero_h1">Explore Japan<br />with <em>Uncle Masa</em></h1>
+      <p class="hero-sub" data-i18n="hero_sub">Private, relaxed local experiences in Tokyo and nearby areas — guided by Masa, a friendly local who loves food, culture, walking, and helping visitors enjoy Japan without stress.</p>
       <div class="hero-btns">
-        <a href="#contact" class="btn-primary" data-i18n="hero_btn1">Plan My Tokyo Day</a>
-        <a href="#tours" class="btn-ghost" data-i18n="hero_btn2">See Sample Tours</a>
+        <a href="#contact" class="btn-primary" data-i18n="hero_btn1">Plan My Day</a>
+        <a href="#tours" class="btn-ghost" data-i18n="hero_btn2">See Sample Experiences</a>
       </div>
     </div>
     <div class="hero-scroll">
@@ -473,17 +625,18 @@
     </div>
   </section>
 
-  <!-- ABOUT -->
+  <!-- ===================== ABOUT ===================== -->
   <section id="about">
     <div class="container">
       <div class="about-grid">
         <div class="about-img-wrap reveal">
           <div class="about-img-frame">
-            <img src="https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=800&q=80&auto=format&fit=crop" alt="Masa in Tokyo" />
+            <!-- REPLACE: A real photo of Uncle Masa smiling, ideally outdoors in Tokyo -->
+            <img src="https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=800&q=80&auto=format&fit=crop" alt="Placeholder photo — Uncle Masa in Tokyo" />
           </div>
           <div class="about-badge">
-            <span class="big">3+</span>
-            <span data-i18n="about_badge">years<br />guiding Tokyo</span>
+            <span class="about-badge-icon">🗺️</span>
+            <span data-i18n="about_badge">Weekend<br />Local Guide</span>
           </div>
         </div>
         <div class="about-text reveal reveal-delay-2">
@@ -492,8 +645,8 @@
             <span class="jp-accent" data-i18n="about_label">About Masa</span>
           </div>
           <h2 class="section-title" data-i18n="about_title">Hi, I'm Masa 👋</h2>
-          <p class="about-intro" data-i18n="about_intro">I live in Japan and enjoy helping visitors experience Tokyo in a relaxed and personal way. I'm not here to rush you from one tourist spot to another — I want you to enjoy Tokyo like you're spending the day with a local friend.</p>
-          <p class="about-intro2" data-i18n="about_intro2">Whether it's finding the perfect bowl of ramen, figuring out the train system, or discovering a quiet temple tucked behind a busy street — I know this city, and I love sharing it.</p>
+          <p class="about-intro" data-i18n="about_intro">I live in Japan and enjoy helping visitors experience Tokyo and nearby areas in a relaxed and personal way. I'm not here to rush you from one tourist spot to another — I want you to enjoy Japan like you're spending the day with a local friend.</p>
+          <p class="about-intro2" data-i18n="about_intro2">Whether it's finding the perfect bowl of ramen, figuring out the train system, or discovering a quiet temple tucked behind a busy street — I know this country, and I love sharing it.</p>
           <div class="about-tags">
             <span class="tag">🇯🇵 <span data-i18n="tag1">Japanese &amp; English</span></span>
             <span class="tag">🧘 <span data-i18n="tag2">Yoga &amp; Jogging</span></span>
@@ -502,92 +655,131 @@
             <span class="tag">😊 <span data-i18n="tag5">Patient &amp; Friendly</span></span>
             <span class="tag">🗺️ <span data-i18n="tag6">First-Timer Friendly</span></span>
           </div>
+          <!-- WHY UNCLE MASA? STORY -->
+          <div class="about-story reveal reveal-delay-3">
+            <div class="about-story-title" data-i18n="about_why_title">Why "Uncle Masa"?</div>
+            <p data-i18n="about_why_body">My niece Anna has called me "Uncle Masa" since she was little. The name became special to me because it feels warm, friendly, and personal. That is also the kind of experience I want to share with visitors — not a rushed tour, but a relaxed day in Japan with someone who feels like a local friend.</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- TOURS -->
+  <!-- ===================== SAMPLE EXPERIENCES ===================== -->
   <section id="tours">
     <div class="container">
       <div class="tours-header">
         <div class="jp-divider">
           <div class="jp-divider-line"></div>
-          <span class="jp-accent" data-i18n="tours_label">Sample Tours</span>
+          <span class="jp-accent" data-i18n="tours_label">Sample Experiences</span>
         </div>
-        <h2 class="section-title reveal" data-i18n="tours_title">Find Your Tokyo Day</h2>
+        <h2 class="section-title reveal" data-i18n="tours_title">Find Your Perfect Day</h2>
         <p class="section-sub reveal reveal-delay-1" data-i18n="tours_sub">No two days are the same. These are starting points — Masa will shape the day around what you enjoy.</p>
       </div>
       <div class="tours-grid">
+
+        <!-- CARD A: Classic Tokyo -->
         <div class="tour-card reveal">
           <div class="tour-img">
-            <img src="https://images.unsplash.com/photo-1554797589-7241bb691973?w=600&q=80&auto=format&fit=crop" alt="Senso-ji Temple" />
+            <!-- REPLACE: A photo of Senso-ji temple or Asakusa neighborhood -->
+            <img src="https://images.unsplash.com/photo-1554797589-7241bb691973?w=600&q=80&auto=format&fit=crop" alt="Placeholder photo — Senso-ji Temple, Asakusa" />
             <span class="tour-label" data-i18n="tour1_badge">Fan Favorite</span>
           </div>
           <div class="tour-body">
-            <div class="tour-title" data-i18n="tour1_title">Classic Tokyo First-Time Tour</div>
-            <p class="tour-desc" data-i18n="tour1_desc">A relaxed introduction to Tokyo's famous sights, with help navigating trains, food, and local culture.</p>
+            <div class="tour-title" data-i18n="tour1_title">Classic Tokyo First-Time Walk</div>
+            <p class="tour-desc" data-i18n="tour1_desc">Good for visitors who want a relaxed first day in Tokyo with help using trains, choosing food, and understanding small local customs.</p>
             <ul class="tour-stops">
               <li data-i18n="tour1_s1">Asakusa</li><li data-i18n="tour1_s2">Senso-ji</li><li data-i18n="tour1_s3">Ueno</li><li data-i18n="tour1_s4">Tokyo Station</li><li data-i18n="tour1_s5">Ginza</li>
             </ul>
-            <a href="#contact" class="tour-link" data-i18n="tour_ask">Ask about this tour →</a>
+            <a href="#contact" class="tour-link" data-i18n="tour_ask">Ask about this experience →</a>
           </div>
         </div>
+
+        <!-- CARD B: Food -->
         <div class="tour-card reveal reveal-delay-1">
           <div class="tour-img">
-            <img src="https://images.unsplash.com/photo-1569050467447-ce54b3bbc37d?w=600&q=80&auto=format&fit=crop" alt="Japanese food" />
+            <!-- REPLACE: A photo of Japanese food — ramen, tempura, or market snacks -->
+            <img src="https://images.unsplash.com/photo-1569050467447-ce54b3bbc37d?w=600&q=80&auto=format&fit=crop" alt="Placeholder photo — Japanese food and local market" />
             <span class="tour-label" data-i18n="tour2_badge">For Foodies</span>
           </div>
           <div class="tour-body">
-            <div class="tour-title" data-i18n="tour2_title">Food &amp; Local Tokyo Tour</div>
-            <p class="tour-desc" data-i18n="tour2_desc">A food-focused day for visitors who want to try real Japanese meals without feeling lost.</p>
+            <div class="tour-title" data-i18n="tour2_title">Food &amp; Local Neighborhoods</div>
+            <p class="tour-desc" data-i18n="tour2_desc">For visitors who want to try real Japanese meals — ramen, tempura, market snacks — without feeling lost or rushed.</p>
             <ul class="tour-stops">
-              <li data-i18n="tour2_s1">Tsukiji Market</li><li data-i18n="tour2_s2">Shimbashi</li><li data-i18n="tour2_s3">Ramen Lunch</li><li data-i18n="tour2_s4">Akasaka Dinner</li>
+              <li data-i18n="tour2_s1">Tsukiji</li><li data-i18n="tour2_s2">Shimbashi</li><li data-i18n="tour2_s3">Ramen Lunch</li><li data-i18n="tour2_s4">Izakaya Dinner</li>
             </ul>
-            <a href="#contact" class="tour-link" data-i18n="tour_ask">Ask about this tour →</a>
+            <a href="#contact" class="tour-link" data-i18n="tour_ask">Ask about this experience →</a>
           </div>
         </div>
+
+        <!-- CARD C: Modern Tokyo -->
         <div class="tour-card reveal reveal-delay-2">
           <div class="tour-img">
-            <img src="https://images.unsplash.com/photo-1542051841857-5f90071e7989?w=600&q=80&auto=format&fit=crop" alt="Shibuya Crossing" />
+            <!-- REPLACE: A photo of Shibuya crossing or Harajuku street -->
+            <img src="https://images.unsplash.com/photo-1542051841857-5f90071e7989?w=600&q=80&auto=format&fit=crop" alt="Placeholder photo — Shibuya crossing at night" />
             <span class="tour-label" data-i18n="tour3_badge">Modern Tokyo</span>
           </div>
           <div class="tour-body">
-            <div class="tour-title" data-i18n="tour3_title">Modern Tokyo Walk</div>
-            <p class="tour-desc" data-i18n="tour3_desc">A mix of modern Tokyo, fashion streets, quiet shrine areas, and city energy.</p>
+            <div class="tour-title" data-i18n="tour3_title">Modern Tokyo &amp; Culture Walk</div>
+            <p class="tour-desc" data-i18n="tour3_desc">A mix of modern Tokyo, quiet shrine areas, fashion streets, and city energy. Good for visitors who want variety in one day.</p>
             <ul class="tour-stops">
               <li>Shibuya</li><li>Harajuku</li><li data-i18n="tour3_s3">Meiji Shrine</li><li>Shinjuku</li>
             </ul>
-            <a href="#contact" class="tour-link" data-i18n="tour_ask">Ask about this tour →</a>
+            <a href="#contact" class="tour-link" data-i18n="tour_ask">Ask about this experience →</a>
           </div>
         </div>
+
+        <!-- CARD D: Custom / Nearby -->
         <div class="tour-card reveal reveal-delay-3">
           <div class="tour-img">
-            <img src="https://images.unsplash.com/photo-1536098561742-ca998e48cbcc?w=600&q=80&auto=format&fit=crop" alt="Custom Tokyo" />
-            <span class="tour-label" data-i18n="tour4_badge">Your Way</span>
+            <!-- REPLACE: A photo of Kamakura, Nikko, Hakone, or a day trip destination near Tokyo -->
+            <img src="https://images.unsplash.com/photo-1536098561742-ca998e48cbcc?w=600&q=80&auto=format&fit=crop" alt="Placeholder photo — Tokyo and nearby Japan day trip" />
+            <span class="tour-label" data-i18n="tour4_badge">Custom Plan</span>
           </div>
           <div class="tour-body">
-            <div class="tour-title" data-i18n="tour4_title">Custom Local Friend Tour</div>
-            <p class="tour-desc" data-i18n="tour4_desc">Tell Masa what you like — food, temples, shopping, anime, parks, or quiet neighborhoods — and he'll create a relaxed custom plan just for you.</p>
+            <div class="tour-title" data-i18n="tour4_title">Tokyo &amp; Nearby Custom Day</div>
+            <p class="tour-desc" data-i18n="tour4_desc">Tell Masa what interests you — food, temples, anime, parks, or a nearby area like Kamakura or Nikko — and the day is planned around you.</p>
             <ul class="tour-stops">
-              <li data-i18n="tour4_s1">Your Interests</li><li data-i18n="tour4_s2">Your Pace</li><li data-i18n="tour4_s3">Your Plan</li>
+              <li>Tokyo</li><li>Kamakura</li><li>Nikko</li><li>Yokohama</li><li data-i18n="tour4_s1">+ More</li>
             </ul>
             <a href="#contact" class="tour-link" data-i18n="tour4_ask">Start planning →</a>
           </div>
         </div>
+
       </div>
     </div>
   </section>
 
-  <!-- WHY MASA -->
+  <!-- ===================== PERFECT FOR ===================== -->
+  <section id="perfect">
+    <div class="container">
+      <div class="jp-divider">
+        <div class="jp-divider-line"></div>
+        <span class="jp-accent" data-i18n="perfect_label">Perfect For</span>
+      </div>
+      <h2 class="section-title reveal" data-i18n="perfect_title">Who Is This For?</h2>
+      <div class="perfect-grid">
+        <div class="perfect-card reveal"><span class="perfect-icon">✈️</span><div class="perfect-label" data-i18n="perfect1">First-time visitors to Japan</div></div>
+        <div class="perfect-card reveal reveal-delay-1"><span class="perfect-icon">💑</span><div class="perfect-label" data-i18n="perfect2">Couples</div></div>
+        <div class="perfect-card reveal reveal-delay-2"><span class="perfect-icon">🧳</span><div class="perfect-label" data-i18n="perfect3">Solo travelers</div></div>
+        <div class="perfect-card reveal reveal-delay-3"><span class="perfect-icon">👨‍👩‍👧</span><div class="perfect-label" data-i18n="perfect4">Families with children</div></div>
+        <div class="perfect-card reveal"><span class="perfect-icon">🍱</span><div class="perfect-label" data-i18n="perfect5">Food lovers</div></div>
+        <div class="perfect-card reveal reveal-delay-1"><span class="perfect-icon">🚇</span><div class="perfect-label" data-i18n="perfect6">Visitors nervous about trains or local manners</div></div>
+        <div class="perfect-card reveal reveal-delay-2"><span class="perfect-icon">🌿</span><div class="perfect-label" data-i18n="perfect7">Travelers who prefer a relaxed private experience</div></div>
+        <div class="perfect-card reveal reveal-delay-3"><span class="perfect-icon">🤝</span><div class="perfect-label" data-i18n="perfect8">People who want local tips, not a rushed group tour</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== WHY UNCLE MASA ===================== -->
   <section id="why">
     <div class="container">
       <div class="jp-divider">
         <div class="jp-divider-line" style="background:rgba(255,255,255,0.15)"></div>
-        <span class="jp-accent" data-i18n="why_label">Why Masa</span>
+        <span class="jp-accent" data-i18n="why_label">Why Uncle Masa</span>
       </div>
-      <h2 class="section-title reveal" data-i18n="why_title">No crowds. No rush.<br />Just Tokyo.</h2>
-      <p class="section-sub reveal reveal-delay-1" data-i18n="why_sub">Here's what makes a day with Masa different from a group tour.</p>
+      <h2 class="section-title reveal" data-i18n="why_title">No crowds. No rush.<br />Just Japan.</h2>
+      <p class="section-sub reveal reveal-delay-1" data-i18n="why_sub">Here's what makes a day with Uncle Masa different from a group tour.</p>
       <div class="why-grid">
         <div class="why-card reveal"><span class="why-icon">🚶</span><div class="why-label" data-i18n="why1">Relaxed Pace</div></div>
         <div class="why-card reveal reveal-delay-1"><span class="why-icon">🏘️</span><div class="why-label" data-i18n="why2">Local Knowledge</div></div>
@@ -601,19 +793,20 @@
     </div>
   </section>
 
-  <!-- SAMPLE DAY -->
+  <!-- ===================== SAMPLE DAY ===================== -->
   <section id="sample">
     <div class="container">
       <div class="day-wrap">
         <div class="day-img reveal">
-          <img src="https://images.unsplash.com/photo-1522383225747-1c993197db4e?w=800&q=80&auto=format&fit=crop" alt="Tokyo day walk" />
+          <!-- REPLACE: A photo of walking through Tokyo streets or a local neighborhood -->
+          <img src="https://images.unsplash.com/photo-1522383225747-1c993197db4e?w=800&q=80&auto=format&fit=crop" alt="Placeholder photo — Walking through Tokyo neighborhood" />
         </div>
         <div class="reveal reveal-delay-2">
           <div class="jp-divider">
             <div class="jp-divider-line"></div>
             <span class="jp-accent" data-i18n="sample_label">Sample Day</span>
           </div>
-          <h2 class="section-title" data-i18n="sample_title">A Sample Day<br />with Masa</h2>
+          <h2 class="section-title" data-i18n="sample_title">A Sample Day<br />with Uncle Masa</h2>
           <p class="section-sub" data-i18n="sample_sub">Every day is flexible — this is just one example of how a relaxed Tokyo day might look.</p>
           <div class="timeline">
             <div class="tl-item"><div class="tl-time">9:00</div><div class="tl-dot-wrap"></div><div class="tl-content"><div class="tl-title" data-i18n="tl1_t">Meet at your hotel or station</div><div class="tl-note" data-i18n="tl1_n">No need to figure out where to go — Masa comes to you.</div></div></div>
@@ -629,7 +822,64 @@
     </div>
   </section>
 
-  <!-- TESTIMONIAL -->
+  <!-- ===================== PHOTO GALLERY ===================== -->
+  <section id="gallery">
+    <div class="container">
+      <div class="jp-divider">
+        <div class="jp-divider-line"></div>
+        <span class="jp-accent" data-i18n="gallery_label">Photo Gallery</span>
+      </div>
+      <h2 class="section-title reveal" data-i18n="gallery_title">A Glimpse of Japan</h2>
+      <div class="gallery-disclaimer reveal reveal-delay-1" data-i18n="gallery_note">📷 Photos shown are placeholders for the first mockup. Real photos will be added later.</div>
+      <div class="gallery-grid">
+
+        <!-- REPLACE: Real photo of Uncle Masa smiling -->
+        <div class="gallery-card reveal">
+          <img src="https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=500&q=75&auto=format&fit=crop" alt="Placeholder photo — Uncle Masa" />
+          <div class="gallery-card-label" data-i18n="gallery1">Uncle Masa</div>
+          <div class="gallery-replace-badge">Replace later</div>
+        </div>
+
+        <!-- REPLACE: Real photo of local food experience -->
+        <div class="gallery-card reveal reveal-delay-1">
+          <img src="https://images.unsplash.com/photo-1569050467447-ce54b3bbc37d?w=500&q=75&auto=format&fit=crop" alt="Placeholder photo — Local Japanese food" />
+          <div class="gallery-card-label" data-i18n="gallery2">Local Food</div>
+          <div class="gallery-replace-badge">Replace later</div>
+        </div>
+
+        <!-- REPLACE: Real photo of Tokyo street or neighborhood -->
+        <div class="gallery-card reveal reveal-delay-2">
+          <img src="https://images.unsplash.com/photo-1536098561742-ca998e48cbcc?w=500&q=75&auto=format&fit=crop" alt="Placeholder photo — Tokyo streets" />
+          <div class="gallery-card-label" data-i18n="gallery3">Tokyo Streets</div>
+          <div class="gallery-replace-badge">Replace later</div>
+        </div>
+
+        <!-- REPLACE: Real photo of a temple or shrine visit -->
+        <div class="gallery-card reveal">
+          <img src="https://images.unsplash.com/photo-1554797589-7241bb691973?w=500&q=75&auto=format&fit=crop" alt="Placeholder photo — Temple or shrine in Japan" />
+          <div class="gallery-card-label" data-i18n="gallery4">Temples &amp; Shrines</div>
+          <div class="gallery-replace-badge">Replace later</div>
+        </div>
+
+        <!-- REPLACE: Real photo of guests enjoying Tokyo with Masa -->
+        <div class="gallery-card reveal reveal-delay-1">
+          <img src="https://images.unsplash.com/photo-1522383225747-1c993197db4e?w=500&q=75&auto=format&fit=crop" alt="Placeholder photo — Guest memories in Tokyo" />
+          <div class="gallery-card-label" data-i18n="gallery5">Guest Memories</div>
+          <div class="gallery-replace-badge">Replace later</div>
+        </div>
+
+        <!-- REPLACE: Real photo of a day trip — Kamakura, Nikko, or Hakone -->
+        <div class="gallery-card reveal reveal-delay-2">
+          <img src="https://images.unsplash.com/photo-1542051841857-5f90071e7989?w=500&q=75&auto=format&fit=crop" alt="Placeholder photo — Day trip near Tokyo" />
+          <div class="gallery-card-label" data-i18n="gallery6">Day Trips</div>
+          <div class="gallery-replace-badge">Replace later</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== TESTIMONIAL ===================== -->
   <section id="testimonial">
     <div class="container">
       <div class="testi-wrap">
@@ -641,17 +891,88 @@
         <div class="stars">★★★★★</div>
         <blockquote class="testi-quote reveal" data-i18n="testi_quote">Masa guided me around Tokyo for 3 days. He planned everything, helped with transportation, chose great places to eat, and showed me both famous spots and local areas I would never have found on my own. It felt like exploring Tokyo with a brother, not a tour guide.</blockquote>
         <div class="testi-author reveal reveal-delay-1">
+          <!-- Andy is a real person — this photo can stay or be replaced with Andy's real photo -->
           <div class="testi-avatar"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80&auto=format&fit=crop" alt="Andy" /></div>
           <div>
             <div class="testi-name" data-i18n="testi_name">Andy, USA</div>
-            <div class="testi-loc" data-i18n="testi_loc">3-day Tokyo private tour</div>
+            <div class="testi-loc" data-i18n="testi_loc">3-day Tokyo private experience</div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CONTACT -->
+  <!-- ===================== FAQ ===================== -->
+  <section id="faq">
+    <div class="container">
+      <div class="jp-divider">
+        <div class="jp-divider-line"></div>
+        <span class="jp-accent" data-i18n="faq_label">FAQ</span>
+      </div>
+      <h2 class="section-title reveal" data-i18n="faq_title">Common Questions</h2>
+      <div class="faq-list">
+
+        <div class="faq-item reveal">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            <span data-i18n="faq1_q">Is this a private tour?</span>
+            <span class="faq-arrow">+</span>
+          </button>
+          <div class="faq-a"><p data-i18n="faq1_a">Yes. The idea is to keep the experience private, relaxed, and flexible — just you and Uncle Masa, at your own pace.</p></div>
+        </div>
+
+        <div class="faq-item reveal reveal-delay-1">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            <span data-i18n="faq2_q">Do you speak English?</span>
+            <span class="faq-arrow">+</span>
+          </button>
+          <div class="faq-a"><p data-i18n="faq2_a">Masa speaks Japanese and conversational English. The experience is friendly and beginner-English comfortable — no need to worry.</p></div>
+        </div>
+
+        <div class="faq-item reveal reveal-delay-2">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            <span data-i18n="faq3_q">Can you help with trains?</span>
+            <span class="faq-arrow">+</span>
+          </button>
+          <div class="faq-a"><p data-i18n="faq3_a">Yes. Helping visitors use trains and move around without stress is part of the experience. You don't need to figure anything out on your own.</p></div>
+        </div>
+
+        <div class="faq-item reveal">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            <span data-i18n="faq4_q">Can families with children join?</span>
+            <span class="faq-arrow">+</span>
+          </button>
+          <div class="faq-a"><p data-i18n="faq4_a">Yes. Families are welcome, and the pace and activities can be adjusted to suit children of any age.</p></div>
+        </div>
+
+        <div class="faq-item reveal reveal-delay-1">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            <span data-i18n="faq5_q">Can the plan be customized?</span>
+            <span class="faq-arrow">+</span>
+          </button>
+          <div class="faq-a"><p data-i18n="faq5_a">Yes. The day can be adjusted based on your interests — food, temples, shopping, anime, parks, quiet neighborhoods, or anything else you enjoy.</p></div>
+        </div>
+
+        <div class="faq-item reveal reveal-delay-2">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            <span data-i18n="faq6_q">Are weekend experiences available?</span>
+            <span class="faq-arrow">+</span>
+          </button>
+          <div class="faq-a"><p data-i18n="faq6_a">Selected weekends and holidays may be available depending on Masa's schedule. This is a small personal service, so availability may be limited.</p></div>
+        </div>
+
+        <div class="faq-item reveal">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            <span data-i18n="faq7_q">Is this available outside Tokyo?</span>
+            <span class="faq-arrow">+</span>
+          </button>
+          <div class="faq-a"><p data-i18n="faq7_a">Some nearby day trips may be possible depending on schedule and destination — Kamakura, Yokohama, Nikko, Hakone, and Chiba are all possibilities worth discussing.</p></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CONTACT ===================== -->
   <section id="contact">
     <div class="container">
       <div class="contact-grid">
@@ -660,14 +981,15 @@
             <div class="jp-divider-line"></div>
             <span class="jp-accent" data-i18n="contact_label">Get in Touch</span>
           </div>
-          <h2 class="section-title" data-i18n="contact_title">Ask Masa About<br />Your Tokyo Day</h2>
+          <h2 class="section-title" data-i18n="contact_title">Ask Masa About<br />Your Japan Day</h2>
           <p class="contact-note" data-i18n="contact_note">Send Masa a quick message and he'll follow up personally. No automated replies. Just a real conversation about your trip.</p>
           <div class="contact-chips">
-            <div class="contact-chip"><span class="contact-chip-icon">📅</span><span data-i18n="chip1">Weekend tours available</span></div>
+            <div class="contact-chip"><span class="contact-chip-icon">📅</span><span data-i18n="chip1">Available on selected weekends &amp; holidays</span></div>
             <div class="contact-chip"><span class="contact-chip-icon">✏️</span><span data-i18n="chip2">Custom plans welcome</span></div>
             <div class="contact-chip"><span class="contact-chip-icon">👨‍👩‍👧</span><span data-i18n="chip3">Great for couples, solo &amp; families</span></div>
-            <div class="contact-chip"><span class="contact-chip-icon">🗾</span><span data-i18n="chip4">Based in Tokyo, Japan</span></div>
+            <div class="contact-chip"><span class="contact-chip-icon">🗾</span><span data-i18n="chip4">Based in Japan — Tokyo &amp; nearby areas</span></div>
           </div>
+          <div class="contact-avail-note" data-i18n="contact_avail">Available on selected weekends and holidays. This is a small personal guide service, so availability may be limited. Please send a message and Masa will respond directly.</div>
         </div>
         <div class="form-wrap reveal reveal-delay-2">
           <div class="form-row">
@@ -694,30 +1016,45 @@
               </select>
             </div>
             <div class="form-group full">
-              <label data-i18n="form_msg">What kind of Tokyo experience are you looking for?</label>
+              <label data-i18n="form_area">Preferred Area</label>
+              <select>
+                <option data-i18n="form_area0">Select area...</option>
+                <option data-i18n="form_area1">Tokyo</option>
+                <option data-i18n="form_area2">Chiba</option>
+                <option data-i18n="form_area3">Yokohama</option>
+                <option data-i18n="form_area4">Kamakura</option>
+                <option data-i18n="form_area5">Nikko</option>
+                <option data-i18n="form_area6">Hakone</option>
+                <option data-i18n="form_area7">Not sure yet</option>
+              </select>
+            </div>
+            <div class="form-group full">
+              <label data-i18n="form_msg">What kind of experience are you looking for?</label>
               <textarea data-i18n-placeholder="form_msg_ph" placeholder="e.g. We love food and quiet places. First time in Japan. Two adults and one child."></textarea>
             </div>
           </div>
           <button class="form-submit" onclick="return false;" data-i18n="form_submit">Ask Masa 🗾</button>
+          <p class="form-mockup-note" data-i18n="form_mockup">This form is a mockup for now. Contact details will be added soon.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
+  <!-- ===================== FOOTER ===================== -->
   <footer>
-    <div class="footer-logo">Walk Tokyo <span>with Masa</span></div>
-    <div class="footer-tagline" data-i18n="footer_tagline">Explore Tokyo like a local friend.</div>
+    <div class="footer-logo">Uncle <span>Masa</span></div>
+    <div class="footer-tagline" data-i18n="footer_tagline">Explore Japan with a Local Friend.</div>
     <ul class="footer-links">
       <li><a href="#home" data-i18n="footer_home">Home</a></li>
       <li><a href="#about" data-i18n="nav_about">About</a></li>
-      <li><a href="#tours" data-i18n="nav_tours">Tours</a></li>
+      <li><a href="#tours" data-i18n="nav_tours">Experiences</a></li>
       <li><a href="#why" data-i18n="nav_why">Why Masa</a></li>
       <li><a href="#sample" data-i18n="nav_sample">Sample Day</a></li>
+      <li><a href="#faq" data-i18n="nav_faq">FAQ</a></li>
       <li><a href="#contact" data-i18n="footer_contact">Contact</a></li>
     </ul>
     <div class="footer-divider"></div>
-    <p data-i18n="footer_copy">© 2025 Walk Tokyo with Masa · Private Local Guide · Tokyo, Japan</p>
+    <p data-i18n="footer_copy">© 2025 Uncle Masa · Private Local Guide · Japan</p>
   </footer>
 
   <script>
@@ -726,181 +1063,279 @@
     // =============================================
     const T = {
       en: {
-        nav_about: "About",
-        nav_tours: "Tours",
-        nav_why: "Why Masa",
+        nav_about:  "About",
+        nav_tours:  "Experiences",
+        nav_why:    "Why Masa",
         nav_sample: "Sample Day",
-        nav_cta: "Ask Masa",
+        nav_faq:    "FAQ",
+        nav_cta:    "Ask Masa",
 
-        hero_tag: "東京 — Private Local Guide",
-        hero_h1: "Explore Tokyo<br />with a <em>Local Friend</em>",
-        hero_sub: "Private, relaxed Tokyo walking tours guided by Masa — a friendly local who loves food, culture, hidden spots, and helping visitors enjoy Japan without stress.",
-        hero_btn1: "Plan My Tokyo Day",
-        hero_btn2: "See Sample Tours",
+        hero_tag:  "東京 · Japan — Private Local Guide",
+        hero_h1:   "Explore Japan<br />with <em>Uncle Masa</em>",
+        hero_sub:  "Private, relaxed local experiences in Tokyo and nearby areas — guided by Masa, a friendly local who loves food, culture, walking, and helping visitors enjoy Japan without stress.",
+        hero_btn1: "Plan My Day",
+        hero_btn2: "See Sample Experiences",
         hero_scroll: "SCROLL",
 
-        about_label: "About Masa",
-        about_title: "Hi, I'm Masa 👋",
-        about_badge: "years<br />guiding Tokyo",
-        about_intro: "I live in Japan and enjoy helping visitors experience Tokyo in a relaxed and personal way. I'm not here to rush you from one tourist spot to another — I want you to enjoy Tokyo like you're spending the day with a local friend.",
-        about_intro2: "Whether it's finding the perfect bowl of ramen, figuring out the train system, or discovering a quiet temple tucked behind a busy street — I know this city, and I love sharing it.",
+        about_label:    "About Masa",
+        about_title:    "Hi, I'm Masa 👋",
+        about_badge:    "Weekend<br />Local Guide",
+        about_intro:    "I live in Japan and enjoy helping visitors experience Tokyo and nearby areas in a relaxed and personal way. I'm not here to rush you from one tourist spot to another — I want you to enjoy Japan like you're spending the day with a local friend.",
+        about_intro2:   "Whether it's finding the perfect bowl of ramen, figuring out the train system, or discovering a quiet temple tucked behind a busy street — I know this country, and I love sharing it.",
         tag1: "Japanese & English",
         tag2: "Yoga & Jogging",
         tag3: "Food Lover",
         tag4: "Train Expert",
         tag5: "Patient & Friendly",
         tag6: "First-Timer Friendly",
+        about_why_title: "Why \"Uncle Masa\"?",
+        about_why_body:  "My niece Anna has called me \"Uncle Masa\" since she was little. The name became special to me because it feels warm, friendly, and personal. That is also the kind of experience I want to share with visitors — not a rushed tour, but a relaxed day in Japan with someone who feels like a local friend.",
 
-        tours_label: "Sample Tours",
-        tours_title: "Find Your Tokyo Day",
-        tours_sub: "No two days are the same. These are starting points — Masa will shape the day around what you enjoy.",
+        tours_label: "Sample Experiences",
+        tours_title: "Find Your Perfect Day",
+        tours_sub:   "No two days are the same. These are starting points — Masa will shape the day around what you enjoy.",
         tour1_badge: "Fan Favorite",
-        tour1_title: "Classic Tokyo First-Time Tour",
-        tour1_desc: "A relaxed introduction to Tokyo's famous sights, with help navigating trains, food, and local culture.",
+        tour1_title: "Classic Tokyo First-Time Walk",
+        tour1_desc:  "Good for visitors who want a relaxed first day in Tokyo with help using trains, choosing food, and understanding small local customs.",
         tour1_s1: "Asakusa", tour1_s2: "Senso-ji", tour1_s3: "Ueno", tour1_s4: "Tokyo Station", tour1_s5: "Ginza",
         tour2_badge: "For Foodies",
-        tour2_title: "Food & Local Tokyo Tour",
-        tour2_desc: "A food-focused day for visitors who want to try real Japanese meals without feeling lost.",
-        tour2_s1: "Tsukiji Market", tour2_s2: "Shimbashi", tour2_s3: "Ramen Lunch", tour2_s4: "Akasaka Dinner",
+        tour2_title: "Food & Local Neighborhoods",
+        tour2_desc:  "For visitors who want to try real Japanese meals — ramen, tempura, market snacks — without feeling lost or rushed.",
+        tour2_s1: "Tsukiji", tour2_s2: "Shimbashi", tour2_s3: "Ramen Lunch", tour2_s4: "Izakaya Dinner",
         tour3_badge: "Modern Tokyo",
-        tour3_title: "Modern Tokyo Walk",
-        tour3_desc: "A mix of modern Tokyo, fashion streets, quiet shrine areas, and city energy.",
+        tour3_title: "Modern Tokyo & Culture Walk",
+        tour3_desc:  "A mix of modern Tokyo, quiet shrine areas, fashion streets, and city energy. Good for visitors who want variety in one day.",
         tour3_s3: "Meiji Shrine",
-        tour4_badge: "Your Way",
-        tour4_title: "Custom Local Friend Tour",
-        tour4_desc: "Tell Masa what you like — food, temples, shopping, anime, parks, or quiet neighborhoods — and he'll create a relaxed custom plan just for you.",
-        tour4_s1: "Your Interests", tour4_s2: "Your Pace", tour4_s3: "Your Plan",
-        tour_ask: "Ask about this tour →",
+        tour4_badge: "Custom Plan",
+        tour4_title: "Tokyo & Nearby Custom Day",
+        tour4_desc:  "Tell Masa what interests you — food, temples, anime, parks, or a nearby area like Kamakura or Nikko — and the day is planned around you.",
+        tour4_s1: "+ More",
+        tour_ask:  "Ask about this experience →",
         tour4_ask: "Start planning →",
 
-        why_label: "Why Masa",
-        why_title: "No crowds. No rush.<br />Just Tokyo.",
-        why_sub: "Here's what makes a day with Masa different from a group tour.",
+        perfect_label: "Perfect For",
+        perfect_title: "Who Is This For?",
+        perfect1: "First-time visitors to Japan",
+        perfect2: "Couples",
+        perfect3: "Solo travelers",
+        perfect4: "Families with children",
+        perfect5: "Food lovers",
+        perfect6: "Visitors nervous about trains or local manners",
+        perfect7: "Travelers who prefer a relaxed private experience",
+        perfect8: "People who want local tips, not a rushed group tour",
+
+        why_label: "Why Uncle Masa",
+        why_title: "No crowds. No rush.<br />Just Japan.",
+        why_sub:   "Here's what makes a day with Uncle Masa different from a group tour.",
         why1: "Relaxed Pace", why2: "Local Knowledge", why3: "Train Help", why4: "Food Recommendations",
         why5: "English & Japanese Support", why6: "No Group Tour Feeling", why7: "Great for First-Timers", why8: "Friendly Local Experience",
 
         sample_label: "Sample Day",
-        sample_title: "A Sample Day<br />with Masa",
-        sample_sub: "Every day is flexible — this is just one example of how a relaxed Tokyo day might look.",
+        sample_title: "A Sample Day<br />with Uncle Masa",
+        sample_sub:   "Every day is flexible — this is just one example of how a relaxed Tokyo day might look.",
         tl1_t: "Meet at your hotel or station", tl1_n: "No need to figure out where to go — Masa comes to you.",
-        tl2_t: "Asakusa & Senso-ji Temple", tl2_n: "Old Tokyo vibes, incense, and a great photo spot.",
-        tl3_t: "Local tempura or ramen lunch", tl3_n: "Masa knows where the locals eat — not the tourist traps.",
-        tl4_t: "Ueno or Tokyo Station area", tl4_n: "Museums, markets, or just a good walk.",
-        tl5_t: "Coffee break or shopping", tl5_n: "Rest your feet. Masa will find a good spot.",
-        tl6_t: "Shibuya or Akasaka evening walk", tl6_n: "Tokyo comes alive at dusk.",
+        tl2_t: "Asakusa & Senso-ji Temple",     tl2_n: "Old Tokyo vibes, incense, and a great photo spot.",
+        tl3_t: "Local tempura or ramen lunch",   tl3_n: "Masa knows where the locals eat — not the tourist traps.",
+        tl4_t: "Ueno or Tokyo Station area",     tl4_n: "Museums, markets, or just a good walk.",
+        tl5_t: "Coffee break or shopping",       tl5_n: "Rest your feet. Masa will find a good spot.",
+        tl6_t: "Shibuya or Akasaka evening walk",tl6_n: "Tokyo comes alive at dusk.",
         tl7_t: "Optional dinner recommendation", tl7_n: "End the day well — Masa will suggest the right spot for your taste.",
+
+        gallery_label: "Photo Gallery",
+        gallery_title: "A Glimpse of Japan",
+        gallery_note:  "📷 Photos shown are placeholders for the first mockup. Real photos will be added later.",
+        gallery1: "Uncle Masa",
+        gallery2: "Local Food",
+        gallery3: "Tokyo Streets",
+        gallery4: "Temples & Shrines",
+        gallery5: "Guest Memories",
+        gallery6: "Day Trips",
 
         testi_label: "What People Say",
         testi_quote: "Masa guided me around Tokyo for 3 days. He planned everything, helped with transportation, chose great places to eat, and showed me both famous spots and local areas I would never have found on my own. It felt like exploring Tokyo with a brother, not a tour guide.",
-        testi_name: "Andy, USA",
-        testi_loc: "3-day Tokyo private tour",
+        testi_name:  "Andy, USA",
+        testi_loc:   "3-day Tokyo private experience",
+
+        faq_label: "FAQ",
+        faq_title: "Common Questions",
+        faq1_q: "Is this a private tour?",
+        faq1_a: "Yes. The idea is to keep the experience private, relaxed, and flexible — just you and Uncle Masa, at your own pace.",
+        faq2_q: "Do you speak English?",
+        faq2_a: "Masa speaks Japanese and conversational English. The experience is friendly and beginner-English comfortable — no need to worry.",
+        faq3_q: "Can you help with trains?",
+        faq3_a: "Yes. Helping visitors use trains and move around without stress is part of the experience. You don't need to figure anything out on your own.",
+        faq4_q: "Can families with children join?",
+        faq4_a: "Yes. Families are welcome, and the pace and activities can be adjusted to suit children of any age.",
+        faq5_q: "Can the plan be customized?",
+        faq5_a: "Yes. The day can be adjusted based on your interests — food, temples, shopping, anime, parks, quiet neighborhoods, or anything else you enjoy.",
+        faq6_q: "Are weekend experiences available?",
+        faq6_a: "Selected weekends and holidays may be available depending on Masa's schedule. This is a small personal service, so availability may be limited.",
+        faq7_q: "Is this available outside Tokyo?",
+        faq7_a: "Some nearby day trips may be possible depending on schedule and destination — Kamakura, Yokohama, Nikko, Hakone, and Chiba are all possibilities worth discussing.",
 
         contact_label: "Get in Touch",
-        contact_title: "Ask Masa About<br />Your Tokyo Day",
-        contact_note: "Send Masa a quick message and he'll follow up personally. No automated replies. Just a real conversation about your trip.",
-        chip1: "Weekend tours available", chip2: "Custom plans welcome",
-        chip3: "Great for couples, solo & families", chip4: "Based in Tokyo, Japan",
-        form_name: "Your Name", form_name_ph: "e.g. Sarah",
-        form_email: "Email Address",
-        form_dates: "Travel Dates", form_dates_ph: "e.g. Oct 12–15, 2025",
-        form_people: "Number of People",
+        contact_title: "Ask Masa About<br />Your Japan Day",
+        contact_note:  "Send Masa a quick message and he'll follow up personally. No automated replies. Just a real conversation about your trip.",
+        chip1: "Available on selected weekends & holidays",
+        chip2: "Custom plans welcome",
+        chip3: "Great for couples, solo & families",
+        chip4: "Based in Japan — Tokyo & nearby areas",
+        contact_avail: "Available on selected weekends and holidays. This is a small personal guide service, so availability may be limited. Please send a message and Masa will respond directly.",
+        form_name:    "Your Name",    form_name_ph: "e.g. Sarah",
+        form_email:   "Email Address",
+        form_dates:   "Travel Dates", form_dates_ph: "e.g. Oct 12–15, 2025",
+        form_people:  "Number of People",
         form_sel0: "Select...", form_sel1: "1 (Solo)", form_sel2: "2 (Couple)", form_sel3: "3–4 (Small group)", form_sel4: "5+ (Family / Group)",
-        form_msg: "What kind of Tokyo experience are you looking for?",
+        form_area:  "Preferred Area",
+        form_area0: "Select area...", form_area1: "Tokyo", form_area2: "Chiba", form_area3: "Yokohama",
+        form_area4: "Kamakura",       form_area5: "Nikko", form_area6: "Hakone", form_area7: "Not sure yet",
+        form_msg:    "What kind of experience are you looking for?",
         form_msg_ph: "e.g. We love food and quiet places. First time in Japan. Two adults and one child.",
-        form_submit: "Ask Masa 🗾",
+        form_submit:  "Ask Masa 🗾",
+        form_mockup:  "This form is a mockup for now. Contact details will be added soon.",
 
-        footer_home: "Home", footer_contact: "Contact",
-        footer_tagline: "Explore Tokyo like a local friend.",
-        footer_copy: "© 2025 Walk Tokyo with Masa · Private Local Guide · Tokyo, Japan",
+        footer_home:    "Home",
+        footer_contact: "Contact",
+        footer_tagline: "Explore Japan with a Local Friend.",
+        footer_copy:    "© 2025 Uncle Masa · Private Local Guide · Japan",
       },
 
       ja: {
-        nav_about: "Masaについて",
-        nav_tours: "ツアー",
-        nav_why: "選ぶ理由",
+        nav_about:  "Masaについて",
+        nav_tours:  "体験を見る",
+        nav_why:    "選ぶ理由",
         nav_sample: "1日の流れ",
-        nav_cta: "Masaに聞く",
+        nav_faq:    "よくある質問",
+        nav_cta:    "Masaに聞く",
 
-        hero_tag: "東京 — プライベートローカルガイド",
-        hero_h1: "地元の友達と<br /><em>東京を歩こう</em>",
-        hero_sub: "Masaによるプライベート・のんびり東京ウォーキングツアー。食、文化、穴場スポット、ストレスなく日本を楽しみたい方へ。",
-        hero_btn1: "東京の1日を計画する",
-        hero_btn2: "サンプルツアーを見る",
+        hero_tag:  "東京 · 日本 — プライベートローカルガイド",
+        hero_h1:   "マサおじさんと<br /><em>日本を旅しよう</em>",
+        hero_sub:  "東京と近郊エリアへのプライベートでのんびりした体験。食、文化、移動サポートまで — ストレスなく日本を楽しみたい方へ。",
+        hero_btn1: "プランを相談する",
+        hero_btn2: "体験を見る",
         hero_scroll: "スクロール",
 
-        about_label: "Masaについて",
-        about_title: "こんにちは、Masaです 👋",
-        about_badge: "年間<br />東京ガイド歴",
-        about_intro: "私は日本在住で、訪れる方に東京をのんびりと、個人的な形で体験してもらうことが好きです。観光地をあちこち急いで回るのではなく、地元の友達と過ごすような1日を一緒に作りたいと思っています。",
-        about_intro2: "絶品ラーメンのお店を見つけること、電車の乗り方、にぎやかな通りの裏に隠れた静かなお寺の発見 — この街のことを知っていて、それを分かち合うことが大好きです。",
+        about_label:    "Masaについて",
+        about_title:    "こんにちは、Masaです 👋",
+        about_badge:    "週末<br />ローカルガイド",
+        about_intro:    "私は日本在住で、訪れる方に東京や近郊エリアをのんびりと、個人的な形で体験してもらうことが好きです。観光地をあちこち急いで回るのではなく、地元の友達と過ごすような1日を一緒に作りたいと思っています。",
+        about_intro2:   "絶品ラーメンのお店を見つけること、電車の乗り方、にぎやかな通りの裏に隠れた静かなお寺の発見 — この国のことを知っていて、それを分かち合うことが大好きです。",
         tag1: "日本語・英語対応",
         tag2: "ヨガ＆ジョギング",
         tag3: "食べることが大好き",
         tag4: "電車ナビが得意",
         tag5: "穏やかで親切",
         tag6: "初めての方も安心",
+        about_why_title: "「マサおじさん」の由来",
+        about_why_body:  "姪のAnnaが小さい頃から「マサおじさん」と呼んでくれています。その名前は温かく、親しみやすく、とても大切です。訪れる方にお届けしたいのも、それと同じ体験です — 急かすツアーではなく、地元の友人と過ごすような、のんびりした日本の1日を。",
 
-        tours_label: "サンプルツアー",
-        tours_title: "あなたの東京の1日を探そう",
-        tours_sub: "同じ日はありません。これはあくまで出発点です — あなたの好みに合わせてMasaが調整します。",
+        tours_label: "体験の一例",
+        tours_title: "あなたの1日を見つけよう",
+        tours_sub:   "同じ日はありません。これはあくまで出発点です — あなたの好みに合わせてMasaが調整します。",
         tour1_badge: "人気No.1",
-        tour1_title: "初めての東京 定番ツアー",
-        tour1_desc: "電車、食事、地元文化のサポートつきで、東京の有名スポットをのんびり巡ります。",
+        tour1_title: "初めての東京 定番ウォーク",
+        tour1_desc:  "電車や食事のサポートつきで、東京の有名スポットをのんびり巡る1日。日本初めての方にぴったりです。",
         tour1_s1: "浅草", tour1_s2: "浅草寺", tour1_s3: "上野", tour1_s4: "東京駅", tour1_s5: "銀座",
         tour2_badge: "食べ歩き向け",
-        tour2_title: "食＆ローカル東京ツアー",
-        tour2_desc: "本格的な日本食を迷わずに楽しみたい方のための、食に特化した1日。",
-        tour2_s1: "築地場外市場", tour2_s2: "新橋", tour2_s3: "ラーメンランチ", tour2_s4: "赤坂ディナー",
+        tour2_title: "食＆ローカル下町めぐり",
+        tour2_desc:  "本格的な日本食を迷わずに楽しみたい方のための、食に特化した1日。",
+        tour2_s1: "築地", tour2_s2: "新橋", tour2_s3: "ラーメンランチ", tour2_s4: "居酒屋ディナー",
         tour3_badge: "現代の東京",
-        tour3_title: "モダン東京ウォーク",
-        tour3_desc: "現代的な東京、ファッションの街、静かな神社エリア、都市のエネルギーをミックスした1日。",
+        tour3_title: "モダン東京＆カルチャーウォーク",
+        tour3_desc:  "現代的な東京、ファッションの街、静かな神社エリア、都市のエネルギーを1日でミックスした体験。",
         tour3_s3: "明治神宮",
         tour4_badge: "オーダーメイド",
-        tour4_title: "カスタム・ローカルフレンドツアー",
-        tour4_desc: "食、寺社、ショッピング、アニメ、公園、静かな下町など — あなたの好みを教えてください。Masaが専用プランを作ります。",
-        tour4_s1: "あなたの興味", tour4_s2: "あなたのペース", tour4_s3: "あなたのプラン",
-        tour_ask: "このツアーについて聞く →",
+        tour4_title: "東京・近郊カスタムデイ",
+        tour4_desc:  "食、寺社、アニメ、公園、鎌倉・日光など近郊エリアまで — ご興味に合わせてプランを一緒に考えます。",
+        tour4_s1: "+ その他",
+        tour_ask:  "この体験について聞く →",
         tour4_ask: "プランを考える →",
 
-        why_label: "Masaを選ぶ理由",
-        why_title: "混雑なし。急がない。<br />東京を楽しもう。",
-        why_sub: "Masaとの1日が、グループツアーと何が違うのかをご紹介します。",
+        perfect_label: "こんな方へ",
+        perfect_title: "Uncle Masaが向いている方",
+        perfect1: "日本が初めての方",
+        perfect2: "カップル",
+        perfect3: "おひとり様",
+        perfect4: "お子様連れのご家族",
+        perfect5: "食べること好きな方",
+        perfect6: "電車やマナーに不安な方",
+        perfect7: "プライベートでのんびり旅を好む方",
+        perfect8: "グループツアーより地元体験を求める方",
+
+        why_label: "選ぶ理由",
+        why_title: "混雑なし。急がない。<br />日本を楽しもう。",
+        why_sub:   "Uncle Masaとの1日が、グループツアーと何が違うのかをご紹介します。",
         why1: "のんびりペース", why2: "地元の知識", why3: "電車サポート", why4: "食事のアドバイス",
         why5: "英語・日本語対応", why6: "団体ツアーじゃない", why7: "初めての方も安心", why8: "親切な地元体験",
 
         sample_label: "1日の流れ",
-        sample_title: "Masaと過ごす<br />サンプルの1日",
-        sample_sub: "毎回柔軟に対応します。これはのんびりした東京の1日のほんの一例です。",
-        tl1_t: "ホテルまたは駅でお待ち合わせ", tl1_n: "どこへ行けばいいか迷う必要はありません — Masaがあなたのもとに来ます。",
-        tl2_t: "浅草・浅草寺", tl2_n: "下町の雰囲気、お線香、素敵な写真スポット。",
-        tl3_t: "天ぷらまたはラーメンのランチ", tl3_n: "Masaは地元の人が通うお店を知っています — 観光客向けのお店ではなく。",
-        tl4_t: "上野または東京駅エリア", tl4_n: "美術館、市場、または散歩を楽しむ。",
-        tl5_t: "コーヒー休憩またはショッピング", tl5_n: "足を休めましょう。Masaが良いお店を見つけます。",
-        tl6_t: "渋谷または赤坂の夕方散歩", tl6_n: "夕暮れ時の東京は格別です。",
-        tl7_t: "ディナーのご提案（任意）", tl7_n: "良い形で1日を締めくくりましょう — Masaがぴったりのお店を提案します。",
+        sample_title: "Uncle Masaと過ごす<br />サンプルの1日",
+        sample_sub:   "毎回柔軟に対応します。これはのんびりした東京の1日のほんの一例です。",
+        tl1_t: "ホテルまたは駅でお待ち合わせ",    tl1_n: "どこへ行けばいいか迷う必要はありません — Masaがあなたのもとに来ます。",
+        tl2_t: "浅草・浅草寺",                     tl2_n: "下町の雰囲気、お線香、素敵な写真スポット。",
+        tl3_t: "天ぷらまたはラーメンのランチ",     tl3_n: "Masaは地元の人が通うお店を知っています — 観光客向けのお店ではなく。",
+        tl4_t: "上野または東京駅エリア",            tl4_n: "美術館、市場、または散歩を楽しむ。",
+        tl5_t: "コーヒー休憩またはショッピング",   tl5_n: "足を休めましょう。Masaが良いお店を見つけます。",
+        tl6_t: "渋谷または赤坂の夕方散歩",         tl6_n: "夕暮れ時の東京は格別です。",
+        tl7_t: "ディナーのご提案（任意）",          tl7_n: "良い形で1日を締めくくりましょう — Masaがぴったりのお店を提案します。",
+
+        gallery_label: "フォトギャラリー",
+        gallery_title: "日本の一コマ",
+        gallery_note:  "📷 掲載している写真はモックアップ用の仮画像です。実際の写真は後日追加予定です。",
+        gallery1: "マサおじさん",
+        gallery2: "地元グルメ",
+        gallery3: "東京の街並み",
+        gallery4: "お寺・神社",
+        gallery5: "ゲストの思い出",
+        gallery6: "日帰り旅行",
 
         testi_label: "お客様の声",
         testi_quote: "Masaは3日間、東京を案内してくれました。移動の計画、交通のサポート、食事のお店選び、有名スポットから自分では絶対見つけられなかったローカルエリアまで — すべてをコーディネートしてくれました。ツアーガイドではなく、まるでお兄さんと東京を探検しているような感覚でした。",
-        testi_name: "Andy（アメリカ）",
-        testi_loc: "3日間・東京プライベートツアー",
+        testi_name:  "Andy（アメリカ）",
+        testi_loc:   "3日間・東京プライベート体験",
+
+        faq_label: "よくある質問",
+        faq_title: "よくある質問",
+        faq1_q: "プライベートツアーですか？",
+        faq1_a: "はい。のんびりとした、柔軟でプライベートな体験を大切にしています — あなたのペースで、Uncle Masaと二人で。",
+        faq2_q: "英語は話せますか？",
+        faq2_a: "Masaは日本語と日常英会話が話せます。英語が得意でなくても、安心して楽しんでいただけます。",
+        faq3_q: "電車のサポートはしてもらえますか？",
+        faq3_a: "もちろんです。電車でスムーズに移動できるようにサポートすることも、体験の一部です。何も自分で調べる必要はありません。",
+        faq4_q: "お子様連れのご家族でも参加できますか？",
+        faq4_a: "はい。ご家族も大歓迎です。お子様の年齢に合わせてペースやアクティビティを調整できます。",
+        faq5_q: "プランのカスタマイズはできますか？",
+        faq5_a: "はい。食事、寺社仏閣、ショッピング、アニメ、公園、静かな街など、ご興味に合わせてプランを考えます。",
+        faq6_q: "週末の体験は対応できますか？",
+        faq6_a: "Masaのスケジュール次第で、一部の週末や祝日に対応できます。小さな個人サービスのため、受付枠が限られる場合があります。",
+        faq7_q: "東京以外でも案内してもらえますか？",
+        faq7_a: "予定と目的地によっては、近郊への日帰り旅行も可能な場合があります — 鎌倉、横浜、日光、箱根、千葉など、ぜひご相談ください。",
 
         contact_label: "お問い合わせ",
-        contact_title: "あなたの東京の1日<br />Masaに相談しませんか",
-        contact_note: "メッセージを送っていただければ、Masaが直接ご返信します。自動応答なし。旅についての素直な会話です。",
-        chip1: "週末ツアーも対応可", chip2: "カスタムプランも歓迎",
-        chip3: "カップル・おひとり様・ご家族も", chip4: "東京在住",
-        form_name: "お名前", form_name_ph: "例：田中さん",
-        form_email: "メールアドレス",
-        form_dates: "旅行の日程", form_dates_ph: "例：10月12日〜15日",
-        form_people: "人数",
+        contact_title: "あなたの日本旅行<br />Masaに相談しませんか",
+        contact_note:  "メッセージを送っていただければ、Masaが直接ご返信します。自動応答なし。旅についての素直な会話です。",
+        chip1: "選ばれた週末・祝日に対応",
+        chip2: "カスタムプランも歓迎",
+        chip3: "カップル・おひとり様・ご家族も",
+        chip4: "日本在住 — 東京・近郊エリア対応",
+        contact_avail: "選ばれた週末・祝日に対応しています。小さな個人サービスのため、受付枠が限られる場合があります。メッセージをお送りいただければ、Masaが直接ご返信します。",
+        form_name:    "お名前",       form_name_ph: "例：田中さん",
+        form_email:   "メールアドレス",
+        form_dates:   "旅行の日程",   form_dates_ph: "例：10月12日〜15日",
+        form_people:  "人数",
         form_sel0: "選んでください", form_sel1: "1名（おひとり様）", form_sel2: "2名（カップル）", form_sel3: "3〜4名（小グループ）", form_sel4: "5名以上（家族・グループ）",
-        form_msg: "どんな東京体験を求めていますか？",
+        form_area:  "ご希望のエリア",
+        form_area0: "エリアを選択", form_area1: "東京", form_area2: "千葉", form_area3: "横浜",
+        form_area4: "鎌倉",         form_area5: "日光", form_area6: "箱根", form_area7: "まだ決まっていません",
+        form_msg:    "どんな体験をお探しですか？",
         form_msg_ph: "例：食べ歩きと静かな場所が好きです。日本は初めて。大人2名と子ども1名です。",
-        form_submit: "Masaに聞く 🗾",
+        form_submit:  "Masaに聞く 🗾",
+        form_mockup:  "このフォームは現在モックアップです。お問い合わせ先は後日追加予定です。",
 
-        footer_home: "ホーム", footer_contact: "お問い合わせ",
-        footer_tagline: "地元の友達と東京を旅しよう。",
-        footer_copy: "© 2025 Walk Tokyo with Masa · プライベートローカルガイド · 東京",
+        footer_home:    "ホーム",
+        footer_contact: "お問い合わせ",
+        footer_tagline: "地元の友達と日本を旅しよう。",
+        footer_copy:    "© 2025 Uncle Masa · プライベートローカルガイド · 日本",
       }
     };
 
@@ -911,38 +1346,33 @@
 
     function setLang(lang) {
       if (lang === currentLang) return;
-
-      // Fade out
       document.body.classList.add('lang-switching');
-
       setTimeout(() => {
         currentLang = lang;
         document.documentElement.lang = lang;
         document.body.classList.toggle('lang-ja', lang === 'ja');
-
-        // Toggle button styles
         document.getElementById('btn-en').classList.toggle('active', lang === 'en');
         document.getElementById('btn-ja').classList.toggle('active', lang === 'ja');
-
-        // Update all text nodes
         document.querySelectorAll('[data-i18n]').forEach(el => {
           const key = el.getAttribute('data-i18n');
-          if (T[lang][key] !== undefined) {
-            el.innerHTML = T[lang][key];
-          }
+          if (T[lang][key] !== undefined) el.innerHTML = T[lang][key];
         });
-
-        // Update placeholders
         document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
           const key = el.getAttribute('data-i18n-placeholder');
-          if (T[lang][key] !== undefined) {
-            el.placeholder = T[lang][key];
-          }
+          if (T[lang][key] !== undefined) el.placeholder = T[lang][key];
         });
-
-        // Fade back in
         document.body.classList.remove('lang-switching');
       }, 200);
+    }
+
+    // =============================================
+    // FAQ ACCORDION
+    // =============================================
+    function toggleFaq(btn) {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
     }
 
     // =============================================

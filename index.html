@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Nunito:wght@300;400;500;600;700&family=Shippori+Mincho:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" />
   <style>
     :root {
       --cream:      #FAF8F3;
@@ -586,6 +587,35 @@
     /* LANG TRANSITION */
     [data-i18n] { transition: opacity 0.2s ease; }
     body.lang-switching [data-i18n] { opacity: 0; }
+
+    /* FLATPICKR BRAND OVERRIDE */
+    .flatpickr-calendar {
+      font-family: 'Nunito', sans-serif;
+      border-radius: 12px;
+      box-shadow: 0 6px 24px rgba(37,37,35,0.15);
+      border: 1.5px solid var(--tan-light);
+    }
+    .flatpickr-months .flatpickr-month,
+    .flatpickr-weekdays { background: var(--cream); }
+    .flatpickr-current-month, .flatpickr-current-month .cur-month,
+    .flatpickr-current-month input.cur-year { color: var(--charcoal); font-family: 'Nunito', sans-serif; }
+    .flatpickr-weekday { color: var(--muted); font-weight: 700; background: var(--cream); }
+    .flatpickr-day { color: var(--charcoal); }
+    .flatpickr-day.selected, .flatpickr-day.startRange, .flatpickr-day.endRange,
+    .flatpickr-day.selected:hover, .flatpickr-day.startRange:hover, .flatpickr-day.endRange:hover {
+      background: var(--red); border-color: var(--red); color: var(--white);
+    }
+    .flatpickr-day.inRange {
+      background: var(--tan-light); border-color: var(--tan-light); color: var(--charcoal);
+      box-shadow: -5px 0 0 var(--tan-light), 5px 0 0 var(--tan-light);
+    }
+    .flatpickr-day:hover, .flatpickr-day:focus {
+      background: var(--ivory); border-color: var(--tan);
+    }
+    .flatpickr-day.today { border-color: var(--red); }
+    .flatpickr-day.today:hover { background: var(--red); color: var(--white); }
+    .flatpickr-prev-month svg, .flatpickr-next-month svg { fill: var(--charcoal); }
+    .flatpickr-prev-month:hover svg, .flatpickr-next-month:hover svg { fill: var(--red); }
   </style>
 </head>
 <body>
@@ -1018,7 +1048,7 @@
             </div>
             <div class="form-group">
               <label data-i18n="form_dates">Travel Dates</label>
-              <input type="text" data-i18n-placeholder="form_dates_ph" placeholder="e.g. Oct 12–15, 2025" />
+              <input type="text" id="travel-dates" data-i18n-placeholder="form_dates_ph" placeholder="Select your travel dates" readonly />
             </div>
             <div class="form-group">
               <label data-i18n="form_people">Number of People</label>
@@ -1175,7 +1205,7 @@
         contact_avail: "Available on selected weekends and holidays. This is a small personal guide service, so availability may be limited. Please send a message and Masa will respond directly.",
         form_name:    "Your Name",    form_name_ph: "e.g. Sarah",
         form_email:   "Email Address",
-        form_dates:   "Travel Dates", form_dates_ph: "e.g. Oct 12–15, 2025",
+        form_dates:   "Travel Dates", form_dates_ph: "Select your travel dates",
         form_people:  "Number of People",
         form_sel0: "Select...", form_sel1: "1 (Solo)", form_sel2: "2 (Pair / Couple)",
         form_area:  "Preferred Course",
@@ -1305,7 +1335,7 @@
         contact_avail: "一部の週末・祝日に対応しています。小さな個人サービスのため、対応できる日程が限られる場合があります。メッセージをお送りいただければ、Masaが直接ご返信します。",
         form_name:    "お名前",       form_name_ph: "例：田中さん",
         form_email:   "メールアドレス",
-        form_dates:   "旅行の日程",   form_dates_ph: "例：10月12日〜15日",
+        form_dates:   "旅行の日程",   form_dates_ph: "旅行の日程を選択",
         form_people:  "人数",
         form_sel0: "選んでください", form_sel1: "1名（おひとり様）", form_sel2: "2名（カップル・ペア）",
         form_area:  "ご希望のコース",
@@ -1387,6 +1417,15 @@
       });
     }, { threshold: 0.12 });
     revealEls.forEach(el => observer.observe(el));
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script>
+    flatpickr("#travel-dates", {
+      mode: "range",
+      dateFormat: "M j, Y",
+      minDate: "today",
+      showMonths: 1
+    });
   </script>
 </body>
 </html>

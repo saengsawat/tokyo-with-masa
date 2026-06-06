@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Uncle Masa — Explore Japan with a Local Friend</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='4' fill='%23FAF8F3'/><rect x='2' y='5' width='28' height='4' rx='1.5' fill='%23B84131'/><rect x='8' y='11' width='16' height='3' rx='1' fill='%23B84131'/><rect x='8' y='5' width='3.5' height='22' rx='1' fill='%23B84131'/><rect x='20.5' y='5' width='3.5' height='22' rx='1' fill='%23B84131'/></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Nunito:wght@300;400;500;600;700&family=Shippori+Mincho:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -346,27 +347,6 @@
     .gk-icon { font-size: 1.4rem; flex-shrink: 0; margin-top: 2px; }
     .gk-title { font-weight: 700; font-size: 0.9rem; color: var(--charcoal); margin-bottom: 4px; }
     .gk-desc { font-size: 0.83rem; color: var(--muted); line-height: 1.65; }
-
-    /* PERFECT FOR */
-    #perfect { background: var(--ivory); }
-    .perfect-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px;
-      margin-top: 40px;
-    }
-    @media (min-width: 640px) { .perfect-grid { grid-template-columns: repeat(4, 1fr); gap: 16px; } }
-    .perfect-card {
-      background: var(--white);
-      border: 1.5px solid var(--tan-light);
-      border-radius: var(--radius);
-      padding: 22px 16px;
-      text-align: center;
-      transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
-    }
-    .perfect-card:hover { border-color: var(--red); transform: translateY(-3px); box-shadow: var(--shadow-sm); }
-    .perfect-icon { font-size: 1.75rem; margin-bottom: 10px; display: block; }
-    .perfect-label { font-size: 0.84rem; font-weight: 600; color: var(--charcoal); line-height: 1.45; }
 
     /* WHY MASA */
     #why { background: var(--charcoal); }
@@ -747,27 +727,6 @@
           </div>
         </div>
 
-      </div>
-    </div>
-  </section>
-
-  <!-- ===================== PERFECT FOR ===================== -->
-  <section id="perfect">
-    <div class="container">
-      <div class="jp-divider">
-        <div class="jp-divider-line"></div>
-        <span class="jp-accent" data-i18n="perfect_label">Perfect For</span>
-      </div>
-      <h2 class="section-title reveal" data-i18n="perfect_title">Who Is This For?</h2>
-      <div class="perfect-grid">
-        <div class="perfect-card reveal"><span class="perfect-icon">✈️</span><div class="perfect-label" data-i18n="perfect1">First-time visitors to Japan</div></div>
-        <div class="perfect-card reveal reveal-delay-1"><span class="perfect-icon">💑</span><div class="perfect-label" data-i18n="perfect2">Couples</div></div>
-        <div class="perfect-card reveal reveal-delay-2"><span class="perfect-icon">🧳</span><div class="perfect-label" data-i18n="perfect3">Solo travelers</div></div>
-        <div class="perfect-card reveal reveal-delay-3"><span class="perfect-icon">🧑‍🤝‍🧑</span><div class="perfect-label" data-i18n="perfect4">Two friends travelling together</div></div>
-        <div class="perfect-card reveal"><span class="perfect-icon">🍱</span><div class="perfect-label" data-i18n="perfect5">Food lovers</div></div>
-        <div class="perfect-card reveal reveal-delay-1"><span class="perfect-icon">🚇</span><div class="perfect-label" data-i18n="perfect6">Visitors nervous about trains or local manners</div></div>
-        <div class="perfect-card reveal reveal-delay-2"><span class="perfect-icon">🌿</span><div class="perfect-label" data-i18n="perfect7">Travelers who prefer a relaxed private experience</div></div>
-        <div class="perfect-card reveal reveal-delay-3"><span class="perfect-icon">🤝</span><div class="perfect-label" data-i18n="perfect8">People who want local tips, not a rushed group tour</div></div>
       </div>
     </div>
   </section>
@@ -1161,17 +1120,6 @@
         tour_incl2: "✓ Max 2 guests",
         tour_ask:  "Ask about this course →",
 
-        perfect_label: "Perfect For",
-        perfect_title: "Who Is This For?",
-        perfect1: "First-time visitors to Japan",
-        perfect2: "Couples",
-        perfect3: "Solo travelers",
-        perfect4: "Two friends travelling together",
-        perfect5: "Food lovers",
-        perfect6: "Visitors nervous about trains or local manners",
-        perfect7: "Travelers who prefer a relaxed private experience",
-        perfect8: "People who want local tips, not a rushed group tour",
-
         why_label: "Why Uncle Masa",
         why_title: "No crowds. No rush.<br />Just Japan.",
         why_sub:   "Here's what makes a day with Uncle Masa different from a group tour.",
@@ -1302,17 +1250,6 @@
         tour_incl1: "✓ ホテルお迎え・送迎",
         tour_incl2: "✓ 最大2名様",
         tour_ask:  "このコースについて聞く →",
-
-        perfect_label: "こんな方へ",
-        perfect_title: "マサおじさんが向いている方",
-        perfect1: "日本が初めての方",
-        perfect2: "カップル",
-        perfect3: "おひとり様",
-        perfect4: "一緒に旅するお二人",
-        perfect5: "食べること好きな方",
-        perfect6: "電車やマナーに不安な方",
-        perfect7: "プライベートでのんびり旅を好む方",
-        perfect8: "グループツアーより地元体験を求める方",
 
         why_label: "選ぶ理由",
         why_title: "混雑なし。急がない。<br />日本を楽しもう。",

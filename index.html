@@ -616,6 +616,17 @@
     .flatpickr-day.today:hover { background: var(--red); color: var(--white); }
     .flatpickr-prev-month svg, .flatpickr-next-month svg { fill: var(--charcoal); }
     .flatpickr-prev-month:hover svg, .flatpickr-next-month:hover svg { fill: var(--red); }
+
+    /* LEGAL NOTICE */
+    #legal { background: var(--ivory); }
+    .legal-block { max-width: 720px; }
+    .legal-block-ja { display: none; }
+    body.lang-ja .legal-block-ja { display: block; }
+    body.lang-ja .legal-block-en { display: none; }
+    .legal-section-head { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 600; color: var(--charcoal); margin-bottom: 28px; }
+    .legal-item { margin-bottom: 20px; }
+    .legal-item-title { font-weight: 700; font-size: 0.88rem; color: var(--charcoal); margin-bottom: 5px; }
+    .legal-item-body { font-size: 0.83rem; color: var(--muted); line-height: 1.9; }
   </style>
 </head>
 <body>
@@ -683,8 +694,7 @@
             <span class="jp-accent" data-i18n="about_label">About Masa</span>
           </div>
           <h2 class="section-title" data-i18n="about_title">Hi, I'm Masa 👋</h2>
-          <p class="about-intro" data-i18n="about_intro">I live in Japan and enjoy helping visitors experience Tokyo and nearby areas in a relaxed and personal way. I'm not here to rush you from one tourist spot to another — I want you to enjoy Japan like you're spending the day with a local friend.</p>
-          <p class="about-intro2" data-i18n="about_intro2">Whether it's finding the perfect bowl of ramen, figuring out the train system, or discovering a quiet temple tucked behind a busy street — I love helping visitors experience the small details that make Japan special.</p>
+          <p class="about-intro" data-i18n="about_intro">I live in Japan and enjoy helping visitors experience Tokyo in a relaxed and personal way. I'm not here to rush you from one tourist spot to another — I want you to enjoy Japan like you're spending the day with a local friend.</p>
           <div class="about-tags">
             <span class="tag">🇯🇵 <span data-i18n="tag1">Japanese &amp; English</span></span>
             <span class="tag">🧘 <span data-i18n="tag2">Yoga &amp; Jogging</span></span>
@@ -739,8 +749,7 @@
         <!-- COURSE 2: Tokyo & Ginza -->
         <div class="tour-card reveal reveal-delay-1">
           <div class="tour-img">
-            <!-- REPLACE: A photo of Ginza street, Tokyo Station, or Imperial Palace -->
-            <img src="https://images.unsplash.com/photo-1542051841857-5f90071e7989?w=600&q=80&auto=format&fit=crop" alt="Placeholder photo — Tokyo Ginza area" />
+            <img src="assets/images/Walking%20through%20Tokyo_Ginza%20Crossing.jpg" alt="Ginza Crossing, Tokyo" />
             <span class="tour-label" data-i18n="tour2_badge">Course 2</span>
           </div>
           <div class="tour-body">
@@ -768,7 +777,7 @@
         <div class="jp-divider-line" style="background:rgba(255,255,255,0.15)"></div>
         <span class="jp-accent" data-i18n="why_label">Why Uncle Masa</span>
       </div>
-      <h2 class="section-title reveal" data-i18n="why_title">No crowds. No rush.<br />Just Japan.</h2>
+      <h2 class="section-title reveal" data-i18n="why_title">No rush.<br />Just Japan.</h2>
       <p class="section-sub reveal reveal-delay-1" data-i18n="why_sub">Here's what makes a day with Uncle Masa different from a group tour.</p>
       <div class="why-grid">
         <div class="why-card reveal"><span class="why-icon">🚶</span><div class="why-label" data-i18n="why1">Relaxed Pace</div></div>
@@ -783,7 +792,7 @@
     </div>
   </section>
 
-  <!-- ===================== SAMPLE DAY ===================== -->
+  <!-- ===================== SAMPLE DAY — COURSE 1 ASAKUSA ===================== -->
   <section id="sample">
     <div class="container">
       <div class="day-wrap">
@@ -793,18 +802,42 @@
         <div class="reveal reveal-delay-2">
           <div class="jp-divider">
             <div class="jp-divider-line"></div>
-            <span class="jp-accent" data-i18n="sample_label">Course 1 — Sample Day</span>
+            <span class="jp-accent" data-i18n="sample_label">Course 1 — Half-Day</span>
           </div>
-          <h2 class="section-title" data-i18n="sample_title">A Sample Day<br />in Asakusa</h2>
+          <h2 class="section-title" data-i18n="sample_title">A Half-Day<br />in Asakusa</h2>
           <p class="section-sub" data-i18n="sample_sub">This is the Asakusa Course itinerary. Every detail can be adjusted based on your pace and interests.</p>
           <div class="timeline">
             <div class="tl-item"><div class="tl-time">9:00</div><div class="tl-dot-wrap"></div><div class="tl-content"><div class="tl-title" data-i18n="tl1_t">Hotel pickup</div><div class="tl-note" data-i18n="tl1_n">Masa meets you at your hotel. No need to figure out directions — just be ready to enjoy the day.</div></div></div>
-            <div class="tl-item"><div class="tl-time">10:00</div><div class="tl-dot-wrap"></div><div class="tl-content"><div class="tl-title" data-i18n="tl2_t">Kaminarimon &amp; Senso-ji Temple</div><div class="tl-note" data-i18n="tl2_n">The iconic red gate, incense, fortune slips, and the energy of old Tokyo.</div></div></div>
-            <div class="tl-item"><div class="tl-time">11:00</div><div class="tl-dot-wrap"></div><div class="tl-content"><div class="tl-title" data-i18n="tl3_t">Nakamise Shopping Street</div><div class="tl-note" data-i18n="tl3_n">Browse traditional snacks, crafts, and souvenirs at this historic arcade.</div></div></div>
-            <div class="tl-item"><div class="tl-time">12:00</div><div class="tl-dot-wrap"></div><div class="tl-content"><div class="tl-title" data-i18n="tl4_t">Local Life Detour</div><div class="tl-note" data-i18n="tl4_n">A visit to a local supermarket, Daiso 100-yen shop, and Uniqlo — the real everyday Japan most tourists never see.</div></div></div>
-            <div class="tl-item"><div class="tl-time">13:30</div><div class="tl-dot-wrap"></div><div class="tl-content"><div class="tl-title" data-i18n="tl5_t">Teppan Lunch</div><div class="tl-note" data-i18n="tl5_n">Monjayaki, okonomiyaki, and yakisoba cooked live on an iron grill. Loud, fun, and delicious.</div></div></div>
-            <div class="tl-item"><div class="tl-time">15:30</div><div class="tl-dot-wrap"></div><div class="tl-content"><div class="tl-title" data-i18n="tl6_t">Free Time in Asakusa</div><div class="tl-note" data-i18n="tl6_n">Wander at your own pace — more shops, a coffee spot, or just soak in the atmosphere.</div></div></div>
-            <div class="tl-item"><div class="tl-time">17:00</div><div class="tl-dot-wrap"></div><div class="tl-content"><div class="tl-title" data-i18n="tl7_t">Hotel drop-off</div><div class="tl-note" data-i18n="tl7_n">Masa takes you back safely with all your bags and souvenirs. No stress at the end of the day.</div></div></div>
+            <div class="tl-item"><div class="tl-time" data-i18n="tl2_time">Morning</div><div class="tl-dot-wrap"></div><div class="tl-content"><div class="tl-title" data-i18n="tl2_t">Asakusa Walk</div><div class="tl-note" data-i18n="tl2_n">Kaminarimon Gate and Senso-ji — the iconic red gate, incense, and fortune slips. Nakamise shopping street for snacks and souvenirs, then a detour into the quiet local back streets.</div></div></div>
+            <div class="tl-item"><div class="tl-time" data-i18n="tl3_time">Around noon</div><div class="tl-dot-wrap"></div><div class="tl-content"><div class="tl-title" data-i18n="tl3_t">Local Life Experience</div><div class="tl-note" data-i18n="tl3_n">A visit to a local supermarket, Daiso (100-yen shop), and Uniqlo — the everyday Japan that most tourists never see.</div></div></div>
+            <div class="tl-item"><div class="tl-time" data-i18n="tl4_time">Lunchtime</div><div class="tl-dot-wrap"></div><div class="tl-content"><div class="tl-title" data-i18n="tl4_t">Monjayaki Lunch</div><div class="tl-note" data-i18n="tl4_n">Monjayaki, okonomiyaki, and yakisoba cooked live on an iron grill in front of you. A lively and delicious local lunch.</div></div></div>
+            <div class="tl-item"><div class="tl-time" data-i18n="tl5_time">Afternoon</div><div class="tl-dot-wrap"></div><div class="tl-content"><div class="tl-title" data-i18n="tl5_t">Stroll toward the station</div><div class="tl-note" data-i18n="tl5_n">After lunch, a slow walk back — browsing souvenirs and taking in the last of the atmosphere.</div></div></div>
+            <div class="tl-item"><div class="tl-time" data-i18n="tl6_time">14:00–15:00</div><div class="tl-dot-wrap"></div><div class="tl-content"><div class="tl-title" data-i18n="tl6_t">Hotel drop-off</div><div class="tl-note" data-i18n="tl6_n">Masa takes you back to your hotel safely with all your bags and souvenirs.</div></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SAMPLE DAY — COURSE 2 GINZA ===================== -->
+  <section id="sample2">
+    <div class="container">
+      <div class="day-wrap">
+        <div class="day-img reveal">
+          <img src="assets/images/Walking%20through%20Tokyo_Ginza.jpg" alt="Walking through Ginza, Tokyo" />
+        </div>
+        <div class="reveal reveal-delay-2">
+          <div class="jp-divider">
+            <div class="jp-divider-line"></div>
+            <span class="jp-accent" data-i18n="sample2_label">Course 2 — Half-Day</span>
+          </div>
+          <h2 class="section-title" data-i18n="sample2_title">A Half-Day in<br />Tokyo &amp; Ginza</h2>
+          <p class="section-sub" data-i18n="sample2_sub">This is the Tokyo &amp; Ginza Course itinerary. A morning of iconic spots and an elegant lunch.</p>
+          <div class="timeline">
+            <div class="tl-item"><div class="tl-time">9:00</div><div class="tl-dot-wrap"></div><div class="tl-content"><div class="tl-title" data-i18n="gl1_t">Hotel pickup</div><div class="tl-note" data-i18n="gl1_n">Masa meets you at your hotel. No need to figure out directions — just be ready to enjoy the day.</div></div></div>
+            <div class="tl-item"><div class="tl-time" data-i18n="gl2_time">Morning</div><div class="tl-dot-wrap"></div><div class="tl-content"><div class="tl-title" data-i18n="gl2_t">Tokyo Station, Imperial Palace &amp; Ginza</div><div class="tl-note" data-i18n="gl2_n">Photo at the red-brick Tokyo Station building. A walk through the Imperial Palace gardens and a stop at Nijubashi. Then on to Ginza — a slow stroll down the main street, a peek at Mitsukoshi's basement food floor, and a photo stop at Kabukiza Theatre.</div></div></div>
+            <div class="tl-item"><div class="tl-time" data-i18n="gl3_time">Lunchtime</div><div class="tl-dot-wrap"></div><div class="tl-content"><div class="tl-title" data-i18n="gl3_t">Tempura Lunch &amp; Depachika</div><div class="tl-note" data-i18n="gl3_n">A tempura counter where the chef prepares each piece fresh in front of you. After lunch, back to the depachika for souvenir shopping.</div></div></div>
+            <div class="tl-item"><div class="tl-time" data-i18n="gl4_time">14:00–15:00</div><div class="tl-dot-wrap"></div><div class="tl-content"><div class="tl-title" data-i18n="gl4_t">Hotel drop-off</div><div class="tl-note" data-i18n="gl4_n">Masa takes you back to your hotel safely with all your bags and souvenirs.</div></div></div>
           </div>
         </div>
       </div>
@@ -970,7 +1003,7 @@
             <span data-i18n="faq2_q">Do you speak English?</span>
             <span class="faq-arrow">+</span>
           </button>
-          <div class="faq-a"><p data-i18n="faq2_a">Masa speaks Japanese and conversational English. The experience is friendly and beginner-English comfortable — no need to worry.</p></div>
+          <div class="faq-a"><p data-i18n="faq2_a">Masa speaks Japanese and simple, easy-to-understand English. You can relax and enjoy the experience without worrying about language.</p></div>
         </div>
 
         <div class="faq-item reveal reveal-delay-2">
@@ -979,38 +1012,6 @@
             <span class="faq-arrow">+</span>
           </button>
           <div class="faq-a"><p data-i18n="faq3_a">Yes. Helping visitors use trains and move around without stress is part of the experience. You don't need to figure anything out on your own.</p></div>
-        </div>
-
-        <div class="faq-item reveal">
-          <button class="faq-q" onclick="toggleFaq(this)">
-            <span data-i18n="faq4_q">Can families with children join?</span>
-            <span class="faq-arrow">+</span>
-          </button>
-          <div class="faq-a"><p data-i18n="faq4_a">Yes. Families are welcome, and the pace and activities can be adjusted to suit children of any age.</p></div>
-        </div>
-
-        <div class="faq-item reveal reveal-delay-1">
-          <button class="faq-q" onclick="toggleFaq(this)">
-            <span data-i18n="faq5_q">Can the plan be customized?</span>
-            <span class="faq-arrow">+</span>
-          </button>
-          <div class="faq-a"><p data-i18n="faq5_a">Yes. The day can be adjusted based on your interests — food, temples, shopping, anime, parks, quiet neighborhoods, or anything else you enjoy.</p></div>
-        </div>
-
-        <div class="faq-item reveal reveal-delay-2">
-          <button class="faq-q" onclick="toggleFaq(this)">
-            <span data-i18n="faq6_q">Are weekend experiences available?</span>
-            <span class="faq-arrow">+</span>
-          </button>
-          <div class="faq-a"><p data-i18n="faq6_a">Selected weekends and holidays may be available depending on Masa's schedule. This is a small personal service, so availability may be limited.</p></div>
-        </div>
-
-        <div class="faq-item reveal">
-          <button class="faq-q" onclick="toggleFaq(this)">
-            <span data-i18n="faq7_q">Is this available outside Tokyo?</span>
-            <span class="faq-arrow">+</span>
-          </button>
-          <div class="faq-a"><p data-i18n="faq7_a">Some nearby day trips may be possible depending on schedule and destination — Kamakura, Yokohama, Nikko, Hakone, and Chiba are all possibilities worth discussing.</p></div>
         </div>
 
       </div>
@@ -1028,13 +1029,7 @@
           </div>
           <h2 class="section-title" data-i18n="contact_title">Ask Masa About<br />Your Japan Day</h2>
           <p class="contact-note" data-i18n="contact_note">Send Masa a quick message and he'll follow up personally. No automated replies. Just a real conversation about your trip.</p>
-          <div class="contact-chips">
-            <div class="contact-chip"><span class="contact-chip-icon">📅</span><span data-i18n="chip1">Available on selected weekends &amp; holidays</span></div>
-            <div class="contact-chip"><span class="contact-chip-icon">✏️</span><span data-i18n="chip2">Custom plans welcome</span></div>
-            <div class="contact-chip"><span class="contact-chip-icon">👨‍👩‍👧</span><span data-i18n="chip3">Great for couples, solo &amp; families</span></div>
-            <div class="contact-chip"><span class="contact-chip-icon">🗾</span><span data-i18n="chip4">Based in Japan — Tokyo &amp; nearby areas</span></div>
-          </div>
-          <div class="contact-avail-note" data-i18n="contact_avail">Available on selected weekends and holidays. This is a small personal guide service, so availability may be limited. Please send a message and Masa will respond directly.</div>
+          <div class="contact-avail-note" data-i18n="contact_avail">Available on selected weekends and holidays. As this is a small personal service, available dates may be limited. I work full-time on weekdays so responses may take a little time, but Masa will always reply personally.</div>
         </div>
         <div class="form-wrap reveal reveal-delay-2">
           <div class="form-row">
@@ -1079,6 +1074,45 @@
     </div>
   </section>
 
+  <!-- ===================== LEGAL NOTICE ===================== -->
+  <section id="legal">
+    <div class="container">
+      <div class="jp-divider">
+        <div class="jp-divider-line"></div>
+        <span class="jp-accent" data-i18n="legal_label">Legal Notice</span>
+      </div>
+
+      <!-- JAPANESE -->
+      <div class="legal-block legal-block-ja">
+        <h2 class="legal-section-head">特定商取引法に基づく表記</h2>
+        <div class="legal-item"><div class="legal-item-title">■ キャンセル・中止・代役について</div><div class="legal-item-body">ゲスト様のご都合によるキャンセル料はいただいておりません。<br />また、地元の親戚が案内するような個人でのガイドのため、体調を崩したり、家族の急な用事が入った場合には、やむを得ずツアーを中止させていただくことがあります。その際は、できるだけ早めにご連絡いたします。<br />なお、ひとりでご案内しているため、代わりのガイドを立てることはできません。</div></div>
+        <div class="legal-item"><div class="legal-item-title">■ 料金</div><div class="legal-item-body">1日 〇〇円（1組2名まで）<br />ガイド料とガイドの交通費を含みます。</div></div>
+        <div class="legal-item"><div class="legal-item-title">■ 料金に含まれないもの</div><div class="legal-item-body">・ゲスト様の交通費<br />・食事代、喫茶店での飲み物代（ガイド分も含みます）<br />・お買い物代</div></div>
+        <div class="legal-item"><div class="legal-item-title">■ 支払方法</div><div class="legal-item-body">ツアー終了時、ホテル到着前に現金でお支払いいただいています。</div></div>
+        <div class="legal-item"><div class="legal-item-title">■ 提供時期</div><div class="legal-item-body">ツアー当日</div></div>
+        <div class="legal-item"><div class="legal-item-title">■ サービス内容</div><div class="legal-item-body">地元の親戚が案内するような、英語でのプライベートウォーキングツアーです。浅草のローカル散歩や、東京駅〜皇居〜銀座エリアの街歩きなど、5〜6時間の気軽なコースをご案内しています。</div></div>
+        <div class="legal-item"><div class="legal-item-title">■ 事業者名</div><div class="legal-item-body">アンクルマサ（個人によるローカルガイド）</div></div>
+        <div class="legal-item"><div class="legal-item-title">■ 所在地</div><div class="legal-item-body">千葉県市原市<br />※詳細な住所は、ご請求いただいた際にお知らせいたします。</div></div>
+        <div class="legal-item"><div class="legal-item-title">■ 連絡先</div><div class="legal-item-body">メール：takahashimasa6o6@gmail.com<br />※電話番号はご請求があればお伝えします。</div></div>
+      </div>
+
+      <!-- ENGLISH -->
+      <div class="legal-block legal-block-en">
+        <h2 class="legal-section-head">Legal Notice Based on the Act on Specified Commercial Transactions</h2>
+        <div class="legal-item"><div class="legal-item-title">■ Cancellation, Tour Suspension, and Substitute Guide</div><div class="legal-item-body">No cancellation fee will be charged for cancellations made for the guest's personal reasons.<br />As this is a small, personal guide service — similar to being shown around by a local relative — the tour may need to be canceled if I become ill or if an unexpected family matter arises. In such cases, I will contact you as early as possible.<br />Please note that I work alone and cannot arrange a substitute guide.</div></div>
+        <div class="legal-item"><div class="legal-item-title">■ Fees</div><div class="legal-item-body">〇〇 yen per day (for up to 2 guests)<br />This includes the guiding fee and the guide's transportation costs.</div></div>
+        <div class="legal-item"><div class="legal-item-title">■ Not Included in the Fee</div><div class="legal-item-body">• Guests' transportation costs<br />• Meal costs and drinks at cafés (including the guide's portion)<br />• Any shopping expenses</div></div>
+        <div class="legal-item"><div class="legal-item-title">■ Payment Method</div><div class="legal-item-body">Payment is made in cash at the end of the tour, before returning to the hotel.</div></div>
+        <div class="legal-item"><div class="legal-item-title">■ Service Date</div><div class="legal-item-body">On the day of the tour.</div></div>
+        <div class="legal-item"><div class="legal-item-title">■ Service Description</div><div class="legal-item-body">This is a private walking tour in English, guided in the style of a friendly local relative. I offer relaxed 5–6 hour courses such as local walks in Asakusa or strolling around the Tokyo Station–Imperial Palace–Ginza area.</div></div>
+        <div class="legal-item"><div class="legal-item-title">■ Business Name</div><div class="legal-item-body">Uncle Masa (independent local guide)</div></div>
+        <div class="legal-item"><div class="legal-item-title">■ Location</div><div class="legal-item-body">Ichihara City, Chiba Prefecture<br />The full address will be provided upon request.</div></div>
+        <div class="legal-item"><div class="legal-item-title">■ Contact</div><div class="legal-item-body">Email: takahashimasa6o6@gmail.com<br />The phone number will be provided upon request.</div></div>
+      </div>
+
+    </div>
+  </section>
+
   <!-- ===================== FOOTER ===================== -->
   <footer>
     <div class="footer-logo">Uncle <span>Masa</span></div>
@@ -1092,9 +1126,10 @@
       <li><a href="#goodtoknow" data-i18n="nav_gk">Good to Know</a></li>
       <li><a href="#faq" data-i18n="nav_faq">FAQ</a></li>
       <li><a href="#contact" data-i18n="footer_contact">Contact</a></li>
+      <li><a href="#legal" data-i18n="footer_legal">Legal Notice</a></li>
     </ul>
     <div class="footer-divider"></div>
-    <p data-i18n="footer_copy">© 2025 Uncle Masa · Private Local Guide · Japan</p>
+    <p data-i18n="footer_copy">© 2026 Uncle Masa · Private Local Guide · Japan</p>
   </footer>
 
   <script>
@@ -1112,7 +1147,7 @@
 
         hero_tag:  "東京 · Japan — Private Local Guide",
         hero_h1:   "Explore Japan<br />with <em>Uncle Masa</em>",
-        hero_sub:  "Private, relaxed local experiences in Tokyo and nearby areas — guided by Masa, a friendly local who loves food, culture, walking, and helping visitors enjoy Japan without stress.",
+        hero_sub:  "Private, relaxed local experiences in two neighborhoods in Tokyo — guided by Masa, a friendly local who loves food, culture, walking, and helping visitors enjoy Japan without stress.",
         hero_btn1: "Plan My Day",
         hero_btn2: "See Sample Experiences",
         hero_scroll: "SCROLL",
@@ -1120,8 +1155,7 @@
         about_label:    "About Masa",
         about_title:    "Hi, I'm Masa 👋",
         about_badge:    "Weekend<br />Local Guide",
-        about_intro:    "I live in Japan and enjoy helping visitors experience Tokyo and nearby areas in a relaxed and personal way. I'm not here to rush you from one tourist spot to another — I want you to enjoy Japan like you're spending the day with a local friend.",
-        about_intro2:   "Whether it's finding the perfect bowl of ramen, figuring out the train system, or discovering a quiet temple tucked behind a busy street — I love helping visitors experience the small details that make Japan special.",
+        about_intro:    "I live in Japan and enjoy helping visitors experience Tokyo in a relaxed and personal way. I'm not here to rush you from one tourist spot to another — I want you to enjoy Japan like you're spending the day with a local friend.",
         tag1: "Japanese & English",
         tag2: "Yoga & Jogging",
         tag3: "Food Lover",
@@ -1136,8 +1170,8 @@
         tours_sub:   "Two carefully designed experiences — each private, personal, and limited to 2 guests.",
         tour1_badge: "Course 1",
         tour1_title: "Asakusa — Tradition & Local Life",
-        tour1_desc:  "A full day in old Tokyo — from Senso-ji temple and Nakamise shopping street to a peek at real everyday Japanese life, ending with lunch on a live iron grill.",
-        tour1_s1: "Kaminarimon Gate", tour1_s2: "Senso-ji", tour1_s3: "Nakamise St.", tour1_s4: "Daiso & Local Shops", tour1_s5: "Teppan Lunch",
+        tour1_desc:  "Old Tokyo in half a day — Senso-ji temple, Nakamise street, a peek at real everyday Japanese life, and lunch cooking right in front of you on an iron grill.",
+        tour1_s1: "Kaminarimon Gate", tour1_s2: "Senso-ji", tour1_s3: "Nakamise St.", tour1_s4: "Daiso & Local Shops", tour1_s5: "Monjayaki Lunch",
         tour2_badge: "Course 2",
         tour2_title: "Tokyo & Ginza — Elegance & Flavour",
         tour2_desc:  "Walk from historic Tokyo Station to the Imperial Palace, explore world-class Ginza, and sit at a tempura counter where the chef prepares each piece in front of you.",
@@ -1147,21 +1181,28 @@
         tour_ask:  "Ask about this course →",
 
         why_label: "Why Uncle Masa",
-        why_title: "No crowds. No rush.<br />Just Japan.",
+        why_title: "No rush.<br />Just Japan.",
         why_sub:   "Here's what makes a day with Uncle Masa different from a group tour.",
         why1: "Relaxed Pace", why2: "Local Knowledge", why3: "Train Help", why4: "Food Recommendations",
         why5: "English & Japanese Support", why6: "No Group Tour Feeling", why7: "Max 2 Guests — Always Personal", why8: "Friendly Local Experience",
 
-        sample_label: "Course 1 — Sample Day",
-        sample_title: "A Sample Day<br />in Asakusa",
+        sample_label: "Course 1 — Half-Day",
+        sample_title: "A Half-Day<br />in Asakusa",
         sample_sub:   "This is the Asakusa Course itinerary. Every detail can be adjusted based on your pace and interests.",
-        tl1_t: "Hotel pickup",               tl1_n: "Masa meets you at your hotel. No need to figure out directions — just be ready to enjoy the day.",
-        tl2_t: "Kaminarimon & Senso-ji Temple", tl2_n: "The iconic red gate, incense, fortune slips, and the energy of old Tokyo.",
-        tl3_t: "Nakamise Shopping Street",    tl3_n: "Browse traditional snacks, crafts, and souvenirs at this historic arcade.",
-        tl4_t: "Local Life Detour",           tl4_n: "A visit to a local supermarket, Daiso 100-yen shop, and Uniqlo — the real everyday Japan most tourists never see.",
-        tl5_t: "Teppan Lunch",               tl5_n: "Monjayaki, okonomiyaki, and yakisoba cooked live on an iron grill. Loud, fun, and delicious.",
-        tl6_t: "Free Time in Asakusa",       tl6_n: "Wander at your own pace — more shops, a coffee spot, or just soak in the atmosphere.",
-        tl7_t: "Hotel drop-off",             tl7_n: "Masa takes you back safely with all your bags and souvenirs. No stress at the end of the day.",
+        tl1_t: "Hotel pickup",         tl1_n: "Masa meets you at your hotel. No need to figure out directions — just be ready to enjoy the day.",
+        tl2_time: "Morning",           tl2_t: "Asakusa Walk",              tl2_n: "Kaminarimon Gate and Senso-ji — the iconic red gate, incense, and fortune slips. Nakamise shopping street for snacks and souvenirs, then a detour into the quiet local back streets.",
+        tl3_time: "Around noon",       tl3_t: "Local Life Experience",     tl3_n: "A visit to a local supermarket, Daiso (100-yen shop), and Uniqlo — the everyday Japan that most tourists never see.",
+        tl4_time: "Lunchtime",         tl4_t: "Monjayaki Lunch",           tl4_n: "Monjayaki, okonomiyaki, and yakisoba cooked live on an iron grill in front of you. A lively and delicious local lunch.",
+        tl5_time: "Afternoon",         tl5_t: "Stroll toward the station", tl5_n: "After lunch, a slow walk back — browsing souvenirs and taking in the last of the atmosphere.",
+        tl6_time: "14:00–15:00",       tl6_t: "Hotel drop-off",            tl6_n: "Masa takes you back to your hotel safely with all your bags and souvenirs.",
+
+        sample2_label: "Course 2 — Half-Day",
+        sample2_title: "A Half-Day in<br />Tokyo & Ginza",
+        sample2_sub:   "This is the Tokyo & Ginza Course itinerary. A morning of iconic spots and an elegant lunch.",
+        gl1_t: "Hotel pickup",         gl1_n: "Masa meets you at your hotel. No need to figure out directions — just be ready to enjoy the day.",
+        gl2_time: "Morning",           gl2_t: "Tokyo Station, Imperial Palace & Ginza", gl2_n: "Photo at the red-brick Tokyo Station building. A walk through the Imperial Palace gardens and a stop at Nijubashi. Then on to Ginza — a slow stroll down the main street, a peek at Mitsukoshi's basement food floor, and a photo stop at Kabukiza Theatre.",
+        gl3_time: "Lunchtime",         gl3_t: "Tempura Lunch & Depachika",  gl3_n: "A tempura counter where the chef prepares each piece fresh in front of you. After lunch, back to the depachika for souvenir shopping.",
+        gl4_time: "14:00–15:00",       gl4_t: "Hotel drop-off",             gl4_n: "Masa takes you back to your hotel safely with all your bags and souvenirs.",
 
         gallery_label: "Photo Gallery",
         gallery_title: "A Glimpse of Japan",
@@ -1183,26 +1224,14 @@
         faq1_q: "Is this a private tour?",
         faq1_a: "Yes. The idea is to keep the experience private, relaxed, and flexible — just you and Uncle Masa, at your own pace.",
         faq2_q: "Do you speak English?",
-        faq2_a: "Masa speaks Japanese and conversational English. The experience is friendly and beginner-English comfortable — no need to worry.",
+        faq2_a: "Masa speaks Japanese and simple, easy-to-understand English. You can relax and enjoy the experience without worrying about language.",
         faq3_q: "Can you help with trains?",
         faq3_a: "Yes. Helping visitors use trains and move around without stress is part of the experience. You don't need to figure anything out on your own.",
-        faq4_q: "Can families with children join?",
-        faq4_a: "Yes. Families are welcome, and the pace and activities can be adjusted to suit children of any age.",
-        faq5_q: "Can the plan be customized?",
-        faq5_a: "Yes. The day can be adjusted based on your interests — food, temples, shopping, anime, parks, quiet neighborhoods, or anything else you enjoy.",
-        faq6_q: "Are weekend experiences available?",
-        faq6_a: "Selected weekends and holidays may be available depending on Masa's schedule. This is a small personal service, so availability may be limited.",
-        faq7_q: "Is this available outside Tokyo?",
-        faq7_a: "Some nearby day trips may be possible depending on schedule and destination — Kamakura, Yokohama, Nikko, Hakone, and Chiba are all possibilities worth discussing.",
 
         contact_label: "Get in Touch",
         contact_title: "Ask Masa About<br />Your Japan Day",
         contact_note:  "Send Masa a quick message and he'll follow up personally. No automated replies. Just a real conversation about your trip.",
-        chip1: "Available on selected weekends & holidays",
-        chip2: "Custom plans welcome",
-        chip3: "Great for couples, solo & families",
-        chip4: "Based in Japan — Tokyo & nearby areas",
-        contact_avail: "Available on selected weekends and holidays. This is a small personal guide service, so availability may be limited. Please send a message and Masa will respond directly.",
+        contact_avail: "Available on selected weekends and holidays. As this is a small personal service, available dates may be limited. I work full-time on weekdays so responses may take a little time, but Masa will always reply personally.",
         form_name:    "Your Name",    form_name_ph: "e.g. Sarah",
         form_email:   "Email Address",
         form_dates:   "Travel Dates", form_dates_ph: "Select your travel dates",
@@ -1224,34 +1253,35 @@
         gk3_t: "Selected Weekends & Holidays",        gk3_d: "Masa works full-time, so availability is on selected weekends and holidays. Contact him to check dates.",
         gk4_t: "Conversational English",              gk4_d: "Masa speaks Japanese and conversational English. Communication will be simple, warm, and friendly.",
         gk5_t: "Personal Local Experience",           gk5_d: "This is not a licensed commercial tour. It is a personal experience with a friendly local — like spending the day with a friend.",
-        gk6_t: "Pricing",                             gk6_d: "Please contact Masa directly for pricing details. He will respond personally.",
+        gk6_t: "Pricing",                             gk6_d: "See our <a href=\"#legal\" style=\"color:var(--red)\">legal notice page</a> for pricing details.",
 
         footer_home:    "Home",
         footer_contact: "Contact",
+        footer_legal:   "Legal Notice",
         footer_tagline: "Explore Japan with a Local Friend.",
-        footer_copy:    "© 2025 Uncle Masa · Private Local Guide · Japan",
+        footer_copy:    "© 2026 Uncle Masa · Private Local Guide · Japan",
+        legal_label:    "Legal Notice",
       },
 
       ja: {
-        nav_about:  "Masaについて",
+        nav_about:  "マサについて",
         nav_tours:  "体験を見る",
         nav_why:    "選ぶ理由",
         nav_sample: "1日の流れ",
         nav_faq:    "よくある質問",
-        nav_cta:    "Masaに聞く",
+        nav_cta:    "マサに聞く",
 
         hero_tag:  "東京 · 日本 — プライベートローカルガイド",
         hero_h1:   "マサおじさんと<br /><em>日本を楽しもう</em>",
-        hero_sub:  "東京と近郊エリアを、地元の友人と過ごすようにのんびり楽しむプライベート体験。食事、文化、電車移動まで、初めての日本でも安心して楽しめるようにサポートします。",
+        hero_sub:  "東京の2つの街を、地元の友人と過ごすようにのんびり楽しむプライベート体験。食事、文化、電車移動まで、初めての日本でも安心して楽しめるようにサポートします。",
         hero_btn1: "プランを相談する",
         hero_btn2: "体験を見る",
         hero_scroll: "スクロール",
 
-        about_label:    "Masaについて",
-        about_title:    "こんにちは、Masaです 👋",
+        about_label:    "マサについて",
+        about_title:    "こんにちは、マサです 👋",
         about_badge:    "週末<br />ローカルガイド",
-        about_intro:    "私は日本在住で、東京や近郊エリアを訪れる方に、のんびりとした個人的な体験を楽しんでもらうことが好きです。観光地を急いで回るのではなく、地元の友人と過ごすような1日を一緒に作りたいと思っています。",
-        about_intro2:   "おいしいラーメンのお店を探したり、電車移動をサポートしたり、にぎやかな通りの近くにある静かなお寺を見つけたり。日本の魅力を一緒に楽しんでもらうことが大好きです。",
+        about_intro:    "私は日本在住で、東京を訪れる方に、のんびりとした個人的な体験を楽しんでもらうことが好きです。観光地を急いで回るのではなく、地元の友人と過ごすような1日を一緒に作りたいと思っています。",
         tag1: "日本語・英語対応",
         tag2: "ヨガ＆ジョギング",
         tag3: "食べることが大好き",
@@ -1266,8 +1296,8 @@
         tours_sub:   "2つの特別なコース — どちらも完全プライベート、最大2名様限定。",
         tour1_badge: "コース①",
         tour1_title: "浅草コース：伝統と日常を感じる1日",
-        tour1_desc:  "雷門・浅草寺・仲見世通りの散策から、地元スーパーやDAISO巡り、鉄板ランチまで。ガイドブックには載っていない「リアルな日本」を一緒に楽しみましょう。",
-        tour1_s1: "雷門", tour1_s2: "浅草寺", tour1_s3: "仲見世通り", tour1_s4: "DAISO・地元散策", tour1_s5: "鉄板ランチ",
+        tour1_desc:  "雷門・浅草寺・仲見世通りの散策から、地元スーパーやDAISO巡り、ランチはもんじゃやきで。ガイドブックには載っていない「リアルな日本」を一緒に楽しみましょう。",
+        tour1_s1: "雷門", tour1_s2: "浅草寺", tour1_s3: "仲見世通り", tour1_s4: "DAISO・地元散策", tour1_s5: "もんじゃランチ",
         tour2_badge: "コース②",
         tour2_title: "東京・銀座コース：洗練された都会の魅力",
         tour2_desc:  "歴史ある東京駅と皇居二重橋から始まり、銀座メインストリート、デパ地下体験、そして目の前で揚げる本格天ぷらランチまで。",
@@ -1277,21 +1307,28 @@
         tour_ask:  "このコースについて聞く →",
 
         why_label: "選ぶ理由",
-        why_title: "混雑なし。急がない。<br />日本を楽しもう。",
+        why_title: "急がない。<br />日本を楽しもう。",
         why_sub:   "マサおじさんとの1日が、グループツアーと何が違うのかをご紹介します。",
         why1: "のんびりペース", why2: "地元の知識", why3: "電車サポート", why4: "食事のアドバイス",
         why5: "英語・日本語対応", why6: "団体ツアーじゃない", why7: "最大2名 — 常にプライベート", why8: "親切な地元体験",
 
-        sample_label: "コース① — 1日の流れ",
-        sample_title: "浅草コースの<br />1日のサンプル",
-        sample_sub:   "浅草コースの1日の流れです。ペースや興味に合わせて柔軟に調整できます。",
-        tl1_t: "ホテルへお迎え",              tl1_n: "Masaがホテルまでお迎えに上がります。道に迷う心配はありません。",
-        tl2_t: "雷門・浅草寺",               tl2_n: "象徴的な赤い門、お線香、おみくじ — 下町の歴史と雰囲気を感じる場所。",
-        tl3_t: "仲見世通り",                  tl3_n: "伝統的なお菓子やお土産を見ながら散策。",
-        tl4_t: "ローカル・ライフ体験",        tl4_n: "地元のスーパー、DAISO（100円ショップ）、ユニクロへ。観光ガイドには載っていない「今の日本」を体験。",
-        tl5_t: "鉄板ランチ",                  tl5_n: "もんじゃ焼き・お好み焼き・焼きそばを目の前の鉄板で。活気ある雰囲気の中で楽しむランチ。",
-        tl6_t: "浅草を自由散策",             tl6_n: "お好みのペースで散策。お店巡り、カフェ休憩、または雰囲気に浸るのもいいですね。",
-        tl7_t: "ホテルまで送り届け",         tl7_n: "お土産がたくさんあっても安心。Masaがホテルまで送り届けます。",
+        sample_label: "コース① — 半日の流れ",
+        sample_title: "浅草コースの<br />半日のサンプル",
+        sample_sub:   "浅草コースの流れです。ペースや興味に合わせて柔軟に調整できます。",
+        tl1_t: "ホテルへお迎え",       tl1_n: "マサがホテルまでお迎えに伺います。道に迷う心配はありません。",
+        tl2_time: "午前",              tl2_t: "浅草散策",              tl2_n: "雷門・浅草寺をゆっくり見学。象徴的な赤い門、お線香、おみくじ — 下町の歴史と雰囲気を感じる場所。仲見世通りでお菓子やお土産を楽しみながら散策。裏道のローカルエリアもご案内します。",
+        tl3_time: "昼前後",            tl3_t: "ローカル・ライフ体験",  tl3_n: "地元のスーパー、DAISO（100円ショップ）、ユニクロなどへ。観光ガイドには載っていない「今の日本の暮らし」を体験できます。",
+        tl4_time: "昼頃",              tl4_t: "もんじゃ・お好み焼きランチ", tl4_n: "もんじゃ焼き・お好み焼き・焼きそばを目の前の鉄板で。活気ある雰囲気の中で楽しむランチ。",
+        tl5_time: "午後",              tl5_t: "浅草を少し散策しながら駅へ", tl5_n: "ランチ後は、お土産を見ながらゆっくり駅方面へ戻ります。",
+        tl6_time: "14:00〜15:00",      tl6_t: "ホテルへお送り",        tl6_n: "お土産が多くても安心。マサがホテルまで送り届けます。",
+
+        sample2_label: "コース② — 半日の流れ",
+        sample2_title: "東京・銀座コースの<br />半日のサンプル",
+        sample2_sub:   "東京・銀座コースの流れです。ペースや興味に合わせて柔軟に調整できます。",
+        gl1_t: "ホテルへお迎え",       gl1_n: "マサがホテルまでお迎えに伺います。道に迷う心配はありません。",
+        gl2_time: "午前",              gl2_t: "東京駅・皇居・銀座散策", gl2_n: "赤レンガ駅舎を背景に記念撮影。皇居外苑を歩き、二重橋前で写真撮影。銀座エリアへ移動し、メインストリートをゆっくり散策。銀座三越デパ地下で人気スイーツをチェック。歌舞伎座前でも写真撮影。",
+        gl3_time: "昼頃",              gl3_t: "天ぷらランチ＋デパ地下",  gl3_n: "職人が目の前で1品ずつ揚げてくれるスタイルの天ぷらランチ。揚げたての天ぷらをお楽しみに。ランチ後は再びデパ地下へ（お土産購入）。",
+        gl4_time: "14:00〜15:00",      gl4_t: "ホテルへお送り",          gl4_n: "お土産が多くても安心。マサがホテルまで送り届けます。",
 
         gallery_label: "フォトギャラリー",
         gallery_title: "日本の一コマ",
@@ -1304,7 +1341,7 @@
         gallery6: "日帰り旅行",
 
         testi_label: "お客様の声",
-        testi_quote: "Masaは3日間、東京を案内してくれました。移動の計画、交通のサポート、食事のお店選び、有名スポットから自分では絶対見つけられなかったローカルエリアまで — すべてをコーディネートしてくれました。ツアーガイドではなく、まるでお兄さんと東京を探検しているような感覚でした。",
+        testi_quote: "マサは3日間、東京を案内してくれました。移動の計画、交通のサポート、食事のお店選び、有名スポットから自分では絶対見つけられなかったローカルエリアまで — すべてをコーディネートしてくれました。ツアーガイドではなく、まるでお兄さんと東京を探検しているような感覚でした。",
         testi_name:  "Andy（アメリカ）",
         testi_loc:   "3日間・東京プライベート体験",
 
@@ -1313,26 +1350,14 @@
         faq1_q: "プライベートツアーですか？",
         faq1_a: "はい。のんびりとした、柔軟でプライベートな体験を大切にしています — あなたのペースで、マサおじさんと二人で。",
         faq2_q: "英語は話せますか？",
-        faq2_a: "Masaは日本語と日常英会話が話せます。英語が得意でなくても、安心して楽しんでいただけます。",
+        faq2_a: "マサは日本語と、分かりやすいシンプルな英語を話します。安心して楽しんでいただけます。",
         faq3_q: "電車のサポートはしてもらえますか？",
         faq3_a: "もちろんです。電車でスムーズに移動できるようにサポートすることも、体験の一部です。何も自分で調べる必要はありません。",
-        faq4_q: "お子様連れのご家族でも参加できますか？",
-        faq4_a: "はい。ご家族も大歓迎です。お子様の年齢に合わせてペースやアクティビティを調整できます。",
-        faq5_q: "プランのカスタマイズはできますか？",
-        faq5_a: "はい。食事、寺社仏閣、ショッピング、アニメ、公園、静かな街など、ご興味に合わせてプランを考えます。",
-        faq6_q: "週末の体験は対応できますか？",
-        faq6_a: "Masaのスケジュール次第で、一部の週末や祝日に対応できます。小さな個人サービスのため、受付枠が限られる場合があります。",
-        faq7_q: "東京以外でも案内してもらえますか？",
-        faq7_a: "予定と目的地によっては、近郊への日帰り旅行も可能な場合があります — 鎌倉、横浜、日光、箱根、千葉など、ぜひご相談ください。",
 
         contact_label: "お問い合わせ",
-        contact_title: "あなたの日本旅行<br />Masaに相談しませんか",
-        contact_note:  "メッセージを送っていただければ、Masaが直接ご返信します。自動応答なし。旅についての素直な会話です。",
-        chip1: "一部の週末・祝日に対応可能",
-        chip2: "カスタムプランも歓迎",
-        chip3: "カップル・おひとり様・ご家族も",
-        chip4: "日本在住 — 東京・近郊エリア対応",
-        contact_avail: "一部の週末・祝日に対応しています。小さな個人サービスのため、対応できる日程が限られる場合があります。メッセージをお送りいただければ、Masaが直接ご返信します。",
+        contact_title: "あなたの日本旅行<br />マサに相談しませんか",
+        contact_note:  "メッセージを送っていただければ、マサが直接ご返信します。自動応答なし。旅についての素直な会話です。",
+        contact_avail: "一部の週末・祝日に対応しています。小さな個人サービスのため、対応できる日程が限られる場合があります。平日は仕事をしているため、返信にお時間をいただくことがありますが、必ずマサ本人がご連絡いたします。",
         form_name:    "お名前",       form_name_ph: "例：田中さん",
         form_email:   "メールアドレス",
         form_dates:   "旅行の日程",   form_dates_ph: "旅行の日程を選択",
@@ -1342,7 +1367,7 @@
         form_area0: "コースを選択", form_area1: "コース① — 浅草", form_area2: "コース② — 東京・銀座", form_area3: "まだ決まっていません",
         form_msg:    "どんな体験をお探しですか？",
         form_msg_ph: "例：食べ歩きと静かな場所が好きです。日本は初めて。大人2名と子ども1名です。",
-        form_submit:  "Masaに聞く 🗾",
+        form_submit:  "マサに聞く 🗾",
         form_mockup:  "このフォームは現在モックアップです。お問い合わせ先は後日追加予定です。",
 
         nav_gk: "ご利用の前に",
@@ -1350,16 +1375,18 @@
         gk_title: "知っておいてほしいこと",
         gk_sub:   "安心してご予約いただくための、正直な情報をお伝えします。",
         gk1_t: "最大2名様 — 完全プライベート",         gk1_d: "1回の体験の最大人数は2名様まで。常にプライベートで、あなただけに集中できます。",
-        gk2_t: "ホテルのお迎えと送迎が含まれます",     gk2_d: "Masaがホテルまでお迎えに来て、1日の終わりにお送りします。移動の心配は不要です。",
-        gk3_t: "一部の週末・祝日に対応",               gk3_d: "Masaはフルタイムで仕事をしているため、対応できるのは一部の週末・祝日です。日程はお気軽にご相談ください。",
-        gk4_t: "英語は日常会話レベル",                 gk4_d: "Masaは日本語と日常英会話が話せます。シンプルで温かい、親しみやすいコミュニケーションです。",
+        gk2_t: "ホテルのお迎えと送迎が含まれます",     gk2_d: "マサがホテルまでお迎えに来て、1日の終わりにお送りします。移動の心配は不要です。",
+        gk3_t: "一部の週末・祝日に対応",               gk3_d: "マサはフルタイムで仕事をしているため、対応できるのは一部の週末・祝日です。日程はお気軽にご相談ください。",
+        gk4_t: "英語は日常会話レベル",                 gk4_d: "マサは日本語と、分かりやすいシンプルな英語を話します。安心して楽しんでいただけます。",
         gk5_t: "個人によるローカル体験",               gk5_d: "これは公認の商業ガイドではありません。地元の友人と過ごすような、個人的な体験です。",
-        gk6_t: "料金について",                         gk6_d: "料金の詳細はMasaに直接お問い合わせください。Masaが直接ご返信します。",
+        gk6_t: "料金について",                         gk6_d: "<a href=\"#legal\" style=\"color:var(--red)\">特定商取引法ページ</a>に記載があります。",
 
         footer_home:    "ホーム",
         footer_contact: "お問い合わせ",
+        footer_legal:   "特定商取引法に基づく表記",
         footer_tagline: "地元の友達と日本を旅しよう。",
-        footer_copy:    "© 2025 Uncle Masa · プライベートローカルガイド · 日本",
+        footer_copy:    "© 2026 Uncle Masa · プライベートローカルガイド · 日本",
+        legal_label:    "特定商取引法に基づく表記",
       }
     };
 

@@ -372,12 +372,12 @@
     .day-img { border-radius: var(--radius); overflow: hidden; aspect-ratio: 3/4; box-shadow: var(--shadow-md); }
     .day-img img { height: 100%; }
     .timeline { display: flex; flex-direction: column; gap: 0; margin-top: 28px; }
-    .tl-item { display: grid; grid-template-columns: 80px 1fr; gap: 16px; position: relative; padding-bottom: 28px; }
+    .tl-item { display: grid; grid-template-columns: 90px 1fr; gap: 20px; position: relative; padding-bottom: 28px; }
     .tl-item:last-child { padding-bottom: 0; }
-    .tl-item::before { content: ''; position: absolute; left: 37px; top: 28px; bottom: 0; width: 1px; background: var(--tan-light); }
+    .tl-item::before { content: ''; position: absolute; left: 91px; top: 20px; bottom: 0; width: 1px; background: var(--tan-light); }
     .tl-item:last-child::before { display: none; }
-    .tl-time { font-family: 'Shippori Mincho', serif; font-size: 0.75rem; font-weight: 500; color: var(--red); padding-top: 3px; text-align: right; }
-    .tl-dot-wrap { position: absolute; left: 30px; top: 4px; width: 16px; height: 16px; background: var(--white); border: 2px solid var(--tan); border-radius: 50%; }
+    .tl-time { font-family: 'Shippori Mincho', serif; font-size: 0.75rem; font-weight: 500; color: var(--red); padding-top: 3px; text-align: right; padding-right: 20px; }
+    .tl-dot-wrap { position: absolute; left: 83px; top: 4px; width: 16px; height: 16px; background: var(--white); border: 2px solid var(--tan); border-radius: 50%; }
     .tl-content { padding-left: 8px; }
     .tl-title { font-weight: 700; font-size: 0.95rem; color: var(--charcoal); line-height: 1.3; }
     .tl-note { font-size: 0.82rem; color: var(--muted); margin-top: 2px; }
@@ -1064,7 +1064,7 @@
             </div>
             <div class="form-group full">
               <label data-i18n="form_msg">What kind of experience are you looking for?</label>
-              <textarea data-i18n-placeholder="form_msg_ph" placeholder="e.g. We love food and quiet places. First time in Japan. Two adults and one child."></textarea>
+              <textarea data-i18n-placeholder="form_msg_ph" placeholder="e.g. We love food and quiet places. First time in Japan. Two adults."></textarea>
             </div>
           </div>
           <button class="form-submit" onclick="return false;" data-i18n="form_submit">Ask Masa 🗾</button>
@@ -1240,7 +1240,7 @@
         form_area:  "Preferred Course",
         form_area0: "Select course...", form_area1: "Course 1 — Asakusa", form_area2: "Course 2 — Tokyo & Ginza", form_area3: "Not sure yet",
         form_msg:    "What kind of experience are you looking for?",
-        form_msg_ph: "e.g. We love food and quiet places. First time in Japan. Two adults and one child.",
+        form_msg_ph: "e.g. We love food and quiet places. First time in Japan. Two adults.",
         form_submit:  "Ask Masa 🗾",
         form_mockup:  "This form is a mockup for now. Contact details will be added soon.",
 
@@ -1366,7 +1366,7 @@
         form_area:  "ご希望のコース",
         form_area0: "コースを選択", form_area1: "コース① — 浅草", form_area2: "コース② — 東京・銀座", form_area3: "まだ決まっていません",
         form_msg:    "どんな体験をお探しですか？",
-        form_msg_ph: "例：食べ歩きと静かな場所が好きです。日本は初めて。大人2名と子ども1名です。",
+        form_msg_ph: "例：食べ歩きと静かな場所が好きです。日本は初めて。大人2名です。",
         form_submit:  "マサに聞く 🗾",
         form_mockup:  "このフォームは現在モックアップです。お問い合わせ先は後日追加予定です。",
 

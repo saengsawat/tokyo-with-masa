@@ -508,6 +508,12 @@
       box-shadow: 0 4px 14px rgba(184,65,49,0.35);
     }
     .form-submit:hover { background: #962E21; transform: translateY(-2px); box-shadow: 0 8px 20px rgba(184,65,49,0.4); }
+    .contact-faq-note { margin-top: 10px; font-size: 0.85rem; font-style: italic; }
+    .course-info-wrap { background: var(--ivory); border-left: 3px solid var(--red); border-radius: var(--radius-sm); padding: 16px 18px; font-size: 0.85rem; line-height: 1.7; }
+    .course-info-common { color: var(--muted); margin-bottom: 12px; }
+    .course-info-common p { margin-bottom: 4px; }
+    .course-info-title { font-weight: 700; color: var(--red); margin-bottom: 8px; font-size: 0.88rem; }
+    .course-info-detail p { color: var(--muted); margin-bottom: 3px; }
     .form-mockup-note {
       text-align: center;
       font-size: 0.78rem;
@@ -670,8 +676,8 @@
   <section id="tours">
     <div class="container">
       <div class="tours-header">
-        <h2 class="section-title reveal" data-i18n="tours_title">Find Your Perfect Day</h2>
-        <p class="section-sub reveal reveal-delay-1" data-i18n="tours_sub">I have created two special courses to show you the very best of Tokyo. These set routes are a wonderful way to experience the city, but please feel free to message me if you have any small requests. I am always happy to help!</p>
+        <h2 class="section-title reveal" data-i18n="tours_title">Experience the Best of Tokyo</h2>
+        <p class="section-sub reveal reveal-delay-1" data-i18n="tours_sub">I have created two special courses to show you the very best of Tokyo. These set routes are a wonderful way to experience the city, and I look forward to guiding you through them!</p>
       </div>
       <div class="tours-grid">
 
@@ -751,9 +757,9 @@
         <div class="reveal reveal-delay-2">
           <div class="jp-divider">
             <div class="jp-divider-line"></div>
-            <span class="jp-accent" data-i18n="sample_label">Course 1 — Half-Day</span>
+            <span class="jp-accent" data-i18n="sample_label">Course 1</span>
           </div>
-          <h2 class="section-title" data-i18n="sample_title">A Half-Day<br />in Asakusa</h2>
+          <h2 class="section-title" data-i18n="sample_title">Asakusa<br />5–6 Hour Private Tour</h2>
           <p class="section-sub" data-i18n="sample_sub">This is our basic Asakusa Course itinerary. We will enjoy this route at a relaxed pace that fits you perfectly.</p>
           <div class="timeline">
             <div class="tl-item"><div class="tl-time">9:00</div><div class="tl-dot-wrap"></div><div class="tl-content"><div class="tl-title" data-i18n="tl1_t">Hotel pickup</div><div class="tl-note" data-i18n="tl1_n">Masa meets you at your hotel lobby. (Pickup is available for Chuo, Chiyoda, and Taito-ku only.)</div></div></div>
@@ -778,9 +784,9 @@
         <div class="reveal reveal-delay-2">
           <div class="jp-divider">
             <div class="jp-divider-line"></div>
-            <span class="jp-accent" data-i18n="sample2_label">Course 2 — Half-Day</span>
+            <span class="jp-accent" data-i18n="sample2_label">Course 2</span>
           </div>
-          <h2 class="section-title" data-i18n="sample2_title">A Half-Day in<br />Tokyo &amp; Ginza</h2>
+          <h2 class="section-title" data-i18n="sample2_title">Tokyo &amp; Ginza<br />5–6 Hour Private Tour</h2>
           <p class="section-sub" data-i18n="sample2_sub">This is the Tokyo &amp; Ginza Course itinerary. A morning of iconic spots and an elegant lunch.</p>
           <div class="timeline">
             <div class="tl-item"><div class="tl-time">9:00</div><div class="tl-dot-wrap"></div><div class="tl-content"><div class="tl-title" data-i18n="gl1_t">Hotel pickup</div><div class="tl-note" data-i18n="gl1_n">Masa meets you at your hotel lobby. (Pickup is available for Chuo, Chiyoda, and Taito-ku only.)</div></div></div>
@@ -862,13 +868,6 @@
             <div class="gk-desc" data-i18n="gk5_d">I am dedicated to giving you my very best hospitality. Think of me as your local uncle in Tokyo.</div>
           </div>
         </div>
-        <div class="gk-card reveal reveal-delay-2">
-          <span class="gk-icon">💴</span>
-          <div>
-            <div class="gk-title" data-i18n="gk6_t">Pricing</div>
-            <div class="gk-desc" data-i18n="gk6_d">¥30,000 per group (up to 2 guests). This is a flat rate for the private tour. Please contact Masa to book your day.</div>
-          </div>
-        </div>
       </div>
     </div>
   </section>
@@ -893,98 +892,58 @@
 
         <div class="faq-item reveal reveal-delay-1">
           <button class="faq-q" onclick="toggleFaq(this)">
-            <span data-i18n="faq2_q">How is this different from a professional tour?</span>
+            <span data-i18n="faq2_q">Is this a private tour?</span>
             <span class="faq-arrow">+</span>
           </button>
-          <div class="faq-a"><p data-i18n="faq2_a">Instead of a formal commercial tour, it feels more like exploring Tokyo with your friendly 'Uncle Masa'. I will guide you through the real local lifestyle and the charm of the city at a very relaxed pace.</p></div>
+          <div class="faq-a"><p data-i18n="faq2_a">Yes! This is a completely private tour. We will enjoy the day at a relaxed pace that fits you perfectly.</p></div>
         </div>
 
         <div class="faq-item reveal reveal-delay-2">
           <button class="faq-q" onclick="toggleFaq(this)">
-            <span data-i18n="faq3_q">Is this a private tour?</span>
+            <span data-i18n="faq3_q">What happens if it rains?</span>
             <span class="faq-arrow">+</span>
           </button>
-          <div class="faq-a"><p data-i18n="faq3_a">Yes! This is a completely private tour. We will enjoy the day at a relaxed pace that fits you perfectly.</p></div>
+          <div class="faq-a"><p data-i18n="faq3_a">The tour will run in light rain but will be canceled in severe weather (with no cancellation fee).</p></div>
         </div>
 
         <div class="faq-item reveal">
           <button class="faq-q" onclick="toggleFaq(this)">
-            <span data-i18n="faq4_q">Do you speak English?</span>
+            <span data-i18n="faq4_q">What if I need to cancel?</span>
             <span class="faq-arrow">+</span>
           </button>
-          <div class="faq-a"><p data-i18n="faq4_a">I speak conversational, friendly English! Communication will be warm, slow, and easy to understand. I love sharing the real Tokyo, so please don't worry at all!</p></div>
+          <div class="faq-a"><p data-i18n="faq4_a">If you feel unwell, please do not overdo it and let me know as early as possible. There is no cancellation fee for my guide service.</p></div>
         </div>
 
         <div class="faq-item reveal reveal-delay-1">
           <button class="faq-q" onclick="toggleFaq(this)">
-            <span data-i18n="faq5_q">Can you help us with the trains?</span>
+            <span data-i18n="faq5_q">Is there any chance the guide will cancel?</span>
             <span class="faq-arrow">+</span>
           </button>
-          <div class="faq-a"><p data-i18n="faq5_a">Of course! Navigating Tokyo's trains can be confusing, but I will guide you every step of the way — including buying tickets and finding the right platforms. You don't need to look up anything.</p></div>
+          <div class="faq-a"><p data-i18n="faq5_a">In the rare event of my sudden illness or emergency, I may have to cancel the tour. Since this is a personally operated tour, I cannot provide a substitute guide. Thank you very much for your understanding.</p></div>
         </div>
 
         <div class="faq-item reveal reveal-delay-2">
           <button class="faq-q" onclick="toggleFaq(this)">
-            <span data-i18n="faq6_q">What is included in the tour price?</span>
+            <span data-i18n="faq6_q">Can you help with special food allergies?</span>
             <span class="faq-arrow">+</span>
           </button>
-          <div class="faq-a"><p data-i18n="faq6_a">The price includes the guiding fee and hotel pickup/drop-off (for Chuo, Chiyoda, and Taito-ku only). *Note: Your own transportation, food, drinks, and souvenirs are not included. If I join you for lunch or a cafe break, my food and drink costs are also not included.</p></div>
+          <div class="faq-a"><p data-i18n="faq6_a">I'm sorry, but since we visit small local restaurants, it is difficult to arrange special allergy-free menus. Please check the food and enjoy your meals safely at your own discretion.</p></div>
         </div>
 
         <div class="faq-item reveal">
           <button class="faq-q" onclick="toggleFaq(this)">
-            <span data-i18n="faq7_q">Will the guide join us for lunch?</span>
+            <span data-i18n="faq7_q">Can I join with a wheelchair or if I have trouble walking?</span>
             <span class="faq-arrow">+</span>
           </button>
-          <div class="faq-a"><p data-i18n="faq7_a">For the Asakusa Course (Monja), I will join you. For the Ginza Course (Tempura), it is optional. If I join, please kindly cover my meal cost on-site. • Asakusa: I will join you for lunch so you can enjoy Monja without any stress. (Total estimated lunch cost for 3 people is around ¥6,000.) • Ginza: You can choose to have a private lunch for just the two of you. If you would like me to join, my lunch cost (approx. ¥12,000 for 1 person) will be required separately.</p></div>
+          <div class="faq-a"><p data-i18n="faq7_a">This is a full walking tour. We will walk a lot on traditional streets and take busy trains, so I cannot support wheelchairs or guests who need walking help. Please make sure everyone is ready for a big walk!</p></div>
         </div>
 
         <div class="faq-item reveal reveal-delay-1">
           <button class="faq-q" onclick="toggleFaq(this)">
-            <span data-i18n="faq8_q">How do I pay for the tour?</span>
+            <span data-i18n="faq8_q">Important Note for the Ginza Course (Restaurant Reservation)</span>
             <span class="faq-arrow">+</span>
           </button>
-          <div class="faq-a"><p data-i18n="faq8_a">Please pay in cash (Japanese Yen) at the very end of the tour. It would be highly appreciated if you could prepare the exact amount.</p></div>
-        </div>
-
-        <div class="faq-item reveal reveal-delay-2">
-          <button class="faq-q" onclick="toggleFaq(this)">
-            <span data-i18n="faq9_q">What happens if it rains?</span>
-            <span class="faq-arrow">+</span>
-          </button>
-          <div class="faq-a"><p data-i18n="faq9_a">The tour will run in light rain but will be canceled in severe weather (with no cancellation fee). However, since the pre-booked lunch restaurant cannot be canceled on the day, we will switch to a 'Rainy Day Mini-Tour' (flat rate: ¥5,000), which includes guiding you safely to the restaurant.</p></div>
-        </div>
-
-        <div class="faq-item reveal">
-          <button class="faq-q" onclick="toggleFaq(this)">
-            <span data-i18n="faq10_q">What if I need to cancel?</span>
-            <span class="faq-arrow">+</span>
-          </button>
-          <div class="faq-a"><p data-i18n="faq10_a">If you feel unwell, please do not overdo it and let me know as early as possible. There is no cancellation fee for my guide service. Important note for Ginza Course: If you cancel on the day, we still have to pay the restaurant's cancellation fee. In that case, I will deeply appreciate your kind support via online payment later.</p></div>
-        </div>
-
-        <div class="faq-item reveal reveal-delay-1">
-          <button class="faq-q" onclick="toggleFaq(this)">
-            <span data-i18n="faq11_q">Is there any chance the guide will cancel?</span>
-            <span class="faq-arrow">+</span>
-          </button>
-          <div class="faq-a"><p data-i18n="faq11_a">In the rare event of my own sudden illness or emergency, I may have to cancel the tour. Since this is a personally operated tour, I cannot provide a substitute guide. Thank you very much for your understanding.</p></div>
-        </div>
-
-        <div class="faq-item reveal reveal-delay-2">
-          <button class="faq-q" onclick="toggleFaq(this)">
-            <span data-i18n="faq12_q">Can you help with special food allergies?</span>
-            <span class="faq-arrow">+</span>
-          </button>
-          <div class="faq-a"><p data-i18n="faq12_a">I'm sorry, but since we visit small local restaurants, it is difficult to arrange special allergy-free menus. Please check the food and enjoy your meals safely!</p></div>
-        </div>
-
-        <div class="faq-item reveal">
-          <button class="faq-q" onclick="toggleFaq(this)">
-            <span data-i18n="faq13_q">Can I join with a wheelchair or if I have trouble walking?</span>
-            <span class="faq-arrow">+</span>
-          </button>
-          <div class="faq-a"><p data-i18n="faq13_a">This is a full walking tour. We will walk a lot on traditional streets and take busy trains, so I cannot support wheelchairs or guests who need walking help. Please make sure everyone is ready for a big walk!</p></div>
+          <div class="faq-a"><p data-i18n="faq8_a">The restaurant may charge a cancellation fee depending on the timing, regardless of the reason for cancellation (weather, guest circumstances, or guide circumstances). If a cancellation fee is incurred, I kindly ask for your understanding and support.</p></div>
         </div>
 
       </div>
@@ -1000,9 +959,10 @@
             <div class="jp-divider-line"></div>
             <span class="jp-accent" data-i18n="contact_label">Get in Touch</span>
           </div>
-          <h2 class="section-title" data-i18n="contact_title">Ask Masa About<br />Your Japan Day</h2>
-          <p class="contact-note" data-i18n="contact_note">Send Masa a quick message and he'll follow up personally. No automated replies. Just a real conversation about your trip.</p>
-          <div class="contact-avail-note" data-i18n="contact_avail">Available on selected weekends and holidays. As this is a small personal service, available dates may be limited. I work full-time on weekdays so responses may take a little time, but Masa will always reply personally.</div>
+          <h2 class="section-title" data-i18n="contact_title">Ask Masa About<br />the Tokyo Courses</h2>
+          <p class="contact-note" data-i18n="contact_note">Send Masa a quick message. I'll reply personally. No automated replies. Just a real conversation about your trip.</p>
+          <div class="contact-avail-note" data-i18n="contact_avail">I am primarily available on weekends and holidays. As I manage this service alongside my full-time job, please allow some extra time for weekday responses. Rest assured, I will always get back to you!</div>
+          <div class="contact-avail-note contact-faq-note" data-i18n="contact_faq_note">Before contacting me, please check the FAQ for details about rainy days, restaurant reservations, and cancellations.</div>
         </div>
         <div class="form-wrap reveal reveal-delay-2">
           <div class="form-row">
@@ -1013,6 +973,10 @@
             <div class="form-group">
               <label data-i18n="form_email">Email Address</label>
               <input type="email" placeholder="you@email.com" />
+            </div>
+            <div class="form-group">
+              <label data-i18n="form_hotel">Accommodation (Hotel Name)</label>
+              <input type="text" data-i18n-placeholder="form_hotel_ph" placeholder="e.g. APA Hotel Asakusa" />
             </div>
             <div class="form-group">
               <label data-i18n="form_dates">Travel Dates</label>
@@ -1028,15 +992,46 @@
             </div>
             <div class="form-group full">
               <label data-i18n="form_area">Preferred Course</label>
-              <select>
-                <option data-i18n="form_area0">Select course...</option>
-                <option data-i18n="form_area1">Course 1 — Asakusa</option>
-                <option data-i18n="form_area2">Course 2 — Tokyo &amp; Ginza</option>
-                <option data-i18n="form_area3">Not sure yet</option>
+              <select id="course-select" onchange="updateCourseInfo(this.value)">
+                <option value="" data-i18n="form_area0">Select course...</option>
+                <option value="1" data-i18n="form_area1">Course 1 — Asakusa &amp; Monjayaki Experience (Guided)</option>
+                <option value="2" data-i18n="form_area2">Course 2 — Tokyo &amp; Ginza with Tempura Lunch (Guided)</option>
+                <option value="3" data-i18n="form_area_c3">Course 3 — Tokyo &amp; Ginza with Tempura Lunch (Self-guided lunch)</option>
+                <option value="0" data-i18n="form_area3">Not sure yet</option>
               </select>
             </div>
+            <div class="form-group full" id="course-info-box" style="display:none;">
+              <div class="course-info-wrap">
+                <div class="course-info-common">
+                  <p data-i18n="course_info_fee">💴 Private Guide Fee: ¥30,000 (flat rate, including guide's transportation costs)</p>
+                  <p data-i18n="course_info_area">🏨 Pick-up/Drop-off: Limited to hotels in Chuo, Chiyoda, and Taito-ku</p>
+                  <p data-i18n="course_info_pay">💴 Payment: Cash (Japanese Yen) in the exact amount at the end of the tour</p>
+                </div>
+                <div id="course-detail-1" class="course-info-detail" style="display:none;">
+                  <div class="course-info-title" data-i18n="course1_info_title">Course 1 — Asakusa &amp; Monjayaki Experience (Guided)</div>
+                  <p data-i18n="course1_info_hi">Highlights: Explore the historical streets of Asakusa with me and enjoy a traditional Monjayaki lunch together.</p>
+                  <p data-i18n="course1_info_inc">Includes: Private guide, round-trip transport support, and guide's transportation costs.</p>
+                  <p data-i18n="course1_info_exc">Excludes: Your own transportation, all food, drinks, and souvenirs.</p>
+                  <p data-i18n="course1_info_note">Note: Please kindly cover your guide's food and drink costs as well.</p>
+                </div>
+                <div id="course-detail-2" class="course-info-detail" style="display:none;">
+                  <div class="course-info-title" data-i18n="course2_info_title">Course 2 — Tokyo &amp; Ginza with Tempura Lunch (Guided)</div>
+                  <p data-i18n="course2_info_hi">Highlights: Visit iconic spots like Tokyo Station, the Imperial Palace, and the Kabuki-za Theatre, followed by a delicious tempura lunch.</p>
+                  <p data-i18n="course2_info_inc">Includes: Private guide, round-trip transport support, and guide's transportation costs.</p>
+                  <p data-i18n="course2_info_exc">Excludes: Your own transportation, all food, drinks, and souvenirs.</p>
+                  <p data-i18n="course2_info_note">Note: Please kindly cover your guide's food and drink costs as well.</p>
+                </div>
+                <div id="course-detail-3" class="course-info-detail" style="display:none;">
+                  <div class="course-info-title" data-i18n="course3_info_title">Course 3 — Tokyo &amp; Ginza with Tempura Lunch (Self-guided lunch)</div>
+                  <p data-i18n="course3_info_hi">Highlights: The same sightseeing itinerary as Course 2, but you will enjoy your lunch privately without the guide.</p>
+                  <p data-i18n="course3_info_inc">Includes: Private guide, round-trip transport support, and guide's transportation costs.</p>
+                  <p data-i18n="course3_info_exc">Excludes: Your own transportation, all food, drinks, and souvenirs.</p>
+                  <p data-i18n="course3_info_note">Note: I will not join you for your meal. If we have a coffee or tea break together, please kindly cover your guide's drink costs.</p>
+                </div>
+              </div>
+            </div>
             <div class="form-group full">
-              <label data-i18n="form_msg">What kind of experience are you looking for?</label>
+              <label data-i18n="form_msg">Message</label>
               <textarea data-i18n-placeholder="form_msg_ph" placeholder="e.g. We love food and quiet places. First time in Japan. Two adults."></textarea>
             </div>
           </div>
@@ -1047,40 +1042,32 @@
     </div>
   </section>
 
-  <!-- ===================== LEGAL NOTICE ===================== -->
-  <section id="legal">
+  <!-- ===================== SERVICE INFO ===================== -->
+  <section id="legal" style="display:none;">
     <div class="container">
       <div class="jp-divider">
         <div class="jp-divider-line"></div>
-        <span class="jp-accent" data-i18n="legal_label">Legal Notice</span>
+        <span class="jp-accent" data-i18n="legal_label">Service Info</span>
       </div>
 
       <!-- JAPANESE -->
       <div class="legal-block legal-block-ja">
-        <h2 class="legal-section-head">特定商取引法に基づく表記</h2>
-        <div class="legal-item"><div class="legal-item-title">■ キャンセル・中止・代役について</div><div class="legal-item-body">ゲスト様のご都合によるキャンセル料はいただいておりません。<br />また、地元の親戚が案内するような個人でのガイドのため、体調を崩したり、家族の急な用事が入った場合には、やむを得ずツアーを中止させていただくことがあります。その際は、できるだけ早めにご連絡いたします。<br />なお、ひとりでご案内しているため、代わりのガイドを立てることはできません。</div></div>
-        <div class="legal-item"><div class="legal-item-title">■ 料金</div><div class="legal-item-body">1グループ 30,000円（最大2名まで）<br />ガイド料とガイドの交通費を含みます。</div></div>
-        <div class="legal-item"><div class="legal-item-title">■ 料金に含まれないもの</div><div class="legal-item-body">・ゲスト様の交通費<br />・食事代、喫茶店での飲み物代（ガイド分も含みます）<br />・お買い物代</div></div>
-        <div class="legal-item"><div class="legal-item-title">■ 支払方法</div><div class="legal-item-body">ツアー終了時、ホテル到着前に現金でお支払いいただいています。</div></div>
+        <h2 class="legal-section-head">サービス情報</h2>
+        <div class="legal-item"><div class="legal-item-title">■ サービス内容</div><div class="legal-item-body">東京でのプライベートウォーキングツアーサービス。</div></div>
         <div class="legal-item"><div class="legal-item-title">■ 提供時期</div><div class="legal-item-body">ツアー当日</div></div>
-        <div class="legal-item"><div class="legal-item-title">■ サービス内容</div><div class="legal-item-body">地元の親戚が案内するような、英語でのプライベートウォーキングツアーです。浅草のローカル散歩や、東京駅〜皇居〜銀座エリアの街歩きなど、5〜6時間の気軽なコースをご案内しています。</div></div>
-        <div class="legal-item"><div class="legal-item-title">■ 事業者名</div><div class="legal-item-body">アンクルマサ（個人によるローカルガイド）</div></div>
-        <div class="legal-item"><div class="legal-item-title">■ 所在地</div><div class="legal-item-body">千葉県市原市<br />※詳細な住所は、ご請求いただいた際にお知らせいたします。</div></div>
-        <div class="legal-item"><div class="legal-item-title">■ 連絡先</div><div class="legal-item-body">メール：takahashimasa6o6@gmail.com<br />※電話番号はご請求があればお伝えします。</div></div>
+        <div class="legal-item"><div class="legal-item-title">■ キャンセル・中止・代役について</div><div class="legal-item-body">ゲスト様のご都合によるキャンセル料はいただいておりません。<br />また、地元の親戚が案内するような個人でのガイドのため、体調を崩したり、家族の急な用事が入った場合には、やむを得ずツアーを中止させていただくことがあります。その際は、できるだけ早めにご連絡いたします。<br />なお、ひとりでご案内しているため、代わりのガイドを立てることはできません。</div></div>
+        <div class="legal-item"><div class="legal-item-title">■ 事業者情報</div><div class="legal-item-body">ガイド名：マサ（マサおじさん）<br />所在地：千葉県市原市、日本<br />詳細な住所：ご請求いただいた際にお知らせいたします<br />メール：takahashimasa6o6@gmail.com<br />電話番号：ご請求があればお伝えします</div></div>
+        <div class="legal-item"><div class="legal-item-title">■ プライバシーポリシー</div><div class="legal-item-body">お名前、メールアドレス、電話番号は、ツアーのご予約目的のみに使用いたします。<br />お客様の個人情報を第三者と共有することはありません。<br />お客様のデータは安全に管理され、ツアーの運営にのみ使用されます。<br />ご不明な点がございましたら、takahashimasa6o6@gmail.com までご連絡ください。</div></div>
       </div>
 
       <!-- ENGLISH -->
       <div class="legal-block legal-block-en">
-        <h2 class="legal-section-head">Legal Notice Based on the Act on Specified Commercial Transactions</h2>
-        <div class="legal-item"><div class="legal-item-title">■ Cancellation, Tour Suspension, and Substitute Guide</div><div class="legal-item-body">No cancellation fee will be charged for cancellations made for the guest's personal reasons.<br />As this is a small, personal guide service — similar to being shown around by a local relative — the tour may need to be canceled if I become ill or if an unexpected family matter arises. In such cases, I will contact you as early as possible.<br />Please note that I work alone and cannot arrange a substitute guide.</div></div>
-        <div class="legal-item"><div class="legal-item-title">■ Fees</div><div class="legal-item-body">¥30,000 per group (up to 2 guests)<br />This includes the guiding fee and the guide's transportation costs.</div></div>
-        <div class="legal-item"><div class="legal-item-title">■ Not Included in the Fee</div><div class="legal-item-body">• Guests' transportation costs<br />• Meal costs and drinks at cafés (including the guide's portion)<br />• Any shopping expenses</div></div>
-        <div class="legal-item"><div class="legal-item-title">■ Payment Method</div><div class="legal-item-body">Payment is made in cash at the end of the tour, before returning to the hotel.</div></div>
+        <h2 class="legal-section-head">Service Information</h2>
+        <div class="legal-item"><div class="legal-item-title">■ Service Description</div><div class="legal-item-body">Private walking tour service in Tokyo.</div></div>
         <div class="legal-item"><div class="legal-item-title">■ Service Date</div><div class="legal-item-body">On the day of the tour.</div></div>
-        <div class="legal-item"><div class="legal-item-title">■ Service Description</div><div class="legal-item-body">This is a private walking tour in English, guided in the style of a friendly local relative. I offer relaxed 5–6 hour courses such as local walks in Asakusa or strolling around the Tokyo Station–Imperial Palace–Ginza area.</div></div>
-        <div class="legal-item"><div class="legal-item-title">■ Business Name</div><div class="legal-item-body">Uncle Masa (independent local guide)</div></div>
-        <div class="legal-item"><div class="legal-item-title">■ Location</div><div class="legal-item-body">Ichihara City, Chiba Prefecture<br />The full address will be provided upon request.</div></div>
-        <div class="legal-item"><div class="legal-item-title">■ Contact</div><div class="legal-item-body">Email: takahashimasa6o6@gmail.com<br />The phone number will be provided upon request.</div></div>
+        <div class="legal-item"><div class="legal-item-title">■ Cancellation, Tour Suspension, and Substitute Guide</div><div class="legal-item-body">No cancellation fee will be charged for cancellations made for the guest's personal reasons.<br />As this is a small, personal guide service similar to being shown around by a local relative, the tour may need to be canceled if I become ill or if an unexpected family matter arises. In such cases, I will contact you as early as possible.<br />Please note that I work alone and cannot arrange a substitute guide.</div></div>
+        <div class="legal-item"><div class="legal-item-title">■ Business Information</div><div class="legal-item-body">Guide Name: Masa (Uncle Masa)<br />Location: Ichihara City, Chiba Prefecture, Japan<br />Full address: Available upon request<br />Email: takahashimasa6o6@gmail.com<br />Phone number: Available upon request</div></div>
+        <div class="legal-item"><div class="legal-item-title">■ Privacy Policy</div><div class="legal-item-body">I collect your name, email, and phone number only for tour bookings.<br />I will never share your personal information with third parties.<br />Your data is kept secure and used only to manage your tour.<br />If you have any questions, please contact me at: takahashimasa6o6@gmail.com</div></div>
       </div>
 
     </div>
@@ -1099,7 +1086,7 @@
       <li><a href="#goodtoknow" data-i18n="nav_gk">Good to Know</a></li>
       <li><a href="#faq" data-i18n="nav_faq">FAQ</a></li>
       <li><a href="#contact" data-i18n="footer_contact">Contact</a></li>
-      <li><a href="#legal" data-i18n="footer_legal">Legal Notice</a></li>
+      <li><a href="#legal" data-i18n="footer_legal" onclick="toggleServiceInfo(event)">Service Info</a></li>
     </ul>
     <div class="footer-divider"></div>
     <p data-i18n="footer_copy">© 2026 Uncle Masa · Private Local Guide · Japan</p>
@@ -1137,8 +1124,8 @@
         about_why_title: "Why \"Uncle Masa\"?",
         about_why_body:  "My niece, Anna, has called me 'Uncle Masa' since she was little. This name means a lot to me because it feels warm, friendly, and close to my heart.",
 
-        tours_title: "Choose Your Course",
-        tours_sub:   "I have created two special courses to show you the very best of Tokyo. These set routes are a wonderful way to experience the city, but please feel free to message me if you have any small requests. I am always happy to help!",
+        tours_title: "Experience the Best of Tokyo",
+        tours_sub:   "I have created two special courses to show you the very best of Tokyo. These set routes are a wonderful way to experience the city, and I look forward to guiding you through them!",
         tour1_badge: "Course 1",
         tour1_title: "Asakusa — Tradition & Local Life",
         tour1_desc:  "Old Tokyo in half a day — Senso-ji temple, Nakamise street, a peek at real everyday Japanese life, and lunch cooking right in front of you on an iron grill.",
@@ -1157,8 +1144,8 @@
         why1: "Relaxed Pace", why2: "Local Knowledge", why3: "Train Help", why4: "Local Food Guide",
         why5: "English & Japanese Support", why6: "No Group Tour Feeling", why7: "Max 2 Guests — Always Personal", why8: "Your Local Friend in Tokyo",
 
-        sample_label: "Course 1 — Half-Day",
-        sample_title: "A Half-Day<br />in Asakusa",
+        sample_label: "Course 1",
+        sample_title: "Asakusa<br />5–6 Hour Private Tour",
         sample_sub:   "This is our basic Asakusa Course itinerary. We will enjoy this route at a relaxed pace that fits you perfectly.",
         tl1_t: "Hotel pickup",         tl1_n: "Masa meets you at your hotel lobby. (Pickup is available for Chuo, Chiyoda, and Taito-ku only.)",
         tl2_time: "Morning",           tl2_t: "Asakusa Walk",              tl2_n: "Kaminarimon Gate and Senso-ji — the iconic red gate, incense, and fortune slips. Nakamise shopping street for snacks and souvenirs, then a detour into the quiet local back streets.",
@@ -1167,8 +1154,8 @@
         tl5_time: "Afternoon",         tl5_t: "Stroll toward the station", tl5_n: "After lunch, a slow walk back — browsing souvenirs and taking in the last of the atmosphere.",
         tl6_time: "14:00–15:00",       tl6_t: "Hotel drop-off",            tl6_n: "Masa guides you safely back to your hotel. (Drop-off is available for Chuo, Chiyoda, and Taito-ku only.)",
 
-        sample2_label: "Course 2 — Half-Day",
-        sample2_title: "A Half-Day in<br />Tokyo & Ginza",
+        sample2_label: "Course 2",
+        sample2_title: "Tokyo & Ginza<br />5–6 Hour Private Tour",
         sample2_sub:   "This is the Tokyo & Ginza Course itinerary. A morning of iconic spots and an elegant lunch.",
         gl1_t: "Hotel pickup",         gl1_n: "Masa meets you at your hotel lobby. (Pickup is available for Chuo, Chiyoda, and Taito-ku only.)",
         gl2_time: "Morning",           gl2_t: "Tokyo Station, Imperial Palace & Ginza", gl2_n: "Photo at the red-brick Tokyo Station building. A walk through the Imperial Palace gardens and a stop at Nijubashi. Then on to Ginza — a slow stroll down the main street, a peek at Mitsukoshi's basement food floor, and a photo stop at Kabukiza Theatre.",
@@ -1185,43 +1172,57 @@
         faq_title: "Common Questions",
         faq1_q: "Are your tours only available on weekends?",
         faq1_a: "Yes, since I work full-time during the week, my tours are exclusively available on Saturdays and Sundays (weekends).",
-        faq2_q: "How is this different from a professional tour?",
-        faq2_a: "Instead of a formal commercial tour, it feels more like exploring Tokyo with your friendly 'Uncle Masa'. I will guide you through the real local lifestyle and the charm of the city at a very relaxed pace.",
-        faq3_q: "Is this a private tour?",
-        faq3_a: "Yes! This is a completely private tour. We will enjoy the day at a relaxed pace that fits you perfectly.",
-        faq4_q: "Do you speak English?",
-        faq4_a: "I speak conversational, friendly English! Communication will be warm, slow, and easy to understand. I love sharing the real Tokyo, so please don't worry at all!",
-        faq5_q: "Can you help us with the trains?",
-        faq5_a: "Of course! Navigating Tokyo's trains can be confusing, but I will guide you every step of the way — including buying tickets and finding the right platforms. You don't need to look up anything.",
-        faq6_q: "What is included in the tour price?",
-        faq6_a: "The price includes the guiding fee and hotel pickup/drop-off (for Chuo, Chiyoda, and Taito-ku only). *Note: Your own transportation, food, drinks, and souvenirs are not included. If I join you for lunch or a cafe break, my food and drink costs are also not included.",
-        faq7_q: "Will the guide join us for lunch?",
-        faq7_a: "For the Asakusa Course (Monja), I will join you. For the Ginza Course (Tempura), it is optional. If I join, please kindly cover my meal cost on-site.<br /><br />• Asakusa: I will join you for lunch so you can enjoy Monja without any stress. (Total estimated lunch cost for 3 people is around ¥6,000.)<br />• Ginza: You can choose to have a private lunch for just the two of you. If you would like me to join, my lunch cost (approx. ¥12,000 for 1 person) will be required separately.",
-        faq8_q: "How do I pay for the tour?",
-        faq8_a: "Please pay in cash (Japanese Yen) at the very end of the tour. It would be highly appreciated if you could prepare the exact amount.",
-        faq9_q: "What happens if it rains?",
-        faq9_a: "The tour will run in light rain but will be canceled in severe weather (with no cancellation fee). However, since the pre-booked lunch restaurant cannot be canceled on the day, we will switch to a 'Rainy Day Mini-Tour' (flat rate: ¥5,000), which includes guiding you safely to the restaurant.",
-        faq10_q: "What if I need to cancel?",
-        faq10_a: "If you feel unwell, please do not overdo it and let me know as early as possible. There is no cancellation fee for my guide service.<br /><br />Important note for Ginza Course: If you cancel on the day, we still have to pay the restaurant's cancellation fee. In that case, I will deeply appreciate your kind support via online payment later.",
-        faq11_q: "Is there any chance the guide will cancel?",
-        faq11_a: "In the rare event of my own sudden illness or emergency, I may have to cancel the tour. Since this is a personally operated tour, I cannot provide a substitute guide. Thank you very much for your understanding.",
-        faq12_q: "Can you help with special food allergies?",
-        faq12_a: "I'm sorry, but since we visit small local restaurants, it is difficult to arrange special allergy-free menus. Please check the food and enjoy your meals safely!",
-        faq13_q: "Can I join with a wheelchair or if I have trouble walking?",
-        faq13_a: "This is a full walking tour. We will walk a lot on traditional streets and take busy trains, so I cannot support wheelchairs or guests who need walking help. Please make sure everyone is ready for a big walk!",
+        faq2_q: "Is this a private tour?",
+        faq2_a: "Yes! This is a completely private tour. We will enjoy the day at a relaxed pace that fits you perfectly.",
+        faq3_q: "What happens if it rains?",
+        faq3_a: "The tour will run in light rain but will be canceled in severe weather (with no cancellation fee).",
+        faq4_q: "What if I need to cancel?",
+        faq4_a: "If you feel unwell, please do not overdo it and let me know as early as possible. There is no cancellation fee for my guide service.",
+        faq5_q: "Is there any chance the guide will cancel?",
+        faq5_a: "In the rare event of my sudden illness or emergency, I may have to cancel the tour. Since this is a personally operated tour, I cannot provide a substitute guide. Thank you very much for your understanding.",
+        faq6_q: "Can you help with special food allergies?",
+        faq6_a: "I'm sorry, but since we visit small local restaurants, it is difficult to arrange special allergy-free menus. Please check the food and enjoy your meals safely at your own discretion.",
+        faq7_q: "Can I join with a wheelchair or if I have trouble walking?",
+        faq7_a: "This is a full walking tour. We will walk a lot on traditional streets and take busy trains, so I cannot support wheelchairs or guests who need walking help. Please make sure everyone is ready for a big walk!",
+        faq8_q: "Important Note for the Ginza Course (Restaurant Reservation)",
+        faq8_a: "The restaurant may charge a cancellation fee depending on the timing, regardless of the reason for cancellation (weather, guest circumstances, or guide circumstances). If a cancellation fee is incurred, I kindly ask for your understanding and support.",
 
         contact_label: "Get in Touch",
-        contact_title: "Ask Masa About<br />Your Japan Day",
-        contact_note:  "Send Masa a quick message and he'll follow up personally. No automated replies. Just a real conversation about your trip.",
-        contact_avail: "Available on selected weekends and holidays. As this is a small personal service, available dates may be limited. I work full-time on weekdays so responses may take a little time, but Masa will always reply personally.",
+        contact_title: "Ask Masa About<br />the Tokyo Courses",
+        contact_note:  "Send Masa a quick message. I'll reply personally. No automated replies. Just a real conversation about your trip.",
+        contact_avail: "I am primarily available on weekends and holidays. As I manage this service alongside my full-time job, please allow some extra time for weekday responses. Rest assured, I will always get back to you!",
+        contact_faq_note: "Before contacting me, please check the FAQ for details about rainy days, restaurant reservations, and cancellations.",
         form_name:    "Your Name",    form_name_ph: "e.g. Sarah",
         form_email:   "Email Address",
+        form_hotel:   "Accommodation (Hotel Name)", form_hotel_ph: "e.g. APA Hotel Asakusa",
         form_dates:   "Travel Dates", form_dates_ph: "Select your travel dates",
         form_people:  "Number of People",
         form_sel0: "Select...", form_sel1: "1 (Solo)", form_sel2: "2 (Pair / Couple)",
         form_area:  "Preferred Course",
-        form_area0: "Select course...", form_area1: "Course 1 — Asakusa", form_area2: "Course 2 — Tokyo & Ginza", form_area3: "Not sure yet",
-        form_msg:    "What kind of experience are you looking for?",
+        form_area0: "Select course...",
+        form_area1: "Course 1 — Asakusa & Monjayaki Experience (Guided)",
+        form_area2: "Course 2 — Tokyo & Ginza with Tempura Lunch (Guided)",
+        form_area_c3: "Course 3 — Tokyo & Ginza with Tempura Lunch (Self-guided lunch)",
+        form_area3: "Not sure yet",
+        course_info_fee:  "💴 Private Guide Fee: ¥30,000 (flat rate, including guide's transportation costs)",
+        course_info_area: "🏨 Pick-up/Drop-off: Limited to hotels in Chuo, Chiyoda, and Taito-ku",
+        course_info_pay:  "💴 Payment: Cash (Japanese Yen) in the exact amount at the end of the tour",
+        course1_info_title: "Course 1 — Asakusa & Monjayaki Experience (Guided)",
+        course1_info_hi:  "Highlights: Explore the historical streets of Asakusa with me and enjoy a traditional Monjayaki lunch together.",
+        course1_info_inc: "Includes: Private guide, round-trip transport support, and guide's transportation costs.",
+        course1_info_exc: "Excludes: Your own transportation, all food, drinks, and souvenirs.",
+        course1_info_note:"Note: Please kindly cover your guide's food and drink costs as well.",
+        course2_info_title: "Course 2 — Tokyo & Ginza with Tempura Lunch (Guided)",
+        course2_info_hi:  "Highlights: Visit iconic spots like Tokyo Station, the Imperial Palace, and the Kabuki-za Theatre, followed by a delicious tempura lunch.",
+        course2_info_inc: "Includes: Private guide, round-trip transport support, and guide's transportation costs.",
+        course2_info_exc: "Excludes: Your own transportation, all food, drinks, and souvenirs.",
+        course2_info_note:"Note: Please kindly cover your guide's food and drink costs as well.",
+        course3_info_title: "Course 3 — Tokyo & Ginza with Tempura Lunch (Self-guided lunch)",
+        course3_info_hi:  "Highlights: The same sightseeing itinerary as Course 2, but you will enjoy your lunch privately without the guide.",
+        course3_info_inc: "Includes: Private guide, round-trip transport support, and guide's transportation costs.",
+        course3_info_exc: "Excludes: Your own transportation, all food, drinks, and souvenirs.",
+        course3_info_note:"Note: I will not join you for your meal. If we have a coffee or tea break together, please kindly cover your guide's drink costs.",
+        form_msg:    "Message",
         form_msg_ph: "e.g. We love food and quiet places. First time in Japan. Two adults.",
         form_submit:  "Ask Masa 🗾",
         form_mockup:  "This form is a mockup for now. Contact details will be added soon.",
@@ -1235,14 +1236,13 @@
         gk3_t: "Selected Weekends & Holidays",        gk3_d: "Masa works full-time, so availability is on selected weekends and holidays. Contact him to check dates.",
         gk4_t: "Conversational English",              gk4_d: "Masa speaks conversational, friendly English. He loves sharing the history of Asakusa warmly and slowly with his guests!",
         gk5_t: "Personal Local Experience",           gk5_d: "I am dedicated to giving you my very best hospitality. Think of me as your local uncle in Tokyo.",
-        gk6_t: "Pricing",                             gk6_d: "¥30,000 per group (up to 2 guests). This is a flat rate for the private tour. Please contact Masa to book your day.",
 
         footer_home:    "Home",
         footer_contact: "Contact",
-        footer_legal:   "Legal Notice",
+        footer_legal:   "Service Info",
         footer_tagline: "Explore Japan with a Local Friend.",
         footer_copy:    "© 2026 Uncle Masa · Private Local Guide · Japan",
-        legal_label:    "Legal Notice",
+        legal_label:    "Service Info",
       },
 
       ja: {
@@ -1272,8 +1272,8 @@
         about_why_title: "「マサおじさん」の由来",
         about_why_body:  "姪のAnnaが小さい頃から、私のことを「マサおじさん」と呼んでくれています。この名前は、温かくて親しみやすく、私の心にとても大切なものです。",
 
-        tours_title: "コースを選ぼう",
-        tours_sub:   "東京の魅力をお伝えするために、2つの特別なコースをご用意しました。このルートはとてもおすすめですが、小さなご要望があればお気軽にご連絡ください。いつでも喜んでお手伝いします！",
+        tours_title: "東京の魅力を体験しよう",
+        tours_sub:   "東京の魅力をお伝えするために、2つの特別なコースをご用意しました。このルートはとてもおすすめで、ご一緒できることを楽しみにしています！",
         tour1_badge: "コース①",
         tour1_title: "浅草コース：伝統と日常を感じる1日",
         tour1_desc:  "雷門・浅草寺・仲見世通りの散策から、地元スーパーやDAISO巡り、ランチはもんじゃやきで。ガイドブックには載っていない「リアルな日本」を一緒に楽しみましょう。",
@@ -1292,8 +1292,8 @@
         why1: "のんびりペース", why2: "地元の知識", why3: "電車サポート", why4: "地元グルメのガイド",
         why5: "英語・日本語対応", why6: "団体ツアーじゃない", why7: "最大2名 — 常にプライベート", why8: "東京の地元の友人",
 
-        sample_label: "コース① — 半日の流れ",
-        sample_title: "浅草コースの<br />半日のサンプル",
+        sample_label: "コース①",
+        sample_title: "浅草<br />5〜6時間プライベートツアー",
         sample_sub:   "浅草コースの基本的な流れです。あなたのペースに合わせて、のんびりと楽しみましょう。",
         tl1_t: "ホテルへお迎え",       tl1_n: "マサがホテルのロビーにお迎えに伺います。（千代田区・中央区・台東区内のホテル限定）",
         tl2_time: "午前",              tl2_t: "浅草散策",              tl2_n: "雷門・浅草寺をゆっくり見学。象徴的な赤い門、お線香、おみくじ — 下町の歴史と雰囲気を感じる場所。仲見世通りでお菓子やお土産を楽しみながら散策。裏道のローカルエリアもご案内します。",
@@ -1302,8 +1302,8 @@
         tl5_time: "午後",              tl5_t: "浅草を少し散策しながら駅へ", tl5_n: "ランチ後は、お土産を見ながらゆっくり駅方面へ戻ります。",
         tl6_time: "14:00〜15:00",      tl6_t: "ホテルへお送り",        tl6_n: "マサが安全にホテルまでお送りします。（千代田区・中央区・台東区内のホテル限定）",
 
-        sample2_label: "コース② — 半日の流れ",
-        sample2_title: "東京・銀座コースの<br />半日のサンプル",
+        sample2_label: "コース②",
+        sample2_title: "東京・銀座<br />5〜6時間プライベートツアー",
         sample2_sub:   "東京・銀座コースの流れです。ペースや興味に合わせて柔軟に調整できます。",
         gl1_t: "ホテルへお迎え",       gl1_n: "マサがホテルのロビーにお迎えに伺います。（千代田区・中央区・台東区内のホテル限定）",
         gl2_time: "午前",              gl2_t: "東京駅・皇居・銀座散策", gl2_n: "赤レンガ駅舎を背景に記念撮影。皇居外苑を歩き、二重橋前で写真撮影。銀座エリアへ移動し、メインストリートをゆっくり散策。銀座三越デパ地下で人気スイーツをチェック。歌舞伎座前でも写真撮影。",
@@ -1320,43 +1320,57 @@
         faq_title: "よくある質問",
         faq1_q: "ツアーは週末のみですか？",
         faq1_a: "はい。平日はフルタイムで仕事をしているため、ツアーは土曜日・日曜日（週末）のみ対応しています。",
-        faq2_q: "プロのツアーとどう違いますか？",
-        faq2_a: "正式な商業ツアーではなく、「マサおじさん」と一緒に東京を探検するような感覚です。地元の日常やまちの魅力を、のんびりとしたペースでご案内します。",
-        faq3_q: "プライベートツアーですか？",
-        faq3_a: "はい！完全プライベートのツアーです。あなたのペースに合わせて、のんびりと1日を楽しみましょう。",
-        faq4_q: "英語は話せますか？",
-        faq4_a: "日常的な、親しみやすい英語を話します！ゆっくり、わかりやすくお伝えします。本物の東京をご紹介するのが大好きですので、どうぞご安心ください！",
-        faq5_q: "電車のサポートはしてもらえますか？",
-        faq5_a: "もちろんです！東京の電車は複雑に見えますが、切符の買い方やホームの探し方まで、すべてご案内します。何も自分で調べる必要はありません。",
-        faq6_q: "ツアー料金に含まれるものは何ですか？",
-        faq6_a: "料金には、ガイド料とホテルのお迎え・送迎（千代田区・中央区・台東区内のホテル限定）が含まれます。※交通費、食事・飲み物代、お土産代は含まれません。ランチやカフェ休憩に同席する場合、マサの飲食代も含まれません。",
-        faq7_q: "ガイドはランチに一緒に来ますか？",
-        faq7_a: "浅草コース（もんじゃ焼き）は一緒に食べます。銀座コース（天ぷら）は任意です。同席の場合は、現地でのお食事代をご負担いただけますと幸いです。<br /><br />・浅草コース：もんじゃをストレスなく楽しんでいただけるよう、ランチに同席します。（3名分の昼食代は合計約6,000円が目安です）<br />・銀座コース：おふたりだけのプライベートランチも選べます。同席をご希望の場合は、マサの昼食代（1名分の目安：約12,000円）が別途必要です。",
-        faq8_q: "ツアー代金の支払い方法は？",
-        faq8_a: "ツアー終了時に、現金（日本円）でのお支払いをお願いしています。ぴったりの金額をご用意いただけると大変助かります。",
-        faq9_q: "雨が降ったらどうなりますか？",
-        faq9_a: "小雨の場合はツアーを実施します。大雨など悪天候の場合はキャンセルとなります（キャンセル料なし）。ただし、事前予約済みのレストランは当日キャンセルができないため、「雨の日ミニツアー」（定額5,000円）に切り替え、安全にレストランまでご案内します。",
-        faq10_q: "キャンセルが必要になった場合は？",
-        faq10_a: "体調が優れない場合は無理をせず、できるだけ早めにご連絡ください。ガイドサービスのキャンセル料はいただきません。<br /><br />銀座コースの重要なご注意：当日キャンセルの場合、レストランのキャンセル料が発生します。その際は、後日オンライン決済でのご支援をいただけますと大変助かります。",
-        faq11_q: "ガイドがキャンセルする可能性はありますか？",
-        faq11_a: "私自身が急病や緊急事態の場合、ツアーをキャンセルさせていただくことがあります。個人運営のツアーのため、代わりのガイドを手配することはできません。何卒ご理解いただけますと幸いです。",
-        faq12_q: "食物アレルギーへの対応はできますか？",
-        faq12_a: "申し訳ありませんが、小さな地元のお店をご案内するため、特別なアレルギー対応メニューのご用意が難しい場合があります。事前にご確認のうえ、安心してお食事をお楽しみください！",
-        faq13_q: "車いすを使用している方や、歩くのが難しい方でも参加できますか？",
-        faq13_a: "このツアーはフル徒歩のツアーです。昔ながらの街並みを多く歩き、混雑した電車にも乗ります。車いすの方や歩行補助が必要な方のサポートはできかねます。しっかり歩ける状態でのご参加をお願いします！",
+        faq2_q: "プライベートツアーですか？",
+        faq2_a: "はい！完全プライベートのツアーです。あなたのペースに合わせて、のんびりと1日を楽しみましょう。",
+        faq3_q: "雨が降ったらどうなりますか？",
+        faq3_a: "小雨の場合はツアーを実施します。大雨など悪天候の場合はキャンセルとなります（キャンセル料なし）。",
+        faq4_q: "キャンセルが必要になった場合は？",
+        faq4_a: "体調が優れない場合は無理をせず、できるだけ早めにご連絡ください。ガイドサービスのキャンセル料はいただきません。",
+        faq5_q: "ガイドがキャンセルする可能性はありますか？",
+        faq5_a: "私自身が急病や緊急事態の場合、ツアーをキャンセルさせていただくことがあります。個人運営のツアーのため、代わりのガイドを手配することはできません。何卒ご理解いただけますと幸いです。",
+        faq6_q: "食物アレルギーへの対応はできますか？",
+        faq6_a: "申し訳ありませんが、小さな地元のお店をご案内するため、特別なアレルギー対応メニューのご用意が難しい場合があります。事前にご確認のうえ、ご自身の判断で安全にお食事をお楽しみください。",
+        faq7_q: "車いすを使用している方や、歩くのが難しい方でも参加できますか？",
+        faq7_a: "このツアーはフル徒歩のツアーです。昔ながらの街並みを多く歩き、混雑した電車にも乗ります。車いすの方や歩行補助が必要な方のサポートはできかねます。しっかり歩ける状態でのご参加をお願いします！",
+        faq8_q: "銀座コース（レストラン予約）に関する重要なご注意",
+        faq8_a: "キャンセルの理由（天候・お客様のご事情・ガイドの事情）にかかわらず、タイミングによってはレストランのキャンセル料が発生する場合があります。キャンセル料が生じた際は、何卒ご理解とご協力をお願いいたします。",
 
         contact_label: "お問い合わせ",
-        contact_title: "あなたの日本旅行<br />マサに相談しませんか",
-        contact_note:  "メッセージを送っていただければ、マサが直接ご返信します。自動応答なし。旅についての素直な会話です。",
-        contact_avail: "一部の週末・祝日に対応しています。小さな個人サービスのため、対応できる日程が限られる場合があります。平日は仕事をしているため、返信にお時間をいただくことがありますが、必ずマサ本人がご連絡いたします。",
+        contact_title: "東京コースについて<br />マサに聞いてみる",
+        contact_note:  "マサにメッセージを送ってください。直接ご返信します。自動応答なし。旅についての素直な会話です。",
+        contact_avail: "主に週末・祝日に対応しています。本業と並行してサービスを運営しているため、平日のご返信にはお時間をいただくことがあります。必ずご連絡いたしますので、どうぞご安心ください！",
+        contact_faq_note: "ご連絡の前に、雨天・レストラン予約・キャンセルについてFAQをご確認ください。",
         form_name:    "お名前",       form_name_ph: "例：田中さん",
         form_email:   "メールアドレス",
+        form_hotel:   "宿泊先（ホテル名）", form_hotel_ph: "例：APAホテル浅草",
         form_dates:   "旅行の日程",   form_dates_ph: "旅行の日程を選択",
         form_people:  "人数",
         form_sel0: "選んでください", form_sel1: "1名（おひとり様）", form_sel2: "2名（カップル・ペア）",
         form_area:  "ご希望のコース",
-        form_area0: "コースを選択", form_area1: "コース① — 浅草", form_area2: "コース② — 東京・銀座", form_area3: "まだ決まっていません",
-        form_msg:    "どんな体験をお探しですか？",
+        form_area0: "コースを選択",
+        form_area1: "コース① — 浅草＆もんじゃ体験（ガイド同席）",
+        form_area2: "コース② — 東京・銀座＆天ぷらランチ（ガイド同席）",
+        form_area_c3: "コース③ — 東京・銀座＆天ぷらランチ（お食事はおふたりで）",
+        form_area3: "まだ決まっていません",
+        course_info_fee:  "💴 ガイド料金：30,000円（定額・ガイドの交通費込み）",
+        course_info_area: "🏨 送迎エリア：千代田区・中央区・台東区内のホテル限定",
+        course_info_pay:  "💴 お支払い：ツアー終了時に現金（日本円）ぴったりでお願いします",
+        course1_info_title: "コース① — 浅草＆もんじゃ体験（ガイド同席）",
+        course1_info_hi:  "ハイライト：マサと一緒に浅草の歴史ある街並みを歩き、もんじゃ焼きランチを楽しみましょう。",
+        course1_info_inc: "含まれるもの：プライベートガイド・往復交通サポート・ガイドの交通費",
+        course1_info_exc: "含まれないもの：お客様の交通費・食費・飲み物代・お土産代",
+        course1_info_note:"ご注意：ガイドの飲食代もご負担いただけますと幸いです。",
+        course2_info_title: "コース② — 東京・銀座＆天ぷらランチ（ガイド同席）",
+        course2_info_hi:  "ハイライト：東京駅・皇居・歌舞伎座などの名所を訪れ、おいしい天ぷらランチを楽しみましょう。",
+        course2_info_inc: "含まれるもの：プライベートガイド・往復交通サポート・ガイドの交通費",
+        course2_info_exc: "含まれないもの：お客様の交通費・食費・飲み物代・お土産代",
+        course2_info_note:"ご注意：ガイドの飲食代もご負担いただけますと幸いです。",
+        course3_info_title: "コース③ — 東京・銀座＆天ぷらランチ（お食事はおふたりで）",
+        course3_info_hi:  "ハイライト：コース②と同じ観光コースですが、ランチはおふたりだけでプライベートにお楽しみいただけます。",
+        course3_info_inc: "含まれるもの：プライベートガイド・往復交通サポート・ガイドの交通費",
+        course3_info_exc: "含まれないもの：お客様の交通費・食費・飲み物代・お土産代",
+        course3_info_note:"ご注意：お食事にはご同席しません。コーヒーや紅茶などの休憩をご一緒する場合は、ガイドの飲み物代もご負担いただけますと幸いです。",
+        form_msg:    "メッセージ",
         form_msg_ph: "例：食べ歩きと静かな場所が好きです。日本は初めて。大人2名です。",
         form_submit:  "マサに聞く 🗾",
         form_mockup:  "このフォームは現在モックアップです。お問い合わせ先は後日追加予定です。",
@@ -1370,14 +1384,13 @@
         gk3_t: "一部の週末・祝日に対応",               gk3_d: "マサはフルタイムで仕事をしているため、対応できるのは一部の週末・祝日です。日程はお気軽にご相談ください。",
         gk4_t: "英語は日常会話レベル",                 gk4_d: "マサは親しみやすい日常英語を話します。浅草の歴史を温かくゆっくりとお伝えするのが大好きです！",
         gk5_t: "個人によるローカル体験",               gk5_d: "心を込めて最高のおもてなしをいたします。東京の地元のおじさんだと思ってください。",
-        gk6_t: "料金について",                         gk6_d: "1グループ（最大2名）30,000円。プライベートツアーの定額料金です。ご予約はマサまでお問い合わせください。",
 
         footer_home:    "ホーム",
         footer_contact: "お問い合わせ",
-        footer_legal:   "特定商取引法に基づく表記",
+        footer_legal:   "サービス情報",
         footer_tagline: "地元の友達と日本を旅しよう。",
         footer_copy:    "© 2026 Uncle Masa · プライベートローカルガイド · 日本",
-        legal_label:    "特定商取引法に基づく表記",
+        legal_label:    "サービス情報",
       }
     };
 
@@ -1405,6 +1418,17 @@
         });
         document.body.classList.remove('lang-switching');
       }, 200);
+    }
+
+    // =============================================
+    // SERVICE INFO TOGGLE
+    // =============================================
+    function toggleServiceInfo(e) {
+      e.preventDefault();
+      var section = document.getElementById('legal');
+      var isVisible = section.style.display !== 'none';
+      section.style.display = isVisible ? 'none' : 'block';
+      if (!isVisible) { setTimeout(function(){ section.scrollIntoView({ behavior: 'smooth' }); }, 50); }
     }
 
     // =============================================
@@ -1438,12 +1462,31 @@
   </script>
   <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
   <script>
-    flatpickr("#travel-dates", {
-      mode: "range",
-      dateFormat: "M j, Y",
-      minDate: "today",
-      showMonths: 1
-    });
+    (function() {
+      var today = new Date();
+      var minDate = new Date(today); minDate.setDate(today.getDate() + 30);
+      var maxDate = new Date(today); maxDate.setDate(today.getDate() + 60);
+      flatpickr("#travel-dates", {
+        mode: "single",
+        dateFormat: "M j, Y",
+        minDate: minDate,
+        maxDate: maxDate,
+        disable: [function(date) { return date.getDay() !== 0 && date.getDay() !== 6; }],
+        showMonths: 1
+      });
+    })();
+
+    function updateCourseInfo(val) {
+      var box = document.getElementById('course-info-box');
+      var d1 = document.getElementById('course-detail-1');
+      var d2 = document.getElementById('course-detail-2');
+      var d3 = document.getElementById('course-detail-3');
+      d1.style.display = 'none'; d2.style.display = 'none'; d3.style.display = 'none';
+      if (val === '1') { box.style.display = 'block'; d1.style.display = 'block'; }
+      else if (val === '2') { box.style.display = 'block'; d2.style.display = 'block'; }
+      else if (val === '3') { box.style.display = 'block'; d3.style.display = 'block'; }
+      else { box.style.display = 'none'; }
+    }
   </script>
 </body>
 </html>

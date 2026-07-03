@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Nunito:wght@300;400;500;600;700&family=Shippori+Mincho:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" />
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
   <style>
     :root {
       --cream:      #FAF8F3;
@@ -325,7 +326,7 @@
     .tour-desc { font-size: 0.87rem; color: var(--muted); line-height: 1.65; flex: 1; }
     .tour-stops { list-style: none; display: flex; flex-wrap: wrap; gap: 5px; margin-top: 4px; }
     .tour-stops li { font-size: 0.72rem; background: var(--ivory); color: var(--charcoal); padding: 3px 9px; border-radius: 50px; font-weight: 600; }
-    .tour-link { display: inline-flex; align-items: center; gap: 6px; color: var(--red); font-size: 0.85rem; font-weight: 700; margin-top: 8px; transition: gap 0.2s; }
+    .tour-link { display: inline-flex; align-items: center; gap: 6px; color: var(--red); font-size: 0.85rem; font-weight: 700; margin-top: 8px; transition: gap 0.2s; background: none; border: none; cursor: pointer; padding: 0; font-family: inherit; }
     .tour-link:hover { gap: 10px; }
     .tour-includes {
       display: flex; flex-wrap: wrap; gap: 8px;
@@ -509,6 +510,18 @@
     }
     .form-submit:hover { background: #962E21; transform: translateY(-2px); box-shadow: 0 8px 20px rgba(184,65,49,0.4); }
     .contact-faq-note { margin-top: 10px; font-size: 0.85rem; font-style: italic; }
+    .calendly-btn-wrap { margin: 28px 0 20px; }
+    .btn-calendly {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: var(--red); color: var(--white);
+      font-family: 'Nunito', sans-serif; font-size: 1rem; font-weight: 700;
+      padding: 14px 28px; border-radius: 50px; border: none; cursor: pointer;
+      box-shadow: 0 4px 14px rgba(184,65,49,0.35); transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+      text-decoration: none;
+    }
+    .btn-calendly:hover { background: #962E21; transform: translateY(-2px); box-shadow: 0 8px 20px rgba(184,65,49,0.4); }
+    .calendly-divider { display: flex; align-items: center; gap: 12px; margin: 24px 0 16px; color: var(--muted); font-size: 0.82rem; }
+    .calendly-divider::before, .calendly-divider::after { content: ''; flex: 1; height: 1px; background: var(--tan-light); }
     .course-info-wrap { background: var(--ivory); border-left: 3px solid var(--red); border-radius: var(--radius-sm); padding: 16px 18px; font-size: 0.85rem; line-height: 1.7; }
     .course-info-common { color: var(--muted); margin-bottom: 12px; }
     .course-info-common p { margin-bottom: 4px; }
@@ -697,7 +710,7 @@
               <span data-i18n="tour_incl1">Hotel pickup &amp; drop-off (Chuo, Chiyoda, and Taito-ku only)</span>
               <span data-i18n="tour_incl2">✓ Max 2 guests</span>
             </div>
-            <a href="#contact" class="tour-link" data-i18n="tour_ask">Ask about this course →</a>
+            <button class="tour-link" onclick="Calendly.initPopupWidget({url:'https://calendly.com/unclemasa-guide2025/tokyo-private-tour'});return false;" data-i18n="tour_ask">Book this course →</button>
           </div>
         </div>
 
@@ -717,7 +730,7 @@
               <span data-i18n="tour_incl1">Hotel pickup &amp; drop-off (Chuo, Chiyoda, and Taito-ku only)</span>
               <span data-i18n="tour_incl2">✓ Max 2 guests</span>
             </div>
-            <a href="#contact" class="tour-link" data-i18n="tour_ask">Ask about this course →</a>
+            <button class="tour-link" onclick="Calendly.initPopupWidget({url:'https://calendly.com/unclemasa-guide2025/tokyo-private-tour'});return false;" data-i18n="tour_ask">Book this course →</button>
           </div>
         </div>
 
@@ -963,8 +976,14 @@
           <p class="contact-note" data-i18n="contact_note">Send Masa a quick message. I'll reply personally. No automated replies. Just a real conversation about your trip.</p>
           <div class="contact-avail-note" data-i18n="contact_avail">I am primarily available on weekends and holidays. As I manage this service alongside my full-time job, please allow some extra time for weekday responses. Rest assured, I will always get back to you!</div>
           <div class="contact-avail-note contact-faq-note" data-i18n="contact_faq_note">Before contacting me, please check the FAQ for details about rainy days, restaurant reservations, and cancellations.</div>
+          <div class="calendly-btn-wrap">
+            <button class="btn-calendly" onclick="Calendly.initPopupWidget({url:'https://calendly.com/unclemasa-guide2025/tokyo-private-tour'});return false;">
+              📅 <span data-i18n="calendly_btn">Book a Tour with Masa</span>
+            </button>
+          </div>
         </div>
         <div class="form-wrap reveal reveal-delay-2">
+          <div class="calendly-divider" data-i18n="calendly_divider">or send a question below</div>
           <div class="form-row">
             <div class="form-group">
               <label data-i18n="form_name">Your Name</label>
@@ -1136,7 +1155,9 @@
         tour2_s1: "Tokyo Station", tour2_s2: "Imperial Palace", tour2_s3: "Ginza", tour2_s4: "Depachika", tour2_s5: "Tempura Lunch",
         tour_incl1: "✓ Hotel pickup & drop-off (Chuo, Chiyoda, and Taito-ku only)",
         tour_incl2: "✓ Max 2 guests",
-        tour_ask:  "Ask about this course →",
+        tour_ask:  "Book this course →",
+        calendly_btn: "Book a Tour with Masa",
+        calendly_divider: "or send a question below",
 
         why_label: "Why Uncle Masa",
         why_title: "No rush.<br />Just Japan.",
@@ -1284,7 +1305,9 @@
         tour2_s1: "東京駅", tour2_s2: "皇居二重橋前", tour2_s3: "銀座", tour2_s4: "デパ地下", tour2_s5: "天ぷらランチ",
         tour_incl1: "✓ ホテルお迎え・送迎（千代田区・中央区・台東区内のホテル限定）",
         tour_incl2: "✓ 最大2名様",
-        tour_ask:  "このコースについて聞く →",
+        tour_ask:  "このコースを予約する →",
+        calendly_btn: "マサとツアーを予約する",
+        calendly_divider: "またはご質問はこちら",
 
         why_label: "選ぶ理由",
         why_title: "急がない。<br />日本を楽しもう。",
@@ -1488,5 +1511,6 @@
       else { box.style.display = 'none'; }
     }
   </script>
+  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 </body>
 </html>

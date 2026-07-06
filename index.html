@@ -8,7 +8,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Nunito:wght@300;400;500;600;700&family=Shippori+Mincho:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" />
   <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
   <style>
     :root {
@@ -470,47 +469,18 @@
 
     /* CONTACT */
     #contact { background: var(--white); }
-    .contact-grid { display: grid; grid-template-columns: 1fr; gap: 48px; }
-    @media (min-width: 768px) { .contact-grid { grid-template-columns: 1fr 1.2fr; align-items: start; } }
-    .contact-note { font-size: 0.95rem; color: var(--muted); margin: 16px 0 28px; line-height: 1.75; }
-    .contact-chips { display: flex; flex-direction: column; gap: 10px; }
-    .contact-chip { display: flex; align-items: center; gap: 12px; background: var(--ivory); border-radius: var(--radius-sm); padding: 14px 16px; font-size: 0.88rem; font-weight: 600; }
-    .contact-chip-icon { font-size: 1.1rem; }
-    .contact-avail-note {
-      background: var(--ivory);
-      border-left: 3px solid var(--tan);
-      border-radius: var(--radius-sm);
-      padding: 14px 18px;
-      font-size: 0.84rem;
-      color: var(--muted);
-      margin-top: 24px;
-      line-height: 1.7;
-    }
-    .form-wrap { background: var(--ivory); border-radius: var(--radius); padding: 32px 28px; box-shadow: var(--shadow-sm); }
-    .form-row { display: grid; grid-template-columns: 1fr; gap: 16px; }
-    @media (min-width: 480px) { .form-row { grid-template-columns: 1fr 1fr; } }
-    .form-group { display: flex; flex-direction: column; gap: 6px; }
-    .form-group.full { grid-column: 1 / -1; }
-    label { font-size: 0.8rem; font-weight: 700; color: var(--charcoal); letter-spacing: 0.04em; }
-    input, select, textarea {
-      font-family: 'Nunito', sans-serif; font-size: 0.95rem; color: var(--charcoal);
-      background: var(--white); border: 1.5px solid var(--tan-light);
-      border-radius: var(--radius-sm); padding: 12px 16px; outline: none;
-      transition: border-color 0.2s, box-shadow 0.2s; width: 100%;
-    }
-    input:focus, select:focus, textarea:focus { border-color: var(--red); box-shadow: 0 0 0 3px rgba(184,65,49,0.12); }
-    textarea { resize: vertical; min-height: 100px; }
-    .form-submit {
-      width: 100%; background: var(--red); color: var(--white);
-      border: none; border-radius: 50px; padding: 15px;
-      font-family: 'Nunito', sans-serif; font-size: 1rem; font-weight: 700;
-      cursor: pointer; margin-top: 8px;
-      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
-      box-shadow: 0 4px 14px rgba(184,65,49,0.35);
-    }
-    .form-submit:hover { background: #962E21; transform: translateY(-2px); box-shadow: 0 8px 20px rgba(184,65,49,0.4); }
-    .contact-faq-note { margin-top: 10px; font-size: 0.85rem; font-style: italic; }
-    .calendly-btn-wrap { margin: 28px 0 20px; }
+    .contact-note { font-size: 0.95rem; color: var(--muted); margin: 16px 0 36px; line-height: 1.75; max-width: 580px; }
+    .book-grid { display: grid; grid-template-columns: 1fr; gap: 24px; margin-bottom: 40px; }
+    @media (min-width: 768px) { .book-grid { grid-template-columns: 1fr 1fr; } }
+    .book-card { background: var(--ivory); border-radius: var(--radius); padding: 28px 24px; }
+    .book-block-title { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 600; color: var(--charcoal); margin-bottom: 18px; }
+    .book-detail-list { list-style: none; display: flex; flex-direction: column; gap: 11px; }
+    .book-detail-list li { font-size: 0.9rem; color: var(--muted); line-height: 1.6; }
+    .book-detail-note { font-size: 0.8rem; color: var(--muted); margin-top: 16px; font-style: italic; }
+    .book-step-list { list-style: none; display: flex; flex-direction: column; gap: 16px; }
+    .book-step-list li { display: flex; gap: 14px; align-items: flex-start; font-size: 0.9rem; color: var(--muted); line-height: 1.6; }
+    .book-step-num { background: var(--red); color: var(--white); font-size: 0.72rem; font-weight: 700; min-width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-top: 2px; flex-shrink: 0; }
+    .book-cta { text-align: center; }
     .btn-calendly {
       display: inline-flex; align-items: center; gap: 10px;
       background: var(--red); color: var(--white);
@@ -520,21 +490,6 @@
       text-decoration: none;
     }
     .btn-calendly:hover { background: #962E21; transform: translateY(-2px); box-shadow: 0 8px 20px rgba(184,65,49,0.4); }
-    .calendly-divider { display: flex; align-items: center; gap: 12px; margin: 24px 0 16px; color: var(--muted); font-size: 0.82rem; }
-    .calendly-divider::before, .calendly-divider::after { content: ''; flex: 1; height: 1px; background: var(--tan-light); }
-    .course-info-wrap { background: var(--ivory); border-left: 3px solid var(--red); border-radius: var(--radius-sm); padding: 16px 18px; font-size: 0.85rem; line-height: 1.7; }
-    .course-info-common { color: var(--muted); margin-bottom: 12px; }
-    .course-info-common p { margin-bottom: 4px; }
-    .course-info-title { font-weight: 700; color: var(--red); margin-bottom: 8px; font-size: 0.88rem; }
-    .course-info-detail p { color: var(--muted); margin-bottom: 3px; }
-    .form-mockup-note {
-      text-align: center;
-      font-size: 0.78rem;
-      color: var(--muted);
-      font-style: italic;
-      margin-top: 12px;
-      line-height: 1.6;
-    }
 
     /* FOOTER */
     footer { background: var(--charcoal); color: rgba(255,255,255,0.55); text-align: center; padding: 36px 24px; font-size: 0.83rem; }
@@ -560,35 +515,6 @@
     /* LANG TRANSITION */
     [data-i18n] { transition: opacity 0.2s ease; }
     body.lang-switching [data-i18n] { opacity: 0; }
-
-    /* FLATPICKR BRAND OVERRIDE */
-    .flatpickr-calendar {
-      font-family: 'Nunito', sans-serif;
-      border-radius: 12px;
-      box-shadow: 0 6px 24px rgba(37,37,35,0.15);
-      border: 1.5px solid var(--tan-light);
-    }
-    .flatpickr-months .flatpickr-month,
-    .flatpickr-weekdays { background: var(--cream); }
-    .flatpickr-current-month, .flatpickr-current-month .cur-month,
-    .flatpickr-current-month input.cur-year { color: var(--charcoal); font-family: 'Nunito', sans-serif; }
-    .flatpickr-weekday { color: var(--muted); font-weight: 700; background: var(--cream); }
-    .flatpickr-day { color: var(--charcoal); }
-    .flatpickr-day.selected, .flatpickr-day.startRange, .flatpickr-day.endRange,
-    .flatpickr-day.selected:hover, .flatpickr-day.startRange:hover, .flatpickr-day.endRange:hover {
-      background: var(--red); border-color: var(--red); color: var(--white);
-    }
-    .flatpickr-day.inRange {
-      background: var(--tan-light); border-color: var(--tan-light); color: var(--charcoal);
-      box-shadow: -5px 0 0 var(--tan-light), 5px 0 0 var(--tan-light);
-    }
-    .flatpickr-day:hover, .flatpickr-day:focus {
-      background: var(--ivory); border-color: var(--tan);
-    }
-    .flatpickr-day.today { border-color: var(--red); }
-    .flatpickr-day.today:hover { background: var(--red); color: var(--white); }
-    .flatpickr-prev-month svg, .flatpickr-next-month svg { fill: var(--charcoal); }
-    .flatpickr-prev-month:hover svg, .flatpickr-next-month:hover svg { fill: var(--red); }
 
     /* LEGAL NOTICE */
     #legal { background: var(--ivory); }
@@ -966,97 +892,39 @@
   <!-- ===================== CONTACT ===================== -->
   <section id="contact">
     <div class="container">
-      <div class="contact-grid">
-        <div class="reveal">
-          <div class="jp-divider">
-            <div class="jp-divider-line"></div>
-            <span class="jp-accent" data-i18n="contact_label">Get in Touch</span>
-          </div>
-          <h2 class="section-title" data-i18n="contact_title">Ask Masa About<br />the Tokyo Courses</h2>
-          <p class="contact-note" data-i18n="contact_note">Send Masa a quick message. I'll reply personally. No automated replies. Just a real conversation about your trip.</p>
-          <div class="contact-avail-note" data-i18n="contact_avail">I am primarily available on weekends and holidays. As I manage this service alongside my full-time job, please allow some extra time for weekday responses. Rest assured, I will always get back to you!</div>
-          <div class="contact-avail-note contact-faq-note" data-i18n="contact_faq_note">Before contacting me, please check the FAQ for details about rainy days, restaurant reservations, and cancellations.</div>
-          <div class="calendly-btn-wrap">
-            <button class="btn-calendly" onclick="Calendly.initPopupWidget({url:'https://calendly.com/unclemasa-guide2025/tokyo-private-tour'});return false;">
-              📅 <span data-i18n="calendly_btn">Book a Tour with Masa</span>
-            </button>
-          </div>
+      <div class="reveal">
+        <div class="jp-divider">
+          <div class="jp-divider-line"></div>
+          <span class="jp-accent" data-i18n="contact_label">Book Now</span>
         </div>
-        <div class="form-wrap reveal reveal-delay-2">
-          <div class="calendly-divider" data-i18n="calendly_divider">or send a question below</div>
-          <div class="form-row">
-            <div class="form-group">
-              <label data-i18n="form_name">Your Name</label>
-              <input type="text" data-i18n-placeholder="form_name_ph" placeholder="e.g. Sarah" />
-            </div>
-            <div class="form-group">
-              <label data-i18n="form_email">Email Address</label>
-              <input type="email" placeholder="you@email.com" />
-            </div>
-            <div class="form-group">
-              <label data-i18n="form_hotel">Accommodation (Hotel Name)</label>
-              <input type="text" data-i18n-placeholder="form_hotel_ph" placeholder="e.g. APA Hotel Asakusa" />
-            </div>
-            <div class="form-group">
-              <label data-i18n="form_dates">Travel Dates</label>
-              <input type="text" id="travel-dates" data-i18n-placeholder="form_dates_ph" placeholder="Select your travel dates" readonly />
-            </div>
-            <div class="form-group">
-              <label data-i18n="form_people">Number of People</label>
-              <select>
-                <option data-i18n="form_sel0">Select...</option>
-                <option data-i18n="form_sel1">1 (Solo)</option>
-                <option data-i18n="form_sel2">2 (Pair / Couple)</option>
-              </select>
-            </div>
-            <div class="form-group full">
-              <label data-i18n="form_area">Preferred Course</label>
-              <select id="course-select" onchange="updateCourseInfo(this.value)">
-                <option value="" data-i18n="form_area0">Select course...</option>
-                <option value="1" data-i18n="form_area1">Course 1 — Asakusa &amp; Monjayaki Experience (Guided)</option>
-                <option value="2" data-i18n="form_area2">Course 2 — Tokyo &amp; Ginza with Tempura Lunch (Guided)</option>
-                <option value="3" data-i18n="form_area_c3">Course 3 — Tokyo &amp; Ginza with Tempura Lunch (Self-guided lunch)</option>
-                <option value="0" data-i18n="form_area3">Not sure yet</option>
-              </select>
-            </div>
-            <div class="form-group full" id="course-info-box" style="display:none;">
-              <div class="course-info-wrap">
-                <div class="course-info-common">
-                  <p data-i18n="course_info_fee">💴 Private Guide Fee: ¥30,000 (flat rate, including guide's transportation costs)</p>
-                  <p data-i18n="course_info_area">🏨 Pick-up/Drop-off: Limited to hotels in Chuo, Chiyoda, and Taito-ku</p>
-                  <p data-i18n="course_info_pay">💴 Payment: Cash (Japanese Yen) in the exact amount at the end of the tour</p>
-                </div>
-                <div id="course-detail-1" class="course-info-detail" style="display:none;">
-                  <div class="course-info-title" data-i18n="course1_info_title">Course 1 — Asakusa &amp; Monjayaki Experience (Guided)</div>
-                  <p data-i18n="course1_info_hi">Highlights: Explore the historical streets of Asakusa with me and enjoy a traditional Monjayaki lunch together.</p>
-                  <p data-i18n="course1_info_inc">Includes: Private guide, round-trip transport support, and guide's transportation costs.</p>
-                  <p data-i18n="course1_info_exc">Excludes: Your own transportation, all food, drinks, and souvenirs.</p>
-                  <p data-i18n="course1_info_note">Note: Please kindly cover your guide's food and drink costs as well.</p>
-                </div>
-                <div id="course-detail-2" class="course-info-detail" style="display:none;">
-                  <div class="course-info-title" data-i18n="course2_info_title">Course 2 — Tokyo &amp; Ginza with Tempura Lunch (Guided)</div>
-                  <p data-i18n="course2_info_hi">Highlights: Visit iconic spots like Tokyo Station, the Imperial Palace, and the Kabuki-za Theatre, followed by a delicious tempura lunch.</p>
-                  <p data-i18n="course2_info_inc">Includes: Private guide, round-trip transport support, and guide's transportation costs.</p>
-                  <p data-i18n="course2_info_exc">Excludes: Your own transportation, all food, drinks, and souvenirs.</p>
-                  <p data-i18n="course2_info_note">Note: Please kindly cover your guide's food and drink costs as well.</p>
-                </div>
-                <div id="course-detail-3" class="course-info-detail" style="display:none;">
-                  <div class="course-info-title" data-i18n="course3_info_title">Course 3 — Tokyo &amp; Ginza with Tempura Lunch (Self-guided lunch)</div>
-                  <p data-i18n="course3_info_hi">Highlights: The same sightseeing itinerary as Course 2, but you will enjoy your lunch privately without the guide.</p>
-                  <p data-i18n="course3_info_inc">Includes: Private guide, round-trip transport support, and guide's transportation costs.</p>
-                  <p data-i18n="course3_info_exc">Excludes: Your own transportation, all food, drinks, and souvenirs.</p>
-                  <p data-i18n="course3_info_note">Note: I will not join you for your meal. If we have a coffee or tea break together, please kindly cover your guide's drink costs.</p>
-                </div>
-              </div>
-            </div>
-            <div class="form-group full">
-              <label data-i18n="form_msg">Message</label>
-              <textarea data-i18n-placeholder="form_msg_ph" placeholder="e.g. We love food and quiet places. First time in Japan. Two adults."></textarea>
-            </div>
-          </div>
-          <button class="form-submit" onclick="return false;" data-i18n="form_submit">Ask Masa 🗾</button>
-          <p class="form-mockup-note" data-i18n="form_mockup">This form is a mockup for now. Contact details will be added soon.</p>
+        <h2 class="section-title" data-i18n="contact_title">Book Your<br />Tokyo Tour</h2>
+        <p class="contact-note" data-i18n="contact_note">All bookings start as a provisional request. Masa will personally confirm restaurant availability and email you within 24 hours. Your tour is officially booked once you reply "OK".</p>
+      </div>
+      <div class="book-grid">
+        <div class="book-card reveal">
+          <h3 class="book-block-title" data-i18n="book_details_title">Tour Details</h3>
+          <ul class="book-detail-list">
+            <li data-i18n="book_detail_price">💴 ¥30,000 per group (up to 2 guests) — flat rate</li>
+            <li data-i18n="book_detail_hotel">🏨 Hotel pickup &amp; drop-off included (Chuo, Chiyoda, and Taito-ku only)</li>
+            <li data-i18n="book_detail_days">📅 Available on Saturdays &amp; Sundays only</li>
+            <li data-i18n="book_detail_pay">💴 Payment: Cash (Japanese Yen) at the end of the tour</li>
+          </ul>
+          <p class="book-detail-note" data-i18n="book_detail_note">* Your own transportation, food, drinks, and souvenirs are not included in the price.</p>
         </div>
+        <div class="book-card reveal reveal-delay-1">
+          <h3 class="book-block-title" data-i18n="book_how_title">How Booking Works</h3>
+          <ol class="book-step-list">
+            <li><span class="book-step-num">1</span><span data-i18n="book_step1">Click "Book a Tour" and pick a Saturday or Sunday date</span></li>
+            <li><span class="book-step-num">2</span><span data-i18n="book_step2">Fill in your details — hotel name, preferred course, and number of guests</span></li>
+            <li><span class="book-step-num">3</span><span data-i18n="book_step3">Masa personally checks restaurant availability and emails you within 24 hours</span></li>
+            <li><span class="book-step-num">4</span><span data-i18n="book_step4">Reply "OK" — your tour is officially confirmed!</span></li>
+          </ol>
+        </div>
+      </div>
+      <div class="book-cta reveal">
+        <button class="btn-calendly" onclick="Calendly.initPopupWidget({url:'https://calendly.com/unclemasa-guide2025/tokyo-private-tour'});return false;">
+          📅 <span data-i18n="calendly_btn">Book a Tour with Masa</span>
+        </button>
       </div>
     </div>
   </section>
@@ -1203,45 +1071,20 @@
         faq8_q: "Important Note for the Ginza Course (Restaurant Reservation)",
         faq8_a: "The restaurant may charge a cancellation fee depending on the timing, regardless of the reason for cancellation (weather, guest circumstances, or guide circumstances). If a cancellation fee is incurred, I kindly ask for your understanding and support.",
 
-        contact_label: "Get in Touch",
-        contact_title: "Ask Masa About<br />the Tokyo Courses",
-        contact_note:  "Send Masa a quick message. I'll reply personally. No automated replies. Just a real conversation about your trip.",
-        contact_avail: "I am primarily available on weekends and holidays. As I manage this service alongside my full-time job, please allow some extra time for weekday responses. Rest assured, I will always get back to you!",
-        contact_faq_note: "Before contacting me, please check the FAQ for details about rainy days, restaurant reservations, and cancellations.",
-        form_name:    "Your Name",    form_name_ph: "e.g. Sarah",
-        form_email:   "Email Address",
-        form_hotel:   "Accommodation (Hotel Name)", form_hotel_ph: "e.g. APA Hotel Asakusa",
-        form_dates:   "Travel Dates", form_dates_ph: "Select your travel dates",
-        form_people:  "Number of People",
-        form_sel0: "Select...", form_sel1: "1 (Solo)", form_sel2: "2 (Pair / Couple)",
-        form_area:  "Preferred Course",
-        form_area0: "Select course...",
-        form_area1: "Course 1 — Asakusa & Monjayaki Experience (Guided)",
-        form_area2: "Course 2 — Tokyo & Ginza with Tempura Lunch (Guided)",
-        form_area_c3: "Course 3 — Tokyo & Ginza with Tempura Lunch (Self-guided lunch)",
-        form_area3: "Not sure yet",
-        course_info_fee:  "💴 Private Guide Fee: ¥30,000 (flat rate, including guide's transportation costs)",
-        course_info_area: "🏨 Pick-up/Drop-off: Limited to hotels in Chuo, Chiyoda, and Taito-ku",
-        course_info_pay:  "💴 Payment: Cash (Japanese Yen) in the exact amount at the end of the tour",
-        course1_info_title: "Course 1 — Asakusa & Monjayaki Experience (Guided)",
-        course1_info_hi:  "Highlights: Explore the historical streets of Asakusa with me and enjoy a traditional Monjayaki lunch together.",
-        course1_info_inc: "Includes: Private guide, round-trip transport support, and guide's transportation costs.",
-        course1_info_exc: "Excludes: Your own transportation, all food, drinks, and souvenirs.",
-        course1_info_note:"Note: Please kindly cover your guide's food and drink costs as well.",
-        course2_info_title: "Course 2 — Tokyo & Ginza with Tempura Lunch (Guided)",
-        course2_info_hi:  "Highlights: Visit iconic spots like Tokyo Station, the Imperial Palace, and the Kabuki-za Theatre, followed by a delicious tempura lunch.",
-        course2_info_inc: "Includes: Private guide, round-trip transport support, and guide's transportation costs.",
-        course2_info_exc: "Excludes: Your own transportation, all food, drinks, and souvenirs.",
-        course2_info_note:"Note: Please kindly cover your guide's food and drink costs as well.",
-        course3_info_title: "Course 3 — Tokyo & Ginza with Tempura Lunch (Self-guided lunch)",
-        course3_info_hi:  "Highlights: The same sightseeing itinerary as Course 2, but you will enjoy your lunch privately without the guide.",
-        course3_info_inc: "Includes: Private guide, round-trip transport support, and guide's transportation costs.",
-        course3_info_exc: "Excludes: Your own transportation, all food, drinks, and souvenirs.",
-        course3_info_note:"Note: I will not join you for your meal. If we have a coffee or tea break together, please kindly cover your guide's drink costs.",
-        form_msg:    "Message",
-        form_msg_ph: "e.g. We love food and quiet places. First time in Japan. Two adults.",
-        form_submit:  "Ask Masa 🗾",
-        form_mockup:  "This form is a mockup for now. Contact details will be added soon.",
+        contact_label: "Book Now",
+        contact_title: "Book Your<br />Tokyo Tour",
+        contact_note:  "All bookings start as a provisional request. Masa will personally confirm restaurant availability and email you within 24 hours. Your tour is officially booked once you reply \"OK\".",
+        book_details_title: "Tour Details",
+        book_detail_price:  "💴 ¥30,000 per group (up to 2 guests) — flat rate",
+        book_detail_hotel:  "🏨 Hotel pickup & drop-off included (Chuo, Chiyoda, and Taito-ku only)",
+        book_detail_days:   "📅 Available on Saturdays & Sundays only",
+        book_detail_pay:    "💴 Payment: Cash (Japanese Yen) at the end of the tour",
+        book_detail_note:   "* Your own transportation, food, drinks, and souvenirs are not included in the price.",
+        book_how_title: "How Booking Works",
+        book_step1: "Click \"Book a Tour\" and pick a Saturday or Sunday date",
+        book_step2: "Fill in your details — hotel name, preferred course, and number of guests",
+        book_step3: "Masa personally checks restaurant availability and emails you within 24 hours",
+        book_step4: "Reply \"OK\" — your tour is officially confirmed!",
 
         nav_gk: "Good to Know",
         gk_label: "Good to Know",
@@ -1353,45 +1196,20 @@
         faq8_q: "銀座コース（レストラン予約）に関する重要なご注意",
         faq8_a: "キャンセルの理由（天候・お客様のご事情・ガイドの事情）にかかわらず、タイミングによってはレストランのキャンセル料が発生する場合があります。キャンセル料が生じた際は、何卒ご理解とご協力をお願いいたします。",
 
-        contact_label: "お問い合わせ",
-        contact_title: "東京コースについて<br />マサに聞いてみる",
-        contact_note:  "マサにメッセージを送ってください。直接ご返信します。自動応答なし。旅についての素直な会話です。",
-        contact_avail: "主に週末・祝日に対応しています。本業と並行してサービスを運営しているため、平日のご返信にはお時間をいただくことがあります。必ずご連絡いたしますので、どうぞご安心ください！",
-        contact_faq_note: "ご連絡の前に、雨天・レストラン予約・キャンセルについてFAQをご確認ください。",
-        form_name:    "お名前",       form_name_ph: "例：田中さん",
-        form_email:   "メールアドレス",
-        form_hotel:   "宿泊先（ホテル名）", form_hotel_ph: "例：APAホテル浅草",
-        form_dates:   "旅行の日程",   form_dates_ph: "旅行の日程を選択",
-        form_people:  "人数",
-        form_sel0: "選んでください", form_sel1: "1名（おひとり様）", form_sel2: "2名（カップル・ペア）",
-        form_area:  "ご希望のコース",
-        form_area0: "コースを選択",
-        form_area1: "コース① — 浅草＆もんじゃ体験（ガイド同席）",
-        form_area2: "コース② — 東京・銀座＆天ぷらランチ（ガイド同席）",
-        form_area_c3: "コース③ — 東京・銀座＆天ぷらランチ（お食事はおふたりで）",
-        form_area3: "まだ決まっていません",
-        course_info_fee:  "💴 ガイド料金：30,000円（定額・ガイドの交通費込み）",
-        course_info_area: "🏨 送迎エリア：千代田区・中央区・台東区内のホテル限定",
-        course_info_pay:  "💴 お支払い：ツアー終了時に現金（日本円）ぴったりでお願いします",
-        course1_info_title: "コース① — 浅草＆もんじゃ体験（ガイド同席）",
-        course1_info_hi:  "ハイライト：マサと一緒に浅草の歴史ある街並みを歩き、もんじゃ焼きランチを楽しみましょう。",
-        course1_info_inc: "含まれるもの：プライベートガイド・往復交通サポート・ガイドの交通費",
-        course1_info_exc: "含まれないもの：お客様の交通費・食費・飲み物代・お土産代",
-        course1_info_note:"ご注意：ガイドの飲食代もご負担いただけますと幸いです。",
-        course2_info_title: "コース② — 東京・銀座＆天ぷらランチ（ガイド同席）",
-        course2_info_hi:  "ハイライト：東京駅・皇居・歌舞伎座などの名所を訪れ、おいしい天ぷらランチを楽しみましょう。",
-        course2_info_inc: "含まれるもの：プライベートガイド・往復交通サポート・ガイドの交通費",
-        course2_info_exc: "含まれないもの：お客様の交通費・食費・飲み物代・お土産代",
-        course2_info_note:"ご注意：ガイドの飲食代もご負担いただけますと幸いです。",
-        course3_info_title: "コース③ — 東京・銀座＆天ぷらランチ（お食事はおふたりで）",
-        course3_info_hi:  "ハイライト：コース②と同じ観光コースですが、ランチはおふたりだけでプライベートにお楽しみいただけます。",
-        course3_info_inc: "含まれるもの：プライベートガイド・往復交通サポート・ガイドの交通費",
-        course3_info_exc: "含まれないもの：お客様の交通費・食費・飲み物代・お土産代",
-        course3_info_note:"ご注意：お食事にはご同席しません。コーヒーや紅茶などの休憩をご一緒する場合は、ガイドの飲み物代もご負担いただけますと幸いです。",
-        form_msg:    "メッセージ",
-        form_msg_ph: "例：食べ歩きと静かな場所が好きです。日本は初めて。大人2名です。",
-        form_submit:  "マサに聞く 🗾",
-        form_mockup:  "このフォームは現在モックアップです。お問い合わせ先は後日追加予定です。",
+        contact_label: "ご予約",
+        contact_title: "東京ツアーを<br />ご予約ください",
+        contact_note:  "ご予約はまず「仮予約」として受け付けます。マサがレストランの空き状況を確認し、24時間以内に確認メールをお送りします。「OK」とご返信いただいた時点で、正式なご予約となります。",
+        book_details_title: "ツアー詳細",
+        book_detail_price:  "💴 1グループ（最大2名）¥30,000 — 定額料金",
+        book_detail_hotel:  "🏨 ホテルのお迎え・送迎あり（千代田区・中央区・台東区内のホテル限定）",
+        book_detail_days:   "📅 土曜日・日曜日のみご案内",
+        book_detail_pay:    "💴 お支払い：ツアー終了後に日本円の現金（ぴったりの金額）でお願いします",
+        book_detail_note:   "※ お客様ご自身の交通費・飲食費・お土産代は含まれません。",
+        book_how_title: "ご予約の流れ",
+        book_step1: "「ツアーを予約する」をクリックして、土曜か日曜の日程を選ぶ",
+        book_step2: "ホテル名・ご希望のコース・人数をご入力ください",
+        book_step3: "マサがレストランの空き状況を確認し、24時間以内に確認メールをお送りします",
+        book_step4: "「OK」とご返信いただければ、正式なご予約の完了です！",
 
         nav_gk: "ご利用の前に",
         gk_label: "ご利用の前に",
@@ -1477,34 +1295,6 @@
       });
     }, { threshold: 0.12 });
     revealEls.forEach(el => observer.observe(el));
-  </script>
-  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-  <script>
-    (function() {
-      var today = new Date();
-      var minDate = new Date(today); minDate.setDate(today.getDate() + 30);
-      var maxDate = new Date(today); maxDate.setDate(today.getDate() + 60);
-      flatpickr("#travel-dates", {
-        mode: "single",
-        dateFormat: "M j, Y",
-        minDate: minDate,
-        maxDate: maxDate,
-        disable: [function(date) { return date.getDay() !== 0 && date.getDay() !== 6; }],
-        showMonths: 1
-      });
-    })();
-
-    function updateCourseInfo(val) {
-      var box = document.getElementById('course-info-box');
-      var d1 = document.getElementById('course-detail-1');
-      var d2 = document.getElementById('course-detail-2');
-      var d3 = document.getElementById('course-detail-3');
-      d1.style.display = 'none'; d2.style.display = 'none'; d3.style.display = 'none';
-      if (val === '1') { box.style.display = 'block'; d1.style.display = 'block'; }
-      else if (val === '2') { box.style.display = 'block'; d2.style.display = 'block'; }
-      else if (val === '3') { box.style.display = 'block'; d3.style.display = 'block'; }
-      else { box.style.display = 'none'; }
-    }
   </script>
   <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 </body>
